@@ -2,23 +2,60 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  background: #050308;
+  min-height: 100%;
 }
 
-img {
-  display: block;
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 20%, #3b1557 0, transparent 25%),
+    radial-gradient(circle at 85% 65%, #2b1045 0, transparent 28%),
+    linear-gradient(180deg, #050308, #16071f, #050308);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  overflow-x: hidden;
+}
+
+/* little stars around the poster */
+body::before {
+  content: "✦  ·  ✧  ☾  ·  ✦     ✧  ·  ✦  ☽  ·  ✧";
+  position: fixed;
+  top: 20px;
+  left: 0;
   width: 100%;
-  height: auto;
-  margin: 0;
+  text-align: center;
+  color: #cda7ff;
+  font-size: 18px;
+  letter-spacing: 10px;
+  opacity: .65;
+  z-index: 0;
 }
-</style>
-</head>
 
-<body>
-  <img src="ravens-scoops-coming-soon.png" alt="Ravens Scoops Coming Soon">
-</body>
-</html>
+.poster {
+  position: relative;
+  z-index: 1;
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: calc(100vw - 36px);
+  max-height: calc(100vh - 36px);
+
+  object-fit: contain;
+
+  box-shadow:
+    0 0 25px rgba(166, 78, 255, .45),
+    0 0 70px rgba(94
