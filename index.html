@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 * {
   box-sizing: border-box;
@@ -11,64 +10,52 @@
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #050308;
 }
 
 body {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 15% 20%, #3b1557 0, transparent 25%),
-    radial-gradient(circle at 85% 65%, #2b1045 0, transparent 28%),
-    linear-gradient(180deg, #050308, #16071f, #050308);
-
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px;
-  overflow-x: hidden;
 }
 
-/* little stars around the poster */
-body::before {
-  content: "✦  ·  ✧  ☾  ·  ✦     ✧  ·  ✦  ☽  ·  ✧";
+/* Fills the empty space */
+.background {
   position: fixed;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: #cda7ff;
-  font-size: 18px;
-  letter-spacing: 10px;
-  opacity: .65;
+  inset: -30px;
+  background-image: url("ravens-scoops-coming-soon.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(22px) brightness(45%);
+  transform: scale(1.12);
   z-index: 0;
 }
 
-.poster {
+/* Your ORIGINAL picture */
+.main-image {
   position: relative;
   z-index: 1;
   display: block;
-
   width: auto;
   height: auto;
-
-  max-width: calc(100vw - 36px);
-  max-height: calc(100vh - 36px);
-
+  max-width: 100vw;
+  max-height: 100vh;
   object-fit: contain;
-
-  box-shadow:
-    0 0 25px rgba(166, 78, 255, .45),
-    0 0 70px rgba(94, 24, 145, .30);
-
-  border: 1px solid rgba(211, 169, 255, .35);
 }
+
 </style>
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <img
-  class="poster"
+  class="main-image"
   src="ravens-scoops-coming-soon.png"
   alt="Ravens Scoops Coming Soon">
 
