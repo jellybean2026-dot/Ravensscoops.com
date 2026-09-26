@@ -62,21 +62,11 @@ h1 {
   margin-top: 0;
 }
 
-.cart-empty {
+.checkout-message {
   text-align: center;
   color: #c9c0d0;
   padding: 35px 10px;
-}
-
-/* Total */
-.total {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #392b45;
-  padding-top: 20px;
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: bold;
+  line-height: 1.6;
 }
 
 /* Checkout button */
@@ -85,18 +75,27 @@ h1 {
   width: 100%;
   margin-top: 25px;
   padding: 16px;
-  background: white;
-  color: #08030d;
+  background: #d99582;
+  color: white;
   border: none;
   border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.checkout-button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+.checkout-button:hover {
+  opacity: 0.9;
+}
+
+/* Secure message */
+.secure {
+  text-align: center;
+  color: #9f95a5;
+  font-size: 14px;
+  margin-top: 15px;
 }
 
 /* Mobile */
@@ -133,20 +132,23 @@ h1 {
 
   <div class="checkout-box">
 
-    <h2>Your Order</h2>
+    <h2>Complete Your Order</h2>
 
-    <div class="cart-empty">
-      Your cart is currently empty.
+    <div class="checkout-message">
+      You're almost there! Continue to our secure Square checkout
+      to complete your Ravens Scoops order.
     </div>
 
-    <div class="total">
-      <span>Total</span>
-      <span>$0.00</span>
-    </div>
+    <a
+      class="checkout-button"
+      href="https://square.link/u/gJmoBJvQ"
+    >
+      Proceed to Secure Checkout
+    </a>
 
-    <button class="checkout-button" disabled>
-      Proceed to Checkout
-    </button>
+    <div class="secure">
+      Secure payment processing provided by Square.
+    </div>
 
   </div>
 
