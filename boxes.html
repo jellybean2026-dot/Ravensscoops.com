@@ -1,61 +1,185 @@
+<!DOCTYPE html>
+<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Boxes — Ravens Scoops</title>
 
 <style>
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
   background: #08030d;
   color: white;
   font-family: Arial, sans-serif;
 }
 
-body {
+nav {
+  width: 100%;
   text-align: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid #2d2435;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 header {
-  padding: 30px 20px;
+  text-align: center;
+  padding: 45px 20px 20px;
 }
 
-h1 {
+header h1 {
   font-size: 42px;
   margin-bottom: 10px;
 }
 
-p {
+header p {
   color: #c9c0d0;
-  font-size: 18px;
 }
 
-.home-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 24px;
-  color: white;
-  text-decoration: none;
-  border: 1px solid white;
+.products {
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.product {
+  background: #110918;
+  border: 1px solid #392b45;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-.home-button:hover {
+.product h2 {
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
   background: white;
   color: #08030d;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .85;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    margin: 0 7px;
+    font-size: 14px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Boxes</h1>
-  <p>Ravens Scoops mystery boxes are coming soon.</p>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="boxes.html">Boxes</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="checkout.html">Checkout</a>
+</nav>
 
-  <a class="home-button" href="index.html">Back to Home</a>
+<header>
+  <h1>Mystery Boxes</h1>
+  <p>Choose your Ravens Scoops mystery box.</p>
 </header>
+
+<section class="products">
+
+  <div class="product">
+    <h2>Small Mystery Box</h2>
+
+    <p>A surprise selection of Ravens Scoops goodies.</p>
+
+    <div class="price">$25.00</div>
+
+    <button onclick="addToCart('Small Mystery Box', 25)">
+      Add to Cart
+    </button>
+  </div>
+
+
+  <div class="product">
+    <h2>Medium Mystery Box</h2>
+
+    <p>A larger mystery selection with even more surprises.</p>
+
+    <div class="price">$50.00</div>
+
+    <button onclick="addToCart('Medium Mystery Box', 50)">
+      Add to Cart
+    </button>
+  </div>
+
+
+  <div class="product">
+    <h2>Large Mystery Box</h2>
+
+    <p>Our biggest mystery box packed with Ravens Scoops goodies.</p>
+
+    <div class="price">$100.00</div>
+
+    <button onclick="addToCart('Large Mystery Box', 100)">
+      Add to Cart
+    </button>
+  </div>
+
+</section>
+
+<script>
+function addToCart(name, price) {
+
+  let cart = JSON.parse(localStorage.getItem("ravensCart")) || [];
+
+  cart.push({
+    name: name,
+    price: price
+  });
+
+  localStorage.setItem("ravensCart", JSON.stringify(cart));
+
+  alert(name + " added to your cart!");
+}
+</script>
 
 </body>
 </html>
