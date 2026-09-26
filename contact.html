@@ -1,21 +1,182 @@
- class="email-button"
-      href="mailto:ravensscoops@gmail.com"
-    >
-      Email Ravens Scoops
-    </a>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — Ravens Scoops</title>
 
-    <div class="email-address">
-      ravensscoops@gmail.com
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: #08030d;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      width: 100%;
+      text-align: center;
+      padding: 20px 10px;
+      background: #08030d;
+      border-bottom: 1px solid #2d2435;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      width: 90%;
+      max-width: 800px;
+      margin: 60px auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 46px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #c9c0d0;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .contact-box {
+      background: #110918;
+      border: 1px solid #392b45;
+      border-radius: 18px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      margin-top: 0;
+    }
+
+    .contact-box p {
+      color: #d0c8d3;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .email-button {
+      display: inline-block;
+      padding: 16px 28px;
+      background: #d99582;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .email-button:hover {
+      opacity: 0.9;
+    }
+
+    .email-address {
+      margin-top: 20px;
+      color: #c9c0d0;
+      font-size: 16px;
+    }
+
+    .raven-message {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 24px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0 6px;
+        font-size: 14px;
+      }
+
+      main {
+        margin-top: 40px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+
+      .email-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="boxes.html">Boxes</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="checkout.html">Checkout</a>
+  </nav>
+
+  <main>
+
+    <h1>Contact Us</h1>
+
+    <div class="subtitle">
+      Have a question about Ravens Scoops, an order, or something
+      you've seen in our shop? We'd love to hear from you.
     </div>
 
-  </div>
+    <div class="contact-box">
 
-  <div class="raven-message">
-    We'll send a raven back as soon as we can. 🖤
-  </div>
+      <h2>Send Us an Email</h2>
 
-</main>
+      <p>
+        Email is currently the best way to get in touch with us.
+        Send us a message and we'll get back to you as soon as we can.
+      </p>
+
+      <a class="email-button" href="mailto:ravensscoops@gmail.com">
+        Email Ravens Scoops
+      </a>
+
+      <div class="email-address">
+        ravensscoops@gmail.com
+      </div>
+
+    </div>
+
+    <div class="raven-message">
+      We'll send a raven back as soon as we can. 🖤
+    </div>
+
+  </main>
 
 </body>
-
 </html>
