@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Ravens Scoops</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #08030d;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+nav {
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid #2d2435;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main page */
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+/* Checkout box */
+.checkout-box {
+  background: #110918;
+  border: 1px solid #392b45;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.checkout-box h2 {
+  margin-top: 0;
+}
+
+.cart-empty {
+  text-align: center;
+  color: #c9c0d0;
+  padding: 35px 10px;
+}
+
+/* Total */
+.total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #392b45;
+  padding-top: 20px;
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Checkout button */
+.checkout-button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  background: white;
+  color: #08030d;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkout-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav a {
+    margin: 0 8px;
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .checkout-box {
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="boxes.html">Boxes</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="checkout.html">Checkout</a>
+</nav>
+
+<main>
+
+  <h1>Checkout</h1>
+
+  <div class="checkout-box">
+
+    <h2>Your Order</h2>
+
+    <div class="cart-empty">
+      Your cart is currently empty.
+    </div>
+
+    <div class="total">
+      <span>Total</span>
+      <span>$0.00</span>
+    </div>
+
+    <button class="checkout-button" disabled>
+      Proceed to Checkout
+    </button>
+
+  </div>
+
+</main>
+
+</body>
+</html>
