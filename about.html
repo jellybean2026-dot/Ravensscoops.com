@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Us — Ravens Scoops</title>
-
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -19,11 +13,13 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* Navigation */
+/* NAVIGATION */
+
 nav {
   width: 100%;
   text-align: center;
   padding: 20px 10px;
+  background: #08030d;
   border-bottom: 1px solid #2d2435;
 }
 
@@ -38,29 +34,33 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Main Content */
+/* MAIN PAGE */
+
 main {
   width: 90%;
-  max-width: 850px;
-  margin: 45px auto;
+  max-width: 900px;
+  margin: 40px auto 60px;
 }
 
-/* Top Image */
+/* RAVEN IMAGE */
+
 .about-image {
-  width: 100%;
-  max-width: 700px;
-  height: auto;
   display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
   margin: 0 auto 40px;
   border-radius: 18px;
+  border: 1px solid #392b45;
 }
 
-/* Title */
+/* TITLE */
+
 h1 {
   text-align: center;
   font-family: Georgia, serif;
   font-size: 46px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 
 .subtitle {
@@ -70,7 +70,8 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* About Box */
+/* ABOUT BOX */
+
 .about-box {
   background: #110918;
   border: 1px solid #392b45;
@@ -86,17 +87,24 @@ h1 {
   margin-bottom: 25px;
 }
 
+/* END MESSAGE */
+
 .raven-message {
   text-align: center;
   font-family: Georgia, serif;
-  font-size: 25px;
+  font-size: 26px;
   color: white;
   margin-top: 35px;
   margin-bottom: 5px;
 }
 
-/* Mobile */
+/* MOBILE */
+
 @media (max-width: 600px) {
+
+  nav {
+    padding: 18px 5px;
+  }
 
   nav a {
     margin: 0 6px;
@@ -104,11 +112,22 @@ h1 {
   }
 
   main {
-    margin-top: 30px;
+    width: 92%;
+    margin-top: 25px;
+  }
+
+  .about-image {
+    margin-bottom: 30px;
+    border-radius: 12px;
   }
 
   h1 {
     font-size: 38px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
   }
 
   .about-box {
@@ -117,16 +136,20 @@ h1 {
 
   .about-box p {
     font-size: 16px;
+    line-height: 1.7;
   }
 
-  .about-image {
-    margin-bottom: 30px;
+  .raven-message {
+    font-size: 23px;
   }
 }
+
 </style>
 </head>
 
 <body>
+
+<!-- NAVIGATION -->
 
 <nav>
   <a href="index.html">Home</a>
@@ -138,19 +161,23 @@ h1 {
 
 <main>
 
-  <!-- ABOUT US IMAGE -->
-  <!-- Replace "about-us.jpg" with the name of your image file -->
+  <!-- RAVEN GRAVEYARD IMAGE -->
+
   <img
-    src="about-us.jpg"
-    alt="The family behind Ravens Scoops"
+    src="Screenshot%202026-09-25%20232257.png"
+    alt="Raven perched in a gothic graveyard"
     class="about-image"
   >
+
+  <!-- ABOUT TITLE -->
 
   <h1>About Us</h1>
 
   <div class="subtitle">
     A little witchy. A little weird. Always a mystery.
   </div>
+
+  <!-- OUR STORY -->
 
   <div class="about-box">
 
@@ -193,4 +220,6 @@ h1 {
 </main>
 
 </body>
+
 </html>
+
