@@ -3,19 +3,345 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Boxes — Ravens Scoops</title>
 
 <style>
+* { box-sizing: border-box; }
 
-* {
-  box-sizing: border-box;
-}
-
-html, body {
+body {
   margin: 0;
-  padding: 0;
   background: #08030d;
   color: white;
   font-family: Arial, sans-serif;
 }
+
+nav {
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid #33273b;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+.page-title {
+  text-align: center;
+  padding: 35px 15px;
+}
+
+.page-title h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.page-title p {
+  color: #c9c0d0;
+}
+
+.products {
+  width: 92%;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.product {
+  background: #0d0712;
+  border: 1px solid #716478;
+  border-radius: 22px;
+  padding: 15px;
+  text-align: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #17101d;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa0af;
+}
+
+.product h2 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.description {
+  color: #cbc3ce;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.choose {
+  width: 100%;
+  padding: 14px;
+  background: #d99582;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modal-box {
+  max-width: 650px;
+  margin: auto;
+  background: #0d0712;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #716478;
+}
+
+.close {
+  float: right;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.modal-box h2 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+}
+
+.full-description {
+  color: #d0c8d3;
+  line-height: 1.6;
+}
+
+label {
+  display: block;
+  margin: 25px 0 8px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 14px;
+  background: #17101d;
+  color: white;
+  border: 1px solid #716478;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity button {
+  width: 45px;
+  height: 45px;
+  background: #17101d;
+  color: white;
+  border: 1px solid #716478;
+  font-size: 20px;
+}
+
+.quantity span {
+  width: 55px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.total {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.sold-out {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: #514b55;
+  color: #ccc;
+  border: 0;
+  border-radius: 7px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    margin: 0 6px;
+    font-size: 14px;
+  }
+
+  .products {
+    gap: 10px;
+  }
+
+  .product {
+    padding: 10px;
+  }
+
+  .product h2 {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="boxes.html">Boxes</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="checkout.html">Checkout</a>
+</nav>
+
+<div class="page-title">
+  <h1>Boxes</h1>
+  <p>Choose your mystery experience and see what the raven scoops for you.</p>
+</div>
+
+<div class="products">
+
+  <div class="product">
+
+    <div class="image-placeholder">
+      Image Coming Soon
+    </div>
+
+    <h2>Witchy Mystery Ball Bundle</h2>
+
+    <p class="description">
+      Let the raven choose! Each mystery ball is hand-picked
+      with a surprise item ranging from witchy and weird to
+      macabre, cute, and sometimes wonderfully campy.
+    </p>
+
+    <div class="price">From $36.00</div>
+
+    <button class="choose" onclick="openProduct()">
+      CHOOSE OPTIONS
+    </button>
+
+  </div>
+
+</div>
+
+
+<div id="productModal" class="modal">
+
+  <div class="modal-box">
+
+    <span class="close" onclick="closeProduct()">&times;</span>
+
+    <div class="image-placeholder">
+      Image Coming Soon
+    </div>
+
+    <h2>Witchy Mystery Ball Bundle</h2>
+
+    <p class="full-description">
+      Ready to see what the raven chooses for you? Our Witchy
+      Mystery Ball Bundles are all about the surprise. Each
+      mystery ball is randomly hand-picked and contains an item
+      from our collection of witchy, weird, macabre, cute, and
+      sometimes delightfully campy finds.
+      <br><br>
+      No two bundles are guaranteed to be the same, which is part
+      of the fun! Your picks could lean spooky, mystical, strange,
+      adorable, or somewhere completely unexpected in between.
+      <br><br>
+      Choose how many mystery balls you want and let the raven
+      do the rest.
+    </p>
+
+    <label for="bundle">Number of Picks</label>
+
+    <select id="bundle" onchange="updatePrice()">
+      <option value="36">6 Picks — $36.00</option>
+      <option value="66">12 Picks — $66.00</option>
+      <option value="96">18 Picks — $96.00</option>
+      <option value="120">24 Picks — $120.00</option>
+    </select>
+
+    <label>Quantity</label>
+
+    <div class="quantity">
+      <button onclick="changeQuantity(-1)">−</button>
+      <span id="quantity">1</span>
+      <button onclick="changeQuantity(1)">+</button>
+    </div>
+
+    <div class="total">
+      Total: <span id="total">$36.00</span>
+    </div>
+
+    <button class="sold-out" disabled>
+      SOLD OUT
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+let quantity = 1;
+
+function openProduct() {
+  document.getElementById("productModal").style.display = "block";
+}
+
+function closeProduct() {
+  document.getElementById("productModal").style.display = "none";
+}
+
+function changeQuantity(change) {
+  quantity += change;
+
+  if (quantity < 1) {
+    quantity = 1;
+  }
+
+  document.getElementById("quantity").textContent = quantity;
+  updatePrice();
+}
+
+function updatePrice() {
+  const price = Number(document.getElementById("bundle").value);
+  const total = price * quantity;
+
+  document.getElementById("total").textContent =
+    "$" + total.toFixed(2);
+}
+
+</script>
+
+</body>
+</html>
