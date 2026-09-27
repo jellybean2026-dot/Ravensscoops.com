@@ -52,15 +52,11 @@ nav {
 }
 
 
-/* SILVER SHINE */
-
 nav::before {
   content: "";
   position: absolute;
-
   top: 0;
   left: 10%;
-
   width: 80%;
   height: 1px;
 
@@ -80,7 +76,6 @@ nav::before {
 
 .nav-lace {
   position: absolute;
-
   top: 0;
 
   width: 36%;
@@ -90,7 +85,6 @@ nav::before {
   object-position: left center;
 
   pointer-events: none;
-
   z-index: 1;
 
   filter:
@@ -159,11 +153,10 @@ nav::before {
 }
 
 
-/* CLEAN CENTER BEHIND LINKS */
+/* CENTER SHADE */
 
 .nav-center-shade {
   position: absolute;
-
   top: 0;
   left: 22%;
 
@@ -284,57 +277,71 @@ nav a:hover::after {
 
 .page-title {
   text-align: center;
+
   padding: 45px 15px 35px;
 }
 
+
 .page-title h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
   font-size: 42px;
+
   margin-bottom: 10px;
 }
+
 
 .page-title p {
   color: #c9c0d0;
 }
 
 
-/* PRODUCTS */
+/* PRODUCT AREA */
 
 .products {
-  width: 92%;
-  max-width: 1000px;
+  width: 90%;
+  max-width: 760px;
 
   margin: auto;
 
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(2, minmax(0, 1fr));
 
-  gap: 20px;
+  gap: 18px;
 
   padding-bottom: 50px;
 }
 
+
+/* PRODUCT CARD */
 
 .product {
   background: #0d0712;
 
   border: 1px solid #716478;
 
-  border-radius: 22px;
+  border-radius: 18px;
 
-  padding: 15px;
+  padding: 12px;
 
   text-align: center;
 
   display: flex;
   flex-direction: column;
 
+  min-width: 0;
+
   box-shadow:
     0 12px 30px rgba(0,0,0,.35);
 }
 
+
+/* PRODUCT IMAGE */
 
 .product-image {
   width: 100%;
@@ -343,11 +350,13 @@ nav a:hover::after {
 
   object-fit: cover;
 
-  border-radius: 15px;
+  border-radius: 13px;
 
   display: block;
 }
 
+
+/* BLACK CAT PLACEHOLDER */
 
 .image-placeholder {
   width: 100%;
@@ -358,7 +367,7 @@ nav a:hover::after {
 
   border: 2px dashed #716478;
 
-  border-radius: 15px;
+  border-radius: 13px;
 
   display: flex;
 
@@ -369,15 +378,16 @@ nav a:hover::after {
 
   color: #aaa0af;
 
-  font-size: 20px;
+  font-size: 18px;
 
-  padding: 20px;
+  padding: 15px;
 }
 
 
 .cat-icon {
-  font-size: 60px;
-  margin-bottom: 15px;
+  font-size: 52px;
+
+  margin-bottom: 12px;
 }
 
 
@@ -387,27 +397,32 @@ nav a:hover::after {
     "Times New Roman",
     serif;
 
-  font-size: 28px;
+  font-size: 24px;
 }
 
 
 .description {
   color: #cbc3ce;
+
   line-height: 1.5;
+
+  font-size: 15px;
 }
 
 
 .price {
-  font-size: 22px;
+  font-size: 20px;
+
   font-weight: bold;
-  margin: 20px;
+
+  margin: 16px;
 }
 
 
 .choose {
   width: 100%;
 
-  padding: 14px;
+  padding: 12px;
 
   background: #d99582;
 
@@ -417,7 +432,7 @@ nav a:hover::after {
 
   border-radius: 7px;
 
-  font-size: 17px;
+  font-size: 15px;
 
   cursor: pointer;
 
@@ -430,7 +445,7 @@ nav a:hover::after {
 }
 
 
-/* MODALS */
+/* MODAL */
 
 .modal {
   display: none;
@@ -489,6 +504,7 @@ nav a:hover::after {
 
 .full-description {
   color: #d0c8d3;
+
   line-height: 1.6;
 }
 
@@ -554,6 +570,7 @@ select {
 
 .quantity button {
   width: 45px;
+
   height: 45px;
 
   background: #17101d;
@@ -636,6 +653,7 @@ select {
 
   .nav-center-shade {
     left: 15%;
+
     width: 70%;
   }
 
@@ -659,33 +677,80 @@ select {
   }
 
 
+  .page-title p {
+    font-size: 14px;
+  }
+
+
+  /* SHRINK ENTIRE PRODUCT AREA */
+
   .products {
-    gap: 10px;
+    width: 92%;
+
+    max-width: 340px;
+
+    gap: 8px;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 
   .product {
-    padding: 10px;
+    padding: 7px;
+
+    border-radius: 13px;
   }
 
 
-  .product h2 {
-    font-size: 20px;
-  }
+  .product-image,
+  .image-placeholder {
+    width: 100%;
 
-
-  .description {
-    font-size: 13px;
+    border-radius: 10px;
   }
 
 
   .image-placeholder {
-    font-size: 15px;
+    padding: 7px;
+
+    font-size: 12px;
   }
 
 
   .cat-icon {
-    font-size: 45px;
+    font-size: 34px;
+
+    margin-bottom: 6px;
+  }
+
+
+  .product h2 {
+    font-size: 16px;
+
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+
+  .description {
+    font-size: 11px;
+
+    line-height: 1.4;
+  }
+
+
+  .price {
+    font-size: 16px;
+
+    margin: 11px 3px;
+  }
+
+
+  .choose {
+    padding: 10px 3px;
+
+    font-size: 11px;
   }
 
 
@@ -696,6 +761,14 @@ select {
 
   .modal-box h2 {
     font-size: 27px;
+  }
+
+
+  /* KEEP MODAL CONTENT NORMAL SIZE */
+
+  .modal-box .product-image,
+  .modal-box .image-placeholder {
+    width: 100%;
   }
 
 }
@@ -731,7 +804,7 @@ select {
 
   <a href="boxes.html">Boxes</a>
 
-  <a href="about.html">About</a>
+  <a href="about.html">About Us</a>
 
   <a href="contact.html">Contact</a>
 
@@ -813,16 +886,13 @@ select {
         🐈‍⬛
       </div>
 
+
       <div>
         Black Cat Mystery Balls
       </div>
 
-      <div
-        style="
-          font-size:14px;
-          margin-top:8px;
-        "
-      >
+
+      <div style="font-size:12px; margin-top:6px;">
         Image Coming Soon
       </div>
 
@@ -862,12 +932,9 @@ select {
 
 
 
-<!-- WITCHY PRODUCT MODAL -->
+<!-- WITCHY MODAL -->
 
-<div
-  id="productModal"
-  class="modal"
->
+<div id="productModal" class="modal">
 
   <div class="modal-box">
 
@@ -950,9 +1017,7 @@ select {
 
     <div class="quantity">
 
-      <button
-        onclick="changeQuantity(-1)"
-      >
+      <button onclick="changeQuantity(-1)">
         −
       </button>
 
@@ -962,9 +1027,7 @@ select {
       </span>
 
 
-      <button
-        onclick="changeQuantity(1)"
-      >
+      <button onclick="changeQuantity(1)">
         +
       </button>
 
@@ -996,12 +1059,9 @@ select {
 
 
 
-<!-- BLACK CAT PRODUCT MODAL -->
+<!-- BLACK CAT MODAL -->
 
-<div
-  id="catProductModal"
-  class="modal"
->
+<div id="catProductModal" class="modal">
 
   <div class="modal-box">
 
@@ -1020,16 +1080,13 @@ select {
         🐈‍⬛
       </div>
 
+
       <div>
         Black Cat Mystery Balls
       </div>
 
-      <div
-        style="
-          font-size:14px;
-          margin-top:8px;
-        "
-      >
+
+      <div style="font-size:14px; margin-top:8px;">
         Image Coming Soon
       </div>
 
@@ -1114,10 +1171,7 @@ select {
 
     <div class="quantity">
 
-
-      <button
-        onclick="changeCatQuantity(-1)"
-      >
+      <button onclick="changeCatQuantity(-1)">
         −
       </button>
 
@@ -1127,12 +1181,9 @@ select {
       </span>
 
 
-      <button
-        onclick="changeCatQuantity(1)"
-      >
+      <button onclick="changeCatQuantity(1)">
         +
       </button>
-
 
     </div>
 
@@ -1163,7 +1214,6 @@ select {
 
 
 <script>
-
 
 let quantity = 1;
 
@@ -1233,7 +1283,6 @@ function updatePrice() {
 
 /* BLACK CAT */
 
-
 let catQuantity = 1;
 
 
@@ -1300,45 +1349,32 @@ function updateCatPrice() {
 
 
 
-/* CLOSE MODAL BY CLICKING BACKGROUND */
+/* CLOSE MODALS BY CLICKING BACKGROUND */
+
+window.onclick = function(event) {
+
+  const witchyModal =
+    document.getElementById("productModal");
 
 
-window.onclick =
-  function(event) {
+  const catModal =
+    document.getElementById("catProductModal");
 
 
-    const witchyModal =
-      document.getElementById(
-        "productModal"
-      );
+  if (event.target === witchyModal) {
+
+    closeProduct();
+
+  }
 
 
-    const catModal =
-      document.getElementById(
-        "catProductModal"
-      );
+  if (event.target === catModal) {
 
+    closeCatProduct();
 
-    if (
-      event.target === witchyModal
-    ) {
+  }
 
-      closeProduct();
-
-    }
-
-
-    if (
-      event.target === catModal
-    ) {
-
-      closeCatProduct();
-
-    }
-
-
-  };
-
+};
 
 </script>
 
