@@ -51,10 +51,11 @@ nav {
 }
 
 
-/* SOFT SILVER SHINE ALONG TOP */
+/* SILVER SHINE ACROSS TOP */
 
 nav::before {
   content: "";
+
   position: absolute;
 
   top: 0;
@@ -79,9 +80,10 @@ nav::before {
 
 .nav-lace {
   position: absolute;
+
   top: 0;
 
-  width: 38%;
+  width: 36%;
   height: 100%;
 
   object-fit: cover;
@@ -91,14 +93,23 @@ nav::before {
 
   z-index: 1;
 
+  /*
+    IMPORTANT:
+    No brightness filter here.
+
+    White stays white so multiply allows
+    the purple background to show through.
+
+    Black lace stays dark.
+  */
+
   filter:
     grayscale(1)
-    brightness(0.18)
-    contrast(1.9);
+    contrast(1.65);
 
   mix-blend-mode: multiply;
 
-  opacity: 1;
+  opacity: 0.88;
 }
 
 
@@ -111,9 +122,10 @@ nav::before {
     linear-gradient(
       to right,
       black 0%,
-      black 45%,
-      rgba(0,0,0,.9) 60%,
-      rgba(0,0,0,.5) 78%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
       transparent 100%
     );
 
@@ -121,9 +133,10 @@ nav::before {
     linear-gradient(
       to right,
       black 0%,
-      black 45%,
-      rgba(0,0,0,.9) 60%,
-      rgba(0,0,0,.5) 78%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
       transparent 100%
     );
 }
@@ -140,9 +153,10 @@ nav::before {
     linear-gradient(
       to right,
       black 0%,
-      black 45%,
-      rgba(0,0,0,.9) 60%,
-      rgba(0,0,0,.5) 78%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
       transparent 100%
     );
 
@@ -150,31 +164,32 @@ nav::before {
     linear-gradient(
       to right,
       black 0%,
-      black 45%,
-      rgba(0,0,0,.9) 60%,
-      rgba(0,0,0,.5) 78%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
       transparent 100%
     );
 }
 
 
-/* DARKER CENTER AREA SO MENU STAYS CLEAN */
+/* CLEAN CENTER BEHIND MENU */
 
 .nav-center-shade {
   position: absolute;
 
   top: 0;
-  left: 21%;
+  left: 22%;
 
-  width: 58%;
+  width: 56%;
   height: 100%;
 
   background:
     radial-gradient(
       ellipse at center,
-      rgba(31, 7, 41, .97) 0%,
-      rgba(31, 7, 41, .88) 48%,
-      rgba(31, 7, 41, .48) 72%,
+      rgba(31, 7, 41, .94) 0%,
+      rgba(31, 7, 41, .80) 48%,
+      rgba(31, 7, 41, .36) 72%,
       transparent 100%
     );
 
@@ -216,7 +231,7 @@ nav a {
 }
 
 
-/* SILVER HOVER LINE */
+/* SILVER HOVER UNDERLINE */
 
 nav a::after {
   content: "";
@@ -257,7 +272,7 @@ nav a:hover::after {
 }
 
 
-/* SMALL SILVER ORNAMENT */
+/* CENTER SILVER ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -309,33 +324,37 @@ nav a:hover::after {
     padding: 20px 3px;
   }
 
+
   nav a {
     font-size: 14px;
     margin: 0 5px;
     letter-spacing: 0;
   }
 
+
   .nav-lace {
-    width: 32%;
+    width: 30%;
 
     filter:
       grayscale(1)
-      brightness(0.16)
-      contrast(1.95);
+      contrast(1.6);
 
-    opacity: 1;
+    opacity: 0.82;
   }
+
 
   .nav-center-shade {
-    left: 14%;
-    width: 72%;
+    left: 15%;
+    width: 70%;
   }
+
 
   .nav-ornament {
     font-size: 7px;
     letter-spacing: 4px;
     bottom: 1px;
   }
+
 
   .home-image {
     width: 100%;
@@ -356,7 +375,9 @@ nav a:hover::after {
 
 </head>
 
+
 <body>
+
 
 <nav>
 
@@ -366,19 +387,27 @@ nav a:hover::after {
     alt=""
   >
 
+
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
 
+
   <span class="nav-center-shade"></span>
 
+
   <a href="index.html">Home</a>
+
   <a href="boxes.html?v=2">Boxes</a>
+
   <a href="about.html">About</a>
+
   <a href="contact.html">Contact</a>
+
   <a href="checkout.html">Checkout</a>
+
 
   <span class="nav-ornament">
     ◆ ✦ ◆ ✦ ◆
@@ -386,11 +415,13 @@ nav a:hover::after {
 
 </nav>
 
+
 <img
   class="home-image"
   src="file_00000000844881f58d4b5c059559045b.png"
   alt="Ravens Scoops"
 >
+
 
 </body>
 
