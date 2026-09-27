@@ -2,137 +2,285 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ravens Scoops</title>
+<title>Ravens Scoops</title>
 
-  <style>
+<style>
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      background-color: #08030d;
-    }
-
-
-    /* TOP NAVIGATION */
-
-    nav {
-      width: 100%;
-      text-align: center;
-      padding: 18px 8px;
-
-      background: linear-gradient(
-        to bottom,
-        #6d28a8,
-        #4b176e
-      );
-
-      border-bottom: 2px solid #a77bd1;
-
-      box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.6);
-
-      position: relative;
-    }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #08030d;
+  color: white;
+}
 
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 0 14px;
-    }
+/* ========================================= */
+/* LUXURY PURPLE + SILVER NAVIGATION         */
+/* ========================================= */
+
+nav {
+  position: relative;
+
+  width: 100%;
+  text-align: center;
+
+  padding: 24px 10px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #55206f 0%,
+      #351044 45%,
+      #17081f 100%
+    );
+
+  border-top: 1px solid rgba(225, 228, 235, 0.35);
+  border-bottom: 1px solid #bfc3cc;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
+
+  z-index: 10;
+}
 
 
-    nav a:hover {
-      color: #e6d1ff;
-    }
+/* SILVER SHINE ACROSS TOP */
+
+nav::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+
+  width: 80%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(255,255,255,.55),
+      transparent
+    );
+}
 
 
-    /* DECORATIVE TRIM */
+/* SILVER ORNAMENT UNDER NAVIGATION */
 
-    nav::after {
-      content: "";
-      position: absolute;
+nav::after {
+  content: "◆  ✦  ◆  ✦  ◆";
 
-      left: 0;
-      bottom: -8px;
+  position: absolute;
 
-      width: 100%;
-      height: 8px;
+  left: 50%;
+  bottom: -14px;
 
-      background:
-        radial-gradient(
-          circle at 8px 0,
-          #a77bd1 0,
-          #a77bd1 4px,
-          transparent 5px
-        );
+  transform: translateX(-50%);
 
-      background-size: 16px 8px;
-      background-repeat: repeat-x;
-    }
+  color: #d7d9df;
+  background: #08030d;
 
+  padding: 0 15px;
 
-    /* MAIN HOME IMAGE */
+  font-size: 10px;
+  letter-spacing: 8px;
 
-    .home-image {
-      display: block;
-
-      width: 100%;
-      max-width: 900px;
-
-      height: auto;
-
-      margin: 8px auto 0 auto;
-    }
+  white-space: nowrap;
+}
 
 
-    /* MOBILE */
+/* ========================================= */
+/* NAVIGATION LINKS                          */
+/* ========================================= */
 
-    @media screen and (max-width: 600px) {
+nav a {
+  position: relative;
 
-      nav {
-        padding: 16px 4px;
-      }
+  color: #f5f1f7;
 
-      nav a {
-        font-size: 14px;
-        margin: 0 5px;
-      }
+  text-decoration: none;
 
-    }
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  </style>
+  font-size: 19px;
+  font-weight: normal;
+
+  letter-spacing: 1px;
+
+  margin: 0 24px;
+
+  text-shadow:
+    0 1px 3px rgba(0,0,0,.9);
+
+  transition:
+    color .25s ease,
+    text-shadow .25s ease;
+}
+
+
+/* SILVER UNDERLINE */
+
+nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -8px;
+
+  width: 0;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      #8d919b,
+      #ffffff,
+      #8d919b
+    );
+
+  transform: translateX(-50%);
+
+  transition: width .25s ease;
+}
+
+
+nav a:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px rgba(214, 196, 255, .8),
+    0 0 14px rgba(123, 67, 160, .5);
+}
+
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* ========================================= */
+/* HOME PAGE HERO IMAGE                      */
+/* ========================================= */
+
+.home-image {
+  display: block;
+
+  width: calc(100% - 30px);
+  max-width: 1200px;
+
+  height: auto;
+
+  margin: 28px auto 55px auto;
+
+  border: 1px solid rgba(215, 218, 228, 0.5);
+
+  box-shadow:
+    0 0 0 5px rgba(70, 27, 88, 0.17),
+    0 20px 55px rgba(0,0,0,.75),
+    0 0 38px rgba(130,90,160,.22);
+}
+
+
+/* ========================================= */
+/* MOBILE                                    */
+/* ========================================= */
+
+@media screen and (max-width: 600px) {
+
+  nav {
+    padding: 18px 4px;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 0 6px;
+    letter-spacing: .2px;
+  }
+
+  nav::after {
+    font-size: 8px;
+    letter-spacing: 4px;
+    bottom: -12px;
+  }
+
+  .home-image {
+    width: 100%;
+    margin-top: 22px;
+
+    border-left: 0;
+    border-right: 0;
+
+    box-shadow:
+      0 10px 35px rgba(0,0,0,.7),
+      0 0 25px rgba(120,75,150,.18);
+  }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="boxes.html?v=2">Boxes</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="checkout.html">Checkout</a>
-  </nav>
+
+<!-- ========================================= -->
+<!-- NAVIGATION                                -->
+<!-- ========================================= -->
+
+<nav>
+
+  <a href="index.html">
+    Home
+  </a>
+
+  <a href="boxes.html?v=2">
+    Boxes
+  </a>
+
+  <a href="about.html">
+    About
+  </a>
+
+  <a href="contact.html">
+    Contact
+  </a>
+
+  <a href="checkout.html">
+    Checkout
+  </a>
+
+</nav>
 
 
-  <img
-    class="home-image"
-    src="file_00000000844881f58d4b5c059559045b.png"
-    alt="Ravens Scoops"
-  >
+
+<!-- ========================================= -->
+<!-- MAIN RAVENS SCOOPS IMAGE                  -->
+<!-- ========================================= -->
+
+<img
+  class="home-image"
+  src="file_00000000844881f58d4b5c059559045b.png"
+  alt="Ravens Scoops"
+>
+
 
 </body>
 
