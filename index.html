@@ -22,18 +22,11 @@ body {
   color: white;
 }
 
-
-/* ========================================= */
-/* LUXURY PURPLE + SILVER NAVIGATION         */
-/* ========================================= */
-
 nav {
   position: relative;
-
   width: 100%;
   text-align: center;
-
-  padding: 24px 10px;
+  padding: 30px 10px;
 
   background:
     radial-gradient(
@@ -50,20 +43,15 @@ nav {
     0 8px 25px rgba(0, 0, 0, 0.7),
     inset 0 1px 0 rgba(255, 255, 255, 0.09);
 
+  overflow: visible;
   z-index: 10;
 }
 
-
-/* SILVER SHINE ACROSS TOP */
-
 nav::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 10%;
-
   width: 80%;
   height: 1px;
 
@@ -74,16 +62,14 @@ nav::before {
       rgba(255,255,255,.55),
       transparent
     );
+
+  z-index: 2;
 }
-
-
-/* SILVER ORNAMENT UNDER NAVIGATION */
 
 nav::after {
   content: "◆  ✦  ◆  ✦  ◆";
 
   position: absolute;
-
   left: 50%;
   bottom: -14px;
 
@@ -98,18 +84,107 @@ nav::after {
   letter-spacing: 8px;
 
   white-space: nowrap;
+  z-index: 4;
 }
 
+.nav-lace {
+  position: absolute;
+  top: 0;
 
-/* ========================================= */
-/* NAVIGATION LINKS                          */
-/* ========================================= */
+  width: 31%;
+  height: 100%;
+
+  pointer-events: none;
+  opacity: 0.38;
+
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      circle at 12px 12px,
+      transparent 0px,
+      transparent 5px,
+      rgba(235,238,245,.85) 6px,
+      transparent 7px
+    ),
+
+    radial-gradient(
+      circle at 25px 24px,
+      transparent 0px,
+      transparent 8px,
+      rgba(190,195,207,.65) 9px,
+      transparent 10px
+    ),
+
+    radial-gradient(
+      circle at 8px 30px,
+      transparent 0px,
+      transparent 4px,
+      rgba(220,223,232,.60) 5px,
+      transparent 6px
+    );
+
+  background-size:
+    25px 25px,
+    48px 48px,
+    32px 32px;
+
+  background-repeat: repeat;
+}
+
+.lace-left {
+  left: 0;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 20%,
+      rgba(0,0,0,.9) 35%,
+      rgba(0,0,0,.4) 65%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 20%,
+      rgba(0,0,0,.9) 35%,
+      rgba(0,0,0,.4) 65%,
+      transparent 100%
+    );
+}
+
+.lace-right {
+  right: 0;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to left,
+      black 0%,
+      black 20%,
+      rgba(0,0,0,.9) 35%,
+      rgba(0,0,0,.4) 65%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to left,
+      black 0%,
+      black 20%,
+      rgba(0,0,0,.9) 35%,
+      rgba(0,0,0,.4) 65%,
+      transparent 100%
+    );
+}
 
 nav a {
   position: relative;
+  z-index: 5;
 
   color: #f5f1f7;
-
   text-decoration: none;
 
   font-family:
@@ -119,7 +194,6 @@ nav a {
 
   font-size: 19px;
   font-weight: normal;
-
   letter-spacing: 1px;
 
   margin: 0 24px;
@@ -131,9 +205,6 @@ nav a {
     color .25s ease,
     text-shadow .25s ease;
 }
-
-
-/* SILVER UNDERLINE */
 
 nav a::after {
   content: "";
@@ -159,24 +230,17 @@ nav a::after {
   transition: width .25s ease;
 }
 
-
 nav a:hover {
   color: #ffffff;
 
   text-shadow:
-    0 0 8px rgba(214, 196, 255, .8),
-    0 0 14px rgba(123, 67, 160, .5);
+    0 0 8px rgba(214,196,255,.8),
+    0 0 14px rgba(123,67,160,.5);
 }
-
 
 nav a:hover::after {
   width: 100%;
 }
-
-
-/* ========================================= */
-/* HOME PAGE HERO IMAGE                      */
-/* ========================================= */
 
 .home-image {
   display: block;
@@ -186,31 +250,31 @@ nav a:hover::after {
 
   height: auto;
 
-  margin: 28px auto 55px auto;
+  margin: 36px auto 55px auto;
 
-  border: 1px solid rgba(215, 218, 228, 0.5);
+  border: 1px solid rgba(215,218,228,.5);
 
   box-shadow:
-    0 0 0 5px rgba(70, 27, 88, 0.17),
+    0 0 0 5px rgba(70,27,88,.17),
     0 20px 55px rgba(0,0,0,.75),
     0 0 38px rgba(130,90,160,.22);
 }
 
-
-/* ========================================= */
-/* MOBILE                                    */
-/* ========================================= */
-
 @media screen and (max-width: 600px) {
 
   nav {
-    padding: 18px 4px;
+    padding: 20px 3px;
   }
 
   nav a {
     font-size: 14px;
-    margin: 0 6px;
-    letter-spacing: .2px;
+    margin: 0 5px;
+    letter-spacing: 0;
+  }
+
+  .nav-lace {
+    width: 24%;
+    opacity: 0.25;
   }
 
   nav::after {
@@ -221,7 +285,7 @@ nav a:hover::after {
 
   .home-image {
     width: 100%;
-    margin-top: 22px;
+    margin-top: 28px;
 
     border-left: 0;
     border-right: 0;
@@ -230,57 +294,32 @@ nav a:hover::after {
       0 10px 35px rgba(0,0,0,.7),
       0 0 25px rgba(120,75,150,.18);
   }
-
 }
 
 </style>
 
 </head>
 
-
 <body>
-
-
-<!-- ========================================= -->
-<!-- NAVIGATION                                -->
-<!-- ========================================= -->
 
 <nav>
 
-  <a href="index.html">
-    Home
-  </a>
+  <span class="nav-lace lace-left"></span>
+  <span class="nav-lace lace-right"></span>
 
-  <a href="boxes.html?v=2">
-    Boxes
-  </a>
-
-  <a href="about.html">
-    About
-  </a>
-
-  <a href="contact.html">
-    Contact
-  </a>
-
-  <a href="checkout.html">
-    Checkout
-  </a>
+  <a href="index.html">Home</a>
+  <a href="boxes.html?v=2">Boxes</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="checkout.html">Checkout</a>
 
 </nav>
-
-
-
-<!-- ========================================= -->
-<!-- MAIN RAVENS SCOOPS IMAGE                  -->
-<!-- ========================================= -->
 
 <img
   class="home-image"
   src="file_00000000844881f58d4b5c059559045b.png"
   alt="Ravens Scoops"
 >
-
 
 </body>
 
