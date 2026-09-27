@@ -6,7 +6,9 @@
 <title>Boxes — Ravens Scoops</title>
 
 <style>
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+}
 
 body {
   margin: 0;
@@ -57,27 +59,38 @@ nav a {
   border-radius: 22px;
   padding: 15px;
   text-align: center;
-}
-
-.image-placeholder {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: #17101d;
-  border-radius: 15px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #aaa0af;
+  flex-direction: column;
 }
 
-
-  .product-image {
+.product-image {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 15px;
   display: block;
 }
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #17101d;
+  border: 2px dashed #716478;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #aaa0af;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.cat-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
 .product h2 {
   font-family: Georgia, serif;
   font-size: 28px;
@@ -103,6 +116,11 @@ nav a {
   border-radius: 7px;
   font-size: 17px;
   cursor: pointer;
+  margin-top: auto;
+}
+
+.choose:hover {
+  background: #e1a08d;
 }
 
 .modal {
@@ -128,6 +146,8 @@ nav a {
   float: right;
   font-size: 35px;
   cursor: pointer;
+  position: relative;
+  z-index: 10;
 }
 
 .modal-box h2 {
@@ -138,6 +158,20 @@ nav a {
 .full-description {
   color: #d0c8d3;
   line-height: 1.6;
+}
+
+.colony-message {
+  background: #17101d;
+  border: 1px solid #716478;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 20px 0;
+  color: #eee7f1;
+  line-height: 1.6;
+}
+
+.colony-message strong {
+  color: #d99582;
 }
 
 label {
@@ -169,6 +203,7 @@ select {
   color: white;
   border: 1px solid #716478;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .quantity span {
@@ -215,6 +250,22 @@ select {
   .description {
     font-size: 13px;
   }
+
+  .image-placeholder {
+    font-size: 15px;
+  }
+
+  .cat-icon {
+    font-size: 45px;
+  }
+
+  .modal-box {
+    padding: 18px;
+  }
+
+  .modal-box h2 {
+    font-size: 27px;
+  }
 }
 </style>
 </head>
@@ -234,13 +285,19 @@ select {
   <p>Choose your mystery experience and see what the raven scoops for you.</p>
 </div>
 
+
 <div class="products">
+
+
+  <!-- ===================================== -->
+  <!-- WITCHY MYSTERY BALL BUNDLE -->
+  <!-- ===================================== -->
 
   <div class="product">
 
     <img src="coffin%20image.jpg"
-     alt="Witchy Mystery Ball Bundle"
-     class="product-image">
+         alt="Witchy Mystery Ball Bundle"
+         class="product-image">
 
     <h2>Witchy Mystery Ball Bundle</h2>
 
@@ -258,8 +315,54 @@ select {
 
   </div>
 
+
+
+  <!-- ===================================== -->
+  <!-- BLACK CAT MYSTERY BALLS -->
+  <!-- ===================================== -->
+
+  <div class="product">
+
+    <!--
+      IMAGE PLACEHOLDER
+
+      Once you have your Black Cat image,
+      we can replace this with an <img> just
+      like the Witchy box.
+    -->
+
+    <div class="image-placeholder">
+      <div class="cat-icon">🐈‍⬛</div>
+      <div>Black Cat Mystery Balls</div>
+      <div style="font-size:14px; margin-top:8px;">
+        Image Coming Soon
+      </div>
+    </div>
+
+    <h2>Black Cat Mystery Balls</h2>
+
+    <p class="description">
+      A mystery bundle made for cat lovers! Every ball contains
+      a cat-related surprise with cute, quirky, spooky, and fun
+      feline finds waiting inside.
+    </p>
+
+    <div class="price">From $36.00</div>
+
+    <button class="choose" onclick="openCatProduct()">
+      CHOOSE OPTIONS
+    </button>
+
+  </div>
+
+
 </div>
 
+
+
+<!-- ===================================== -->
+<!-- WITCHY PRODUCT MODAL -->
+<!-- ===================================== -->
 
 <div id="productModal" class="modal">
 
@@ -268,8 +371,8 @@ select {
     <span class="close" onclick="closeProduct()">&times;</span>
 
     <img src="coffin%20image.jpg"
-     alt="Witchy Mystery Ball Bundle"
-     class="product-image">
+         alt="Witchy Mystery Ball Bundle"
+         class="product-image">
 
     <h2>Witchy Mystery Ball Bundle</h2>
 
@@ -318,7 +421,102 @@ select {
 </div>
 
 
+
+<!-- ===================================== -->
+<!-- BLACK CAT PRODUCT MODAL -->
+<!-- ===================================== -->
+
+<div id="catProductModal" class="modal">
+
+  <div class="modal-box">
+
+    <span class="close" onclick="closeCatProduct()">&times;</span>
+
+
+    <!-- BLACK CAT IMAGE PLACEHOLDER -->
+
+    <div class="image-placeholder">
+      <div class="cat-icon">🐈‍⬛</div>
+      <div>Black Cat Mystery Balls</div>
+      <div style="font-size:14px; margin-top:8px;">
+        Image Coming Soon
+      </div>
+    </div>
+
+
+    <h2>Black Cat Mystery Balls</h2>
+
+    <p class="full-description">
+      Calling all cat lovers! Our Black Cat Mystery Balls are
+      filled with cat-themed surprises. Each mystery ball is
+      randomly hand-picked from our collection of cute, quirky,
+      spooky, and fun feline finds.
+      <br><br>
+      No two bundles are guaranteed to be the same, so you never
+      know what the raven — and the cats — might choose for you.
+    </p>
+
+
+    <div class="colony-message">
+
+      <strong>
+        50% of every Black Cat Mystery Ball purchase goes toward
+        helping our stray cat colony.
+      </strong>
+
+      <br><br>
+
+      Your purchase helps us provide food, spaying and neutering,
+      medical care, and support for finding loving homes for the
+      cats and kittens in our colony.
+
+    </div>
+
+
+    <p class="full-description">
+      Choose 6 or 12 mystery balls, enjoy a surprise for yourself,
+      and help us care for the cats that depend on us.
+    </p>
+
+
+    <label for="catBundle">Number of Picks</label>
+
+    <select id="catBundle" onchange="updateCatPrice()">
+      <option value="36">6 Picks — $36.00</option>
+      <option value="66">12 Picks — $66.00</option>
+    </select>
+
+
+    <label>Quantity</label>
+
+    <div class="quantity">
+      <button onclick="changeCatQuantity(-1)">−</button>
+      <span id="catQuantity">1</span>
+      <button onclick="changeCatQuantity(1)">+</button>
+    </div>
+
+
+    <div class="total">
+      Total: <span id="catTotal">$36.00</span>
+    </div>
+
+
+    <button class="sold-out" disabled>
+      SOLD OUT
+    </button>
+
+  </div>
+
+</div>
+
+
+
 <script>
+
+
+/* ===================================== */
+/* WITCHY MYSTERY BALLS */
+/* ===================================== */
 
 let quantity = 1;
 
@@ -348,6 +546,62 @@ function updatePrice() {
   document.getElementById("total").textContent =
     "$" + total.toFixed(2);
 }
+
+
+
+/* ===================================== */
+/* BLACK CAT MYSTERY BALLS */
+/* ===================================== */
+
+let catQuantity = 1;
+
+function openCatProduct() {
+  document.getElementById("catProductModal").style.display = "block";
+}
+
+function closeCatProduct() {
+  document.getElementById("catProductModal").style.display = "none";
+}
+
+function changeCatQuantity(change) {
+  catQuantity += change;
+
+  if (catQuantity < 1) {
+    catQuantity = 1;
+  }
+
+  document.getElementById("catQuantity").textContent = catQuantity;
+  updateCatPrice();
+}
+
+function updateCatPrice() {
+  const price = Number(document.getElementById("catBundle").value);
+  const total = price * catQuantity;
+
+  document.getElementById("catTotal").textContent =
+    "$" + total.toFixed(2);
+}
+
+
+
+/* ===================================== */
+/* CLOSE MODALS IF BACKGROUND IS CLICKED */
+/* ===================================== */
+
+window.onclick = function(event) {
+
+  const witchyModal = document.getElementById("productModal");
+  const catModal = document.getElementById("catProductModal");
+
+  if (event.target === witchyModal) {
+    closeProduct();
+  }
+
+  if (event.target === catModal) {
+    closeCatProduct();
+  }
+
+};
 
 </script>
 
