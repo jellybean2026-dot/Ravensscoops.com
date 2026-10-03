@@ -51,7 +51,6 @@ nav {
   z-index: 10;
 }
 
-
 nav::before {
   content: "";
   position: absolute;
@@ -77,25 +76,16 @@ nav::before {
 .nav-lace {
   position: absolute;
   top: 0;
-
   width: 36%;
   height: 100%;
-
   object-fit: cover;
   object-position: left center;
-
   pointer-events: none;
   z-index: 1;
-
-  filter:
-    grayscale(1)
-    contrast(1.65);
-
+  filter: grayscale(1) contrast(1.65);
   mix-blend-mode: multiply;
-
   opacity: 0.88;
 }
-
 
 .lace-left {
   left: 0;
@@ -123,10 +113,8 @@ nav::before {
     );
 }
 
-
 .lace-right {
   right: 0;
-
   transform: scaleX(-1);
 
   -webkit-mask-image:
@@ -159,7 +147,6 @@ nav::before {
   position: absolute;
   top: 0;
   left: 22%;
-
   width: 56%;
   height: 100%;
 
@@ -173,7 +160,6 @@ nav::before {
     );
 
   pointer-events: none;
-
   z-index: 2;
 }
 
@@ -182,11 +168,8 @@ nav::before {
 
 nav a {
   position: relative;
-
   z-index: 5;
-
   color: #f5f1f7;
-
   text-decoration: none;
 
   font-family:
@@ -195,11 +178,8 @@ nav a {
     serif;
 
   font-size: 19px;
-
   font-weight: normal;
-
   letter-spacing: 1px;
-
   margin: 0 24px;
 
   text-shadow:
@@ -210,15 +190,11 @@ nav a {
     text-shadow .25s ease;
 }
 
-
 nav a::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: -8px;
-
   width: 0;
   height: 1px;
 
@@ -231,10 +207,8 @@ nav a::after {
     );
 
   transform: translateX(-50%);
-
   transition: width .25s ease;
 }
-
 
 nav a:hover {
   color: #ffffff;
@@ -243,7 +217,6 @@ nav a:hover {
     0 0 8px rgba(220,205,255,.85),
     0 0 15px rgba(130,70,175,.6);
 }
-
 
 nav a:hover::after {
   width: 100%;
@@ -254,21 +227,14 @@ nav a:hover::after {
 
 .nav-ornament {
   position: absolute;
-
   left: 50%;
   bottom: 2px;
-
   transform: translateX(-50%);
-
   color: #e0e2e8;
-
   font-size: 9px;
   letter-spacing: 8px;
-
   z-index: 6;
-
   opacity: .85;
-
   white-space: nowrap;
 }
 
@@ -277,10 +243,8 @@ nav a:hover::after {
 
 .page-title {
   text-align: center;
-
   padding: 45px 15px 35px;
 }
-
 
 .page-title h1 {
   font-family:
@@ -289,10 +253,8 @@ nav a:hover::after {
     serif;
 
   font-size: 42px;
-
   margin-bottom: 10px;
 }
-
 
 .page-title p {
   color: #c9c0d0;
@@ -304,16 +266,10 @@ nav a:hover::after {
 .products {
   width: 90%;
   max-width: 760px;
-
   margin: auto;
-
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-
   padding-bottom: 50px;
 }
 
@@ -322,18 +278,12 @@ nav a:hover::after {
 
 .product {
   background: #0d0712;
-
   border: 1px solid #716478;
-
   border-radius: 18px;
-
   padding: 12px;
-
   text-align: center;
-
   display: flex;
   flex-direction: column;
-
   min-width: 0;
 
   box-shadow:
@@ -345,13 +295,9 @@ nav a:hover::after {
 
 .product-image {
   width: 100%;
-
   aspect-ratio: 1 / 1;
-
   object-fit: cover;
-
   border-radius: 13px;
-
   display: block;
 }
 
@@ -360,36 +306,23 @@ nav a:hover::after {
 
 .image-placeholder {
   width: 100%;
-
   aspect-ratio: 1 / 1;
-
   background: #17101d;
-
   border: 2px dashed #716478;
-
   border-radius: 13px;
-
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
-
   color: #aaa0af;
-
   font-size: 18px;
-
   padding: 15px;
 }
 
-
 .cat-icon {
   font-size: 52px;
-
   margin-bottom: 12px;
 }
-
 
 .product h2 {
   font-family:
@@ -400,45 +333,29 @@ nav a:hover::after {
   font-size: 24px;
 }
 
-
 .description {
   color: #cbc3ce;
-
   line-height: 1.5;
-
   font-size: 15px;
 }
-
 
 .price {
   font-size: 20px;
-
   font-weight: bold;
-
   margin: 16px;
 }
 
-
 .choose {
   width: 100%;
-
   padding: 12px;
-
   background: #d99582;
-
   color: white;
-
   border: 0;
-
   border-radius: 7px;
-
   font-size: 15px;
-
   cursor: pointer;
-
   margin-top: auto;
 }
-
 
 .choose:hover {
   background: #e1a08d;
@@ -449,48 +366,30 @@ nav a:hover::after {
 
 .modal {
   display: none;
-
   position: fixed;
-
   inset: 0;
-
   background: rgba(0,0,0,.9);
-
   z-index: 1000;
-
   overflow-y: auto;
-
   padding: 20px;
 }
 
-
 .modal-box {
   max-width: 650px;
-
   margin: auto;
-
   background: #0d0712;
-
   padding: 25px;
-
   border-radius: 20px;
-
   border: 1px solid #716478;
 }
 
-
 .close {
   float: right;
-
   font-size: 35px;
-
   cursor: pointer;
-
   position: relative;
-
   z-index: 10;
 }
-
 
 .modal-box h2 {
   font-family:
@@ -501,30 +400,20 @@ nav a:hover::after {
   font-size: 32px;
 }
 
-
 .full-description {
   color: #d0c8d3;
-
   line-height: 1.6;
 }
-
 
 .colony-message {
   background: #17101d;
-
   border: 1px solid #716478;
-
   border-radius: 12px;
-
   padding: 18px;
-
   margin: 20px 0;
-
   color: #eee7f1;
-
   line-height: 1.6;
 }
-
 
 .colony-message strong {
   color: #d99582;
@@ -535,89 +424,104 @@ nav a:hover::after {
 
 label {
   display: block;
-
   margin: 25px 0 8px;
-
   font-weight: bold;
 }
-
 
 select {
   width: 100%;
-
   padding: 14px;
-
   background: #17101d;
-
   color: white;
-
   border: 1px solid #716478;
-
   border-radius: 7px;
-
   font-size: 16px;
 }
 
-
 .quantity {
   display: flex;
-
   align-items: center;
-
   margin-top: 10px;
 }
 
-
 .quantity button {
   width: 45px;
-
   height: 45px;
-
   background: #17101d;
-
   color: white;
-
   border: 1px solid #716478;
-
   font-size: 20px;
-
-  cursor: pointer;
 }
 
+.quantity button:disabled {
+  color: #716b75;
+  cursor: not-allowed;
+}
 
 .quantity span {
   width: 55px;
-
   text-align: center;
-
   font-size: 18px;
 }
 
-
 .total {
   font-size: 25px;
-
   font-weight: bold;
-
   margin-top: 25px;
 }
 
+.add-cart {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8c55a7,
+      #5c2b76
+    );
+
+  color: white;
+
+  border:
+    1px solid rgba(220,220,230,.55);
+
+  border-radius: 7px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.add-cart:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #a36cc0,
+      #693685
+    );
+}
+
+.add-cart:disabled {
+  background: #514b55;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.cart-message {
+  text-align: center;
+  margin-top: 12px;
+  color: #d0c8d3;
+  min-height: 20px;
+}
 
 .sold-out {
   width: 100%;
-
   padding: 15px;
-
   margin-top: 20px;
-
   background: #514b55;
-
   color: #ccc;
-
   border: 0;
-
   border-radius: 7px;
-
   font-size: 18px;
 }
 
@@ -630,141 +534,99 @@ select {
     padding: 20px 3px;
   }
 
-
   nav a {
     font-size: 14px;
-
     margin: 0 5px;
-
     letter-spacing: 0;
   }
 
-
   .nav-lace {
     width: 30%;
-
-    filter:
-      grayscale(1)
-      contrast(1.6);
-
+    filter: grayscale(1) contrast(1.6);
     opacity: 0.82;
   }
 
-
   .nav-center-shade {
     left: 15%;
-
     width: 70%;
   }
 
-
   .nav-ornament {
     font-size: 7px;
-
     letter-spacing: 4px;
-
     bottom: 1px;
   }
-
 
   .page-title {
     padding: 35px 15px 25px;
   }
 
-
   .page-title h1 {
     font-size: 34px;
   }
-
 
   .page-title p {
     font-size: 14px;
   }
 
-
-  /* SHRINK ENTIRE PRODUCT AREA */
-
   .products {
     width: 92%;
-
     max-width: 340px;
-
     gap: 8px;
 
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
-
   .product {
     padding: 7px;
-
     border-radius: 13px;
   }
-
 
   .product-image,
   .image-placeholder {
     width: 100%;
-
     border-radius: 10px;
   }
 
-
   .image-placeholder {
     padding: 7px;
-
     font-size: 12px;
   }
 
-
   .cat-icon {
     font-size: 34px;
-
     margin-bottom: 6px;
   }
 
-
   .product h2 {
     font-size: 16px;
-
     margin-top: 12px;
     margin-bottom: 8px;
   }
 
-
   .description {
     font-size: 11px;
-
     line-height: 1.4;
   }
 
-
   .price {
     font-size: 16px;
-
     margin: 11px 3px;
   }
 
-
   .choose {
     padding: 10px 3px;
-
     font-size: 11px;
   }
-
 
   .modal-box {
     padding: 18px;
   }
 
-
   .modal-box h2 {
     font-size: 27px;
   }
-
-
-  /* KEEP MODAL CONTENT NORMAL SIZE */
 
   .modal-box .product-image,
   .modal-box .image-placeholder {
@@ -789,27 +651,19 @@ select {
     alt=""
   >
 
-
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
 
-
   <span class="nav-center-shade"></span>
 
-
   <a href="index.html">Home</a>
-
   <a href="boxes.html">Boxes</a>
-
   <a href="about.html">About Us</a>
-
   <a href="contact.html">Contact</a>
-
   <a href="checkout.html">Checkout</a>
-
 
   <span class="nav-ornament">
     ◆ ✦ ◆ ✦ ◆
@@ -844,11 +698,9 @@ select {
       class="product-image"
     >
 
-
     <h2>
       Witchy Mystery Ball Bundle
     </h2>
-
 
     <p class="description">
 
@@ -858,11 +710,9 @@ select {
 
     </p>
 
-
     <div class="price">
       From $36.00
     </div>
-
 
     <button
       class="choose"
@@ -879,18 +729,15 @@ select {
 
   <div class="product">
 
-
     <div class="image-placeholder">
 
       <div class="cat-icon">
         🐈‍⬛
       </div>
 
-
       <div>
         Black Cat Mystery Balls
       </div>
-
 
       <div style="font-size:12px; margin-top:6px;">
         Image Coming Soon
@@ -898,11 +745,9 @@ select {
 
     </div>
 
-
     <h2>
       Black Cat Mystery Balls
     </h2>
-
 
     <p class="description">
 
@@ -912,11 +757,9 @@ select {
 
     </p>
 
-
     <div class="price">
       From $36.00
     </div>
-
 
     <button
       class="choose"
@@ -938,7 +781,6 @@ select {
 
   <div class="modal-box">
 
-
     <span
       class="close"
       onclick="closeProduct()"
@@ -946,18 +788,15 @@ select {
       &times;
     </span>
 
-
     <img
       src="coffin%20image.jpg"
       alt="Witchy Mystery Ball Bundle"
       class="product-image"
     >
 
-
     <h2>
       Witchy Mystery Ball Bundle
     </h2>
-
 
     <p class="full-description">
 
@@ -995,16 +834,16 @@ select {
         6 Picks — $36.00
       </option>
 
-      <option value="66">
-        12 Picks — $66.00
+      <option value="66" disabled>
+        12 Picks — $66.00 — SOLD OUT
       </option>
 
-      <option value="96">
-        18 Picks — $96.00
+      <option value="96" disabled>
+        18 Picks — $96.00 — SOLD OUT
       </option>
 
-      <option value="120">
-        24 Picks — $120.00
+      <option value="120" disabled>
+        24 Picks — $120.00 — SOLD OUT
       </option>
 
     </select>
@@ -1017,17 +856,15 @@ select {
 
     <div class="quantity">
 
-      <button onclick="changeQuantity(-1)">
+      <button disabled>
         −
       </button>
-
 
       <span id="quantity">
         1
       </span>
 
-
-      <button onclick="changeQuantity(1)">
+      <button disabled>
         +
       </button>
 
@@ -1046,11 +883,18 @@ select {
 
 
     <button
-      class="sold-out"
-      disabled
+      id="addCartButton"
+      class="add-cart"
+      onclick="addWitchyToCart()"
     >
-      SOLD OUT
+      ADD TO CART
     </button>
+
+
+    <div
+      id="cartMessage"
+      class="cart-message"
+    ></div>
 
 
   </div>
@@ -1064,7 +908,6 @@ select {
 <div id="catProductModal" class="modal">
 
   <div class="modal-box">
-
 
     <span
       class="close"
@@ -1080,11 +923,9 @@ select {
         🐈‍⬛
       </div>
 
-
       <div>
         Black Cat Mystery Balls
       </div>
-
 
       <div style="font-size:14px; margin-top:8px;">
         Image Coming Soon
@@ -1115,7 +956,6 @@ select {
 
     <div class="colony-message">
 
-
       <strong>
 
         50% of every Black Cat Mystery Ball purchase goes toward
@@ -1123,14 +963,11 @@ select {
 
       </strong>
 
-
       <br><br>
-
 
       Your purchase helps us provide food, spaying and neutering,
       medical care, and support for finding loving homes for the
       cats and kittens in our colony.
-
 
     </div>
 
@@ -1148,17 +985,14 @@ select {
     </label>
 
 
-    <select
-      id="catBundle"
-      onchange="updateCatPrice()"
-    >
+    <select id="catBundle">
 
-      <option value="36">
-        6 Picks — $36.00
+      <option value="36" disabled>
+        6 Picks — $36.00 — SOLD OUT
       </option>
 
-      <option value="66">
-        12 Picks — $66.00
+      <option value="66" disabled>
+        12 Picks — $66.00 — SOLD OUT
       </option>
 
     </select>
@@ -1171,17 +1005,15 @@ select {
 
     <div class="quantity">
 
-      <button onclick="changeCatQuantity(-1)">
+      <button disabled>
         −
       </button>
-
 
       <span id="catQuantity">
         1
       </span>
 
-
-      <button onclick="changeCatQuantity(1)">
+      <button disabled>
         +
       </button>
 
@@ -1215,14 +1047,14 @@ select {
 
 <script>
 
-let quantity = 1;
-
 
 function openProduct() {
 
   document
     .getElementById("productModal")
     .style.display = "block";
+
+  updateCartButton();
 
 }
 
@@ -1236,55 +1068,114 @@ function closeProduct() {
 }
 
 
-function changeQuantity(change) {
-
-  quantity += change;
-
-
-  if (quantity < 1) {
-
-    quantity = 1;
-
-  }
-
+function updatePrice() {
 
   document
-    .getElementById("quantity")
-    .textContent = quantity;
-
-
-  updatePrice();
+    .getElementById("total")
+    .textContent = "$36.00";
 
 }
 
 
-function updatePrice() {
+function addWitchyToCart() {
 
-  const price =
-    Number(
-      document
-        .getElementById("bundle")
-        .value
-    );
+  const item = {
+
+    id: "witchy-6",
+
+    name: "Witchy Mystery Ball Bundle",
+
+    variant: "6 Picks",
+
+    price: 36,
+
+    quantity: 1,
+
+    image: "coffin%20image.jpg"
+
+  };
 
 
-  const total =
-    price * quantity;
+  localStorage.setItem(
+    "ravensScoopsCart",
+    JSON.stringify([item])
+  );
 
 
   document
-    .getElementById("total")
+    .getElementById("cartMessage")
     .textContent =
-      "$" + total.toFixed(2);
+      "6 Picks added to your cart.";
+
+
+  updateCartButton();
+
+}
+
+
+function updateCartButton() {
+
+  const button =
+    document.getElementById("addCartButton");
+
+
+  const message =
+    document.getElementById("cartMessage");
+
+
+  let cart = [];
+
+
+  try {
+
+    cart =
+      JSON.parse(
+        localStorage.getItem("ravensScoopsCart")
+      ) || [];
+
+  }
+
+  catch (error) {
+
+    cart = [];
+
+  }
+
+
+  const alreadyInCart =
+    cart.some(
+      item => item.id === "witchy-6"
+    );
+
+
+  if (alreadyInCart) {
+
+    button.disabled = true;
+
+    button.textContent =
+      "IN CART";
+
+
+    message.innerHTML =
+      'This is the only one available. ' +
+      '<a href="checkout.html" style="color:#d99582;">View Cart</a>';
+
+  }
+
+  else {
+
+    button.disabled = false;
+
+    button.textContent =
+      "ADD TO CART";
+
+  }
 
 }
 
 
 
 /* BLACK CAT */
-
-let catQuantity = 1;
-
 
 function openCatProduct() {
 
@@ -1300,50 +1191,6 @@ function closeCatProduct() {
   document
     .getElementById("catProductModal")
     .style.display = "none";
-
-}
-
-
-function changeCatQuantity(change) {
-
-  catQuantity += change;
-
-
-  if (catQuantity < 1) {
-
-    catQuantity = 1;
-
-  }
-
-
-  document
-    .getElementById("catQuantity")
-    .textContent = catQuantity;
-
-
-  updateCatPrice();
-
-}
-
-
-function updateCatPrice() {
-
-  const price =
-    Number(
-      document
-        .getElementById("catBundle")
-        .value
-    );
-
-
-  const total =
-    price * catQuantity;
-
-
-  document
-    .getElementById("catTotal")
-    .textContent =
-      "$" + total.toFixed(2);
 
 }
 
@@ -1376,9 +1223,10 @@ window.onclick = function(event) {
 
 };
 
+
 </script>
 
 
 </body>
 
-</html>
+</html> 
