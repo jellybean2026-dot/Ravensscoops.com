@@ -208,7 +208,7 @@ nav a {
 
   letter-spacing: 1px;
 
-  margin: 0 24px;
+  margin: 0 19px;
 
   text-shadow:
     0 1px 4px rgba(0,0,0,.95);
@@ -469,6 +469,163 @@ nav a:hover::after {
 
 
 /* =========================
+   DECORATIVE BOTTOM BANNER
+========================= */
+
+.bottom-banner {
+  position: relative;
+
+  width: 100%;
+  height: 85px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #55206f 0%,
+      #411456 48%,
+      #291033 100%
+    );
+
+  border-top: 1px solid #bfc3cc;
+  border-bottom: 1px solid rgba(225,228,235,.20);
+
+  box-shadow:
+    0 -8px 25px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.06);
+
+  overflow: hidden;
+}
+
+
+.bottom-banner::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+
+  width: 80%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      rgba(255,255,255,.45),
+      transparent
+    );
+
+  z-index: 3;
+}
+
+
+.footer-lace {
+  position: absolute;
+
+  top: 0;
+
+  width: 36%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: left center;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  filter:
+    grayscale(1)
+    contrast(1.65);
+
+  mix-blend-mode: multiply;
+
+  opacity: .88;
+}
+
+
+.footer-lace-left {
+  left: 0;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
+
+
+.footer-lace-right {
+  right: 0;
+
+  transform: scaleX(-1);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
+
+
+.footer-center-shade {
+  position: absolute;
+
+  top: 0;
+  left: 22%;
+
+  width: 56%;
+  height: 100%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(31,7,41,.94) 0%,
+      rgba(31,7,41,.80) 48%,
+      rgba(31,7,41,.36) 72%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -480,9 +637,9 @@ nav a:hover::after {
 
 
   nav a {
-    font-size: 14px;
+    font-size: 12px;
 
-    margin: 0 5px;
+    margin: 0 3px;
 
     letter-spacing: 0;
   }
@@ -553,6 +710,29 @@ nav a:hover::after {
     overflow-wrap: anywhere;
   }
 
+
+  .bottom-banner {
+    height: 70px;
+  }
+
+
+  .footer-lace {
+    width: 30%;
+
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: .82;
+  }
+
+
+  .footer-center-shade {
+    left: 15%;
+
+    width: 70%;
+  }
+
 }
 
 </style>
@@ -589,6 +769,8 @@ nav a:hover::after {
   <a href="boxes.html">Boxes</a>
 
   <a href="about.html">About Us</a>
+
+  <a href="faq.html">FAQ</a>
 
   <a href="contact.html">Contact</a>
 
@@ -696,6 +878,30 @@ nav a:hover::after {
 
 
 </main>
+
+
+<!-- =========================
+     DECORATIVE BOTTOM BANNER
+     NO TEXT ON CONTACT PAGE
+========================= -->
+
+<footer class="bottom-banner">
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-left"
+    alt=""
+  >
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-right"
+    alt=""
+  >
+
+  <span class="footer-center-shade"></span>
+
+</footer>
 
 
 </body>
