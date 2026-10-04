@@ -29,6 +29,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* =========================
    NAVIGATION
@@ -284,6 +290,8 @@ main {
   max-width: 900px;
 
   margin: 50px auto 65px;
+
+  flex: 1;
 }
 
 
@@ -478,6 +486,8 @@ details[open] summary {
 
 .contact-footer {
   position: relative;
+
+  flex-shrink: 0;
 
   width: 100%;
 
@@ -736,6 +746,8 @@ details[open] summary {
     margin-top: 38px;
 
     margin-bottom: 50px;
+
+    flex: 1;
   }
 
 
@@ -906,8 +918,6 @@ details[open] summary {
   <div class="faq-list">
 
 
-    <!-- TURNAROUND -->
-
     <details>
 
       <summary>
@@ -929,8 +939,6 @@ details[open] summary {
     </details>
 
 
-    <!-- SHIPPING COST -->
-
     <details>
 
       <summary>
@@ -949,8 +957,6 @@ details[open] summary {
     </details>
 
 
-    <!-- SHIPPING AREA -->
-
     <details>
 
       <summary>
@@ -968,8 +974,6 @@ details[open] summary {
 
     </details>
 
-
-    <!-- RETURNS -->
 
     <details>
 
@@ -992,8 +996,6 @@ details[open] summary {
     </details>
 
 
-    <!-- REQUESTS -->
-
     <details>
 
       <summary>
@@ -1012,8 +1014,6 @@ details[open] summary {
 
     </details>
 
-
-    <!-- REPEATS -->
 
     <details>
 
@@ -1036,8 +1036,6 @@ details[open] summary {
     </details>
 
 
-    <!-- DAMAGED OR MISSING -->
-
     <details>
 
       <summary>
@@ -1057,8 +1055,6 @@ details[open] summary {
 
     </details>
 
-
-    <!-- LOST PACKAGE -->
 
     <details>
 
