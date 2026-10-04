@@ -5,7 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>About Us — Ravens Scoops</title>
+<title>FAQ — Ravens Scoops</title>
+
+<meta
+  name="description"
+  content="Frequently asked questions about Ravens Scoops mystery bundles, shipping, turnaround times, returns, and more."
+>
 
 <style>
 
@@ -33,7 +38,7 @@ nav {
   position: relative;
   width: 100%;
   text-align: center;
-  padding: 30px 10px;
+  padding: 22px 10px;
 
   background:
     radial-gradient(
@@ -55,15 +60,11 @@ nav {
 }
 
 
-/* SILVER SHINE */
-
 nav::before {
   content: "";
   position: absolute;
-
   top: 0;
   left: 10%;
-
   width: 80%;
   height: 1px;
 
@@ -83,9 +84,7 @@ nav::before {
 
 .nav-lace {
   position: absolute;
-
   top: 0;
-
   width: 36%;
   height: 100%;
 
@@ -162,14 +161,12 @@ nav::before {
 }
 
 
-/* CLEAN CENTER BEHIND LINKS */
+/* CENTER SHADE */
 
 .nav-center-shade {
   position: absolute;
-
   top: 0;
   left: 22%;
-
   width: 56%;
   height: 100%;
 
@@ -183,7 +180,6 @@ nav::before {
     );
 
   pointer-events: none;
-
   z-index: 2;
 }
 
@@ -192,7 +188,6 @@ nav::before {
 
 nav a {
   position: relative;
-
   z-index: 5;
 
   color: #f5f1f7;
@@ -205,9 +200,7 @@ nav a {
     serif;
 
   font-size: 19px;
-
   font-weight: normal;
-
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -223,7 +216,6 @@ nav a {
 
 nav a::after {
   content: "";
-
   position: absolute;
 
   left: 50%;
@@ -260,7 +252,7 @@ nav a:hover::after {
 }
 
 
-/* CENTER ORNAMENT */
+/* ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -284,44 +276,25 @@ nav a:hover::after {
 
 
 /* =========================
-   MAIN PAGE
+   MAIN FAQ
 ========================= */
 
 main {
   width: 90%;
   max-width: 900px;
-  margin: 48px auto 60px;
+
+  margin: 50px auto 65px;
 }
 
 
-/* RAVEN IMAGE */
-
-.about-image {
-  display: block;
-
-  width: 100%;
-  max-width: 800px;
-
-  height: auto;
-
-  margin: 0 auto 40px;
-
-  border-radius: 18px;
-
-  border: 1px solid rgba(215,218,228,.42);
-
-  box-shadow:
-    0 0 0 4px rgba(70,27,88,.14),
-    0 18px 45px rgba(0,0,0,.55),
-    0 0 28px rgba(120,75,150,.16);
-}
-
-
-/* TITLE */
-
-h1 {
+.faq-header {
   text-align: center;
 
+  margin-bottom: 40px;
+}
+
+
+.faq-header h1 {
   font-family:
     Georgia,
     "Times New Roman",
@@ -333,20 +306,27 @@ h1 {
 }
 
 
-.subtitle {
-  text-align: center;
-
+.faq-header p {
   color: #c9c0d0;
 
-  font-size: 18px;
+  font-size: 17px;
 
-  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 
-/* ABOUT BOX */
+/* FAQ ACCORDION */
 
-.about-box {
+.faq-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+details {
   background:
     linear-gradient(
       145deg,
@@ -356,49 +336,139 @@ h1 {
 
   border: 1px solid #554560;
 
-  border-radius: 18px;
+  border-radius: 13px;
 
-  padding: 40px;
+  overflow: hidden;
 
   box-shadow:
-    0 18px 45px rgba(0,0,0,.45),
-    inset 0 1px 0 rgba(255,255,255,.025);
+    0 12px 30px rgba(0,0,0,.35);
 }
 
 
-.about-box p {
-  color: #d0c8d3;
+summary {
+  position: relative;
 
-  font-size: 18px;
+  padding: 20px 55px 20px 22px;
 
-  line-height: 1.8;
+  cursor: pointer;
 
-  margin-top: 0;
-
-  margin-bottom: 25px;
-}
-
-
-/* END MESSAGE */
-
-.raven-message {
-  text-align: center;
+  list-style: none;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 26px;
+  font-size: 18px;
 
-  color: white;
+  color: #f5f1f7;
+}
 
-  margin-top: 35px;
 
-  margin-bottom: 5px;
+summary::-webkit-details-marker {
+  display: none;
+}
 
-  text-shadow:
-    0 0 10px rgba(150,95,185,.35);
+
+summary::after {
+  content: "+";
+
+  position: absolute;
+
+  right: 22px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 25px;
+
+  color: #d99582;
+}
+
+
+details[open] summary::after {
+  content: "−";
+}
+
+
+details[open] summary {
+  border-bottom:
+    1px solid rgba(113,100,120,.45);
+}
+
+
+.faq-answer {
+  padding: 20px 22px 22px;
+
+  color: #d0c8d3;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+.faq-answer p {
+  margin: 0;
+}
+
+
+/* =========================
+   NEED HELP
+========================= */
+
+.need-help {
+  text-align: center;
+
+  margin-top: 45px;
+
+  padding: 30px 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #13091b,
+      #0d0612
+    );
+
+  border: 1px solid #554560;
+
+  border-radius: 15px;
+}
+
+
+.need-help h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  margin: 0 0 10px;
+
+  font-size: 27px;
+}
+
+
+.need-help p {
+  color: #c9c0d0;
+
+  line-height: 1.6;
+
+  margin: 0;
+}
+
+
+.need-help a {
+  color: #d99582;
+
+  text-decoration: none;
+}
+
+
+.need-help a:hover {
+  text-decoration: underline;
 }
 
 
@@ -434,11 +504,8 @@ h1 {
 }
 
 
-/* FOOTER LACE */
-
 .footer-lace {
   position: absolute;
-
   top: 0;
 
   width: 36%;
@@ -517,8 +584,6 @@ h1 {
 }
 
 
-/* FOOTER CENTER SHADE */
-
 .footer-center-shade {
   position: absolute;
 
@@ -575,7 +640,6 @@ h1 {
   display: flex;
 
   justify-content: center;
-
   align-items: center;
 
   flex-wrap: wrap;
@@ -626,7 +690,7 @@ h1 {
 @media screen and (max-width: 600px) {
 
   nav {
-    padding: 20px 3px;
+    padding: 16px 3px;
   }
 
 
@@ -646,7 +710,7 @@ h1 {
       grayscale(1)
       contrast(1.6);
 
-    opacity: 0.82;
+    opacity: .82;
   }
 
 
@@ -669,43 +733,48 @@ h1 {
   main {
     width: 92%;
 
-    margin-top: 35px;
+    margin-top: 38px;
+
+    margin-bottom: 50px;
   }
 
 
-  .about-image {
-    margin-bottom: 30px;
-
-    border-radius: 12px;
+  .faq-header h1 {
+    font-size: 35px;
   }
 
 
-  h1 {
-    font-size: 38px;
+  .faq-header p {
+    font-size: 15px;
   }
 
 
-  .subtitle {
+  summary {
+    padding: 17px 48px 17px 17px;
+
     font-size: 16px;
-
-    margin-bottom: 30px;
   }
 
 
-  .about-box {
-    padding: 25px 20px;
+  summary::after {
+    right: 17px;
   }
 
 
-  .about-box p {
-    font-size: 16px;
+  .faq-answer {
+    padding: 17px;
 
-    line-height: 1.7;
+    font-size: 15px;
   }
 
 
-  .raven-message {
-    font-size: 23px;
+  .need-help {
+    padding: 25px 16px;
+  }
+
+
+  .need-help h2 {
+    font-size: 24px;
   }
 
 
@@ -721,7 +790,7 @@ h1 {
       grayscale(1)
       contrast(1.6);
 
-    opacity: 0.82;
+    opacity: .82;
   }
 
 
@@ -784,45 +853,26 @@ h1 {
     alt=""
   >
 
-
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
 
-
   <span class="nav-center-shade"></span>
 
 
-  <a href="index.html">
-    Home
-  </a>
+  <a href="index.html">Home</a>
 
+  <a href="boxes.html">Boxes</a>
 
-  <a href="boxes.html">
-    Boxes
-  </a>
+  <a href="about.html">About Us</a>
 
+  <a href="faq.html">FAQ</a>
 
-  <a href="about.html">
-    About Us
-  </a>
+  <a href="contact.html">Contact</a>
 
-
-  <a href="faq.html">
-    FAQ
-  </a>
-
-
-  <a href="contact.html">
-    Contact
-  </a>
-
-
-  <a href="checkout.html">
-    Checkout
-  </a>
+  <a href="checkout.html">Checkout</a>
 
 
   <span class="nav-ornament">
@@ -833,78 +883,221 @@ h1 {
 
 
 <!-- =========================
-     ABOUT US
+     FAQ
 ========================= -->
 
 <main>
 
 
-  <img
-    src="Screenshot%202026-09-25%20232257.png"
-    alt="Raven perched in a gothic graveyard"
-    class="about-image"
-  >
+  <div class="faq-header">
 
+    <h1>
+      Frequently Asked Questions
+    </h1>
 
-  <h1>
-    About Us
-  </h1>
+    <p>
+      Have a question about Ravens Scoops? Here are answers
+      to some of our most frequently asked questions.
+    </p>
 
-
-  <div class="subtitle">
-    A little witchy. A little weird. Always a mystery.
   </div>
 
 
-  <div class="about-box">
+  <div class="faq-list">
 
+
+    <!-- TURNAROUND -->
+
+    <details>
+
+      <summary>
+        What is your turnaround time?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          Our turnaround time is typically 1–3 weeks because each
+          Ravens Scoops order is individually hand-picked and curated.
+          We strive to have orders prepared and shipped within 7 days
+          of ordering, but please allow up to 3 weeks for your order
+          to be prepared.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- SHIPPING COST -->
+
+    <details>
+
+      <summary>
+        How much is shipping?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          Shipping costs are based on your location and will be
+          calculated during checkout.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- SHIPPING AREA -->
+
+    <details>
+
+      <summary>
+        Where do you ship?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          Ravens Scoops currently ships within the United States only.
+          At this time, we do not offer international shipping.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- RETURNS -->
+
+    <details>
+
+      <summary>
+        Do you accept returns or exchanges?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          Due to the nature of our mystery bundles, we do not accept
+          returns or exchanges because of an item you do not like or
+          would not have personally chosen. The mystery is part of the
+          Ravens Scoops experience, and the items inside are selected
+          at random.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- REQUESTS -->
+
+    <details>
+
+      <summary>
+        Can I request specific items?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          No. We are unable to accommodate requests for specific items.
+          Each bundle is individually hand-picked and curated while
+          still keeping the contents a mystery.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- REPEATS -->
+
+    <details>
+
+      <summary>
+        Will every mystery bundle be different?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          We strive to make every mystery bundle different and provide
+          a unique experience with each order. However, because our
+          inventory changes and items are selected from what is
+          available, we cannot guarantee that you will never receive a
+          repeat item, especially across multiple orders.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- DAMAGED OR MISSING -->
+
+    <details>
+
+      <summary>
+        What if an item arrives damaged or is missing from my order?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          If an item arrives damaged or you believe something is
+          missing from your order, please contact Ravens Scoops at
+          ravensscoops@gmail.com. Please include your order information
+          and details about the issue so we can look into it and help.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- LOST PACKAGE -->
+
+    <details>
+
+      <summary>
+        What if my package is lost or delayed during shipping?
+      </summary>
+
+      <div class="faq-answer">
+
+        <p>
+          Once your order has shipped, Ravens Scoops has access to the
+          same carrier tracking information available to you. If your
+          tracking shows a shipping delay, delivery issue, or a package
+          that may be lost, please contact the shipping carrier directly
+          for assistance.
+        </p>
+
+      </div>
+
+    </details>
+
+
+  </div>
+
+
+  <!-- STILL NEED HELP -->
+
+  <div class="need-help">
+
+    <h2>
+      Still Have a Question?
+    </h2>
 
     <p>
-
-      Ravens Scoops started with the three of us—a mother and two
-      daughters who have always shared a love for anything macabre,
-      paranormal, metaphysical, and true crime. We love wandering
-      through metaphysical shops, finding weird and unusual things,
-      and, of course, we all love a good surprise.
-
+      We're happy to help. Contact Ravens Scoops at
+      <a href="mailto:ravensscoops@gmail.com">
+        ravensscoops@gmail.com
+      </a>.
     </p>
-
-
-    <p>
-
-      That love for the strange, mysterious, and unexpected is really
-      where Ravens Scoops came from. We wanted to create something
-      together that combined all the things we enjoy—from crystals
-      and witchy finds to spooky, macabre, paranormal, true crime,
-      and sometimes just cute or completely random things that make
-      us smile.
-
-    </p>
-
-
-    <p>
-
-      And because we love surprises ourselves, mystery is a huge part
-      of what we do. With our mystery ball bundles, you choose how many
-      picks you want and let the raven decide what you get. Half the
-      fun is not knowing what's coming until you open it.
-
-    </p>
-
-
-    <p>
-
-      Ravens Scoops is something we're building together as a family,
-      and we're excited to share a little bit of our weirdness with
-      everyone who loves these things as much as we do.
-
-    </p>
-
-
-    <div class="raven-message">
-      Let the raven choose. 🖤
-    </div>
-
 
   </div>
 
@@ -913,7 +1106,7 @@ h1 {
 
 
 <!-- =========================
-     CONTACT FOOTER
+     FOOTER
 ========================= -->
 
 <footer class="contact-footer">
@@ -924,13 +1117,11 @@ h1 {
     alt=""
   >
 
-
   <img
     src="lace.jpg"
     class="footer-lace footer-lace-right"
     alt=""
   >
-
 
   <span class="footer-center-shade"></span>
 
@@ -940,7 +1131,6 @@ h1 {
     <h2>
       Ravens Scoops
     </h2>
-
 
     <p>
       Have a question? We'd love to hear from you.
