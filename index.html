@@ -388,4 +388,348 @@ nav a:hover::after {
 }
 
 
-.footer-lace
+.footer-lace-right {
+  right: 0;
+
+  transform: scaleX(-1);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
+
+
+/* FOOTER CENTER SHADE */
+
+.footer-center-shade {
+  position: absolute;
+
+  top: 0;
+  left: 22%;
+
+  width: 56%;
+  height: 100%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(31,7,41,.94) 0%,
+      rgba(31,7,41,.80) 48%,
+      rgba(31,7,41,.36) 72%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+/* FOOTER CONTENT */
+
+.footer-content {
+  position: relative;
+
+  z-index: 5;
+}
+
+
+.footer-content h2 {
+  margin: 0 0 10px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 27px;
+
+  font-weight: normal;
+
+  letter-spacing: 1px;
+
+  color: white;
+}
+
+
+.footer-content p {
+  margin: 8px 0;
+
+  font-family: Arial, sans-serif;
+
+  color: #d5ced9;
+
+  font-size: 15px;
+}
+
+
+.footer-email {
+  display: inline-block;
+
+  margin-top: 8px;
+
+  color: white;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.55);
+
+  padding-bottom: 3px;
+}
+
+
+.footer-email:hover {
+  text-shadow:
+    0 0 8px rgba(220,205,255,.85);
+}
+
+
+.footer-ornament {
+  margin-top: 18px;
+
+  color: #e0e2e8;
+
+  font-size: 9px;
+
+  letter-spacing: 8px;
+
+  opacity: .85;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 600px) {
+
+  nav {
+    padding: 20px 3px;
+  }
+
+
+  nav a {
+    font-size: 14px;
+    margin: 0 5px;
+    letter-spacing: 0;
+  }
+
+
+  .nav-lace {
+    width: 30%;
+
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: 0.82;
+  }
+
+
+  .nav-center-shade {
+    left: 15%;
+    width: 70%;
+  }
+
+
+  .nav-ornament {
+    font-size: 7px;
+    letter-spacing: 4px;
+    bottom: 1px;
+  }
+
+
+  .home-image {
+    width: 100%;
+
+    margin-top: 28px;
+    margin-bottom: 45px;
+
+    border-left: 0;
+    border-right: 0;
+
+    box-shadow:
+      0 10px 35px rgba(0,0,0,.7),
+      0 0 25px rgba(120,75,150,.18);
+  }
+
+
+  .contact-footer {
+    padding: 30px 15px 25px;
+  }
+
+
+  .footer-lace {
+    width: 30%;
+
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: 0.82;
+  }
+
+
+  .footer-center-shade {
+    left: 15%;
+    width: 70%;
+  }
+
+
+  .footer-content h2 {
+    font-size: 23px;
+  }
+
+
+  .footer-content p {
+    font-size: 14px;
+  }
+
+
+  .footer-email {
+    font-size: 16px;
+  }
+
+
+  .footer-ornament {
+    font-size: 7px;
+    letter-spacing: 4px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+  <img
+    src="lace.jpg"
+    class="nav-lace lace-left"
+    alt=""
+  >
+
+
+  <img
+    src="lace.jpg"
+    class="nav-lace lace-right"
+    alt=""
+  >
+
+
+  <span class="nav-center-shade"></span>
+
+
+  <a href="index.html">Home</a>
+
+  <a href="boxes.html?v=2">Boxes</a>
+
+  <a href="about.html">About</a>
+
+  <a href="contact.html">Contact</a>
+
+  <a href="checkout.html">Checkout</a>
+
+
+  <span class="nav-ornament">
+    ◆ ✦ ◆ ✦ ◆
+  </span>
+
+</nav>
+
+
+<!-- RAVEN IMAGE -->
+
+<img
+  class="home-image"
+  src="Screenshot%202026-09-25%20232257.png"
+  alt="Raven in a gothic graveyard"
+>
+
+
+<!-- CONTACT FOOTER -->
+
+<footer class="contact-footer">
+
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-left"
+    alt=""
+  >
+
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-right"
+    alt=""
+  >
+
+
+  <span class="footer-center-shade"></span>
+
+
+  <div class="footer-content">
+
+
+    <h2>
+      Contact Us
+    </h2>
+
+
+    <p>
+      Have a question? We'd love to hear from you.
+    </p>
+
+
+    <a
+      class="footer-email"
+      href="mailto:ravensscoops@gmail.com"
+    >
+      ravensscoops@gmail.com
+    </a>
+
+
+    <div class="footer-ornament">
+      ◆ ✦ ◆ ✦ ◆
+    </div>
+
+
+  </div>
+
+
+</footer>
+
+
+</body>
+
+</html>
