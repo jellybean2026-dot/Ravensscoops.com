@@ -23,7 +23,9 @@ body {
 }
 
 
-/* MAIN NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
   position: relative;
@@ -51,11 +53,10 @@ nav {
 }
 
 
-/* SILVER SHINE ACROSS TOP */
+/* SILVER SHINE */
 
 nav::before {
   content: "";
-
   position: absolute;
 
   top: 0;
@@ -76,7 +77,7 @@ nav::before {
 }
 
 
-/* REAL BLACK LACE */
+/* BLACK LACE */
 
 .nav-lace {
   position: absolute;
@@ -102,8 +103,6 @@ nav::before {
   opacity: 0.88;
 }
 
-
-/* LEFT LACE */
 
 .lace-left {
   left: 0;
@@ -131,8 +130,6 @@ nav::before {
     );
 }
 
-
-/* RIGHT LACE */
 
 .lace-right {
   right: 0;
@@ -163,7 +160,7 @@ nav::before {
 }
 
 
-/* CLEAN CENTER BEHIND MENU */
+/* CENTER SHADE */
 
 .nav-center-shade {
   position: absolute;
@@ -260,7 +257,7 @@ nav a:hover::after {
 }
 
 
-/* CENTER SILVER ORNAMENT */
+/* NAV ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -283,17 +280,19 @@ nav a:hover::after {
 }
 
 
-/* HOME RAVEN IMAGE */
+/* =========================
+   MAIN RAVEN IMAGE
+========================= */
 
 .home-image {
   display: block;
 
   width: calc(100% - 30px);
-  max-width: 850px;
+  max-width: 1200px;
 
   height: auto;
 
-  margin: 36px auto 55px auto;
+  margin: 36px auto 45px auto;
 
   border: 1px solid rgba(215,218,228,.5);
 
@@ -304,7 +303,134 @@ nav a:hover::after {
 }
 
 
-/* CONTACT FOOTER */
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-section {
+  width: calc(100% - 40px);
+  max-width: 900px;
+
+  margin: 0 auto 60px auto;
+
+  text-align: center;
+
+  padding: 40px 35px;
+
+  border-top: 1px solid rgba(215,218,228,.30);
+  border-bottom: 1px solid rgba(215,218,228,.30);
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(75,28,96,.25) 0%,
+      rgba(25,8,33,.30) 60%,
+      transparent 100%
+    );
+}
+
+
+.welcome-section h1 {
+  margin: 0 0 14px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 34px;
+
+  font-weight: normal;
+
+  color: #f2eaf6;
+
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 15px rgba(135,75,170,.45);
+}
+
+
+.welcome-ornament {
+  color: #c9b6d5;
+
+  font-size: 11px;
+
+  letter-spacing: 8px;
+
+  margin-bottom: 22px;
+}
+
+
+.welcome-section p {
+  max-width: 760px;
+
+  margin: 0 auto 28px auto;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  color: #d9d2dd;
+}
+
+
+/* SHOP BUTTON */
+
+.shop-button {
+  display: inline-block;
+
+  padding: 14px 30px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #5b2475,
+      #371147
+    );
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  letter-spacing: .5px;
+
+  border: 1px solid #aaa0b2;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.15);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.shop-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.65),
+    0 0 20px rgba(126,67,160,.35);
+}
+
+
+/* =========================
+   CONTACT FOOTER
+========================= */
 
 .contact-footer {
   position: relative;
@@ -313,7 +439,7 @@ nav a:hover::after {
 
   text-align: center;
 
-  padding: 35px 20px 30px;
+  padding: 38px 20px 30px;
 
   background:
     radial-gradient(
@@ -471,9 +597,12 @@ nav a:hover::after {
 
 
 .footer-content p {
-  margin: 8px 0;
+  margin: 8px 0 16px;
 
-  font-family: Arial, sans-serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   color: #d5ced9;
 
@@ -481,11 +610,23 @@ nav a:hover::after {
 }
 
 
-.footer-email {
-  display: inline-block;
+/* EMAIL + TIKTOK */
 
-  margin-top: 8px;
+.contact-links {
+  display: flex;
 
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px 30px;
+
+  margin-top: 12px;
+}
+
+
+.contact-link {
   color: white;
 
   font-family:
@@ -504,14 +645,14 @@ nav a:hover::after {
 }
 
 
-.footer-email:hover {
+.contact-link:hover {
   text-shadow:
     0 0 8px rgba(220,205,255,.85);
 }
 
 
 .footer-ornament {
-  margin-top: 18px;
+  margin-top: 20px;
 
   color: #e0e2e8;
 
@@ -523,7 +664,9 @@ nav a:hover::after {
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media screen and (max-width: 600px) {
 
@@ -534,7 +677,9 @@ nav a:hover::after {
 
   nav a {
     font-size: 14px;
+
     margin: 0 5px;
+
     letter-spacing: 0;
   }
 
@@ -552,13 +697,16 @@ nav a:hover::after {
 
   .nav-center-shade {
     left: 15%;
+
     width: 70%;
   }
 
 
   .nav-ornament {
     font-size: 7px;
+
     letter-spacing: 4px;
+
     bottom: 1px;
   }
 
@@ -567,7 +715,7 @@ nav a:hover::after {
     width: 100%;
 
     margin-top: 28px;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 
     border-left: 0;
     border-right: 0;
@@ -575,6 +723,34 @@ nav a:hover::after {
     box-shadow:
       0 10px 35px rgba(0,0,0,.7),
       0 0 25px rgba(120,75,150,.18);
+  }
+
+
+  .welcome-section {
+    width: calc(100% - 30px);
+
+    padding: 30px 18px;
+
+    margin-bottom: 45px;
+  }
+
+
+  .welcome-section h1 {
+    font-size: 27px;
+  }
+
+
+  .welcome-section p {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  .shop-button {
+    font-size: 16px;
+
+    padding: 13px 24px;
   }
 
 
@@ -596,6 +772,7 @@ nav a:hover::after {
 
   .footer-center-shade {
     left: 15%;
+
     width: 70%;
   }
 
@@ -610,13 +787,21 @@ nav a:hover::after {
   }
 
 
-  .footer-email {
+  .contact-links {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+
+  .contact-link {
     font-size: 16px;
   }
 
 
   .footer-ornament {
     font-size: 7px;
+
     letter-spacing: 4px;
   }
 
@@ -630,6 +815,10 @@ nav a:hover::after {
 <body>
 
 
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
 
   <img
@@ -638,13 +827,11 @@ nav a:hover::after {
     alt=""
   >
 
-
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
-
 
   <span class="nav-center-shade"></span>
 
@@ -667,19 +854,56 @@ nav a:hover::after {
 </nav>
 
 
-<!-- RAVEN IMAGE -->
+<!-- =========================
+     RAVENS SCOOPS IMAGE
+========================= -->
 
 <img
   class="home-image"
   src="Screenshot%202026-09-25%20232257.png"
-  alt="Raven in a gothic graveyard"
+  alt="Ravens Scoops"
 >
 
 
-<!-- CONTACT FOOTER -->
+<!-- =========================
+     WELCOME / ABOUT
+========================= -->
+
+<section class="welcome-section">
+
+  <h1>
+    Welcome to Ravens Scoops
+  </h1>
+
+  <div class="welcome-ornament">
+    ◆ ✦ ◆ ✦ ◆
+  </div>
+
+  <p>
+    Ravens Scoops is a family-run business created by a mother
+    and two daughters with a love for all things macabre,
+    paranormal, metaphysical, and mysterious. From crystals and
+    witchy treasures to spooky, unusual, and sometimes completely
+    random finds, you never quite know what the raven will choose
+    for you.
+  </p>
+
+
+  <a
+    class="shop-button"
+    href="boxes.html?v=2"
+  >
+    Shop Mystery Bundles
+  </a>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <footer class="contact-footer">
-
 
   <img
     src="lace.jpg"
@@ -687,45 +911,53 @@ nav a:hover::after {
     alt=""
   >
 
-
   <img
     src="lace.jpg"
     class="footer-lace footer-lace-right"
     alt=""
   >
 
-
   <span class="footer-center-shade"></span>
 
 
   <div class="footer-content">
 
-
     <h2>
       Contact Us
     </h2>
-
 
     <p>
       Have a question? We'd love to hear from you.
     </p>
 
 
-    <a
-      class="footer-email"
-      href="mailto:ravensscoops@gmail.com"
-    >
-      ravensscoops@gmail.com
-    </a>
+    <div class="contact-links">
+
+      <a
+        class="contact-link"
+        href="mailto:ravensscoops@gmail.com"
+      >
+        ✉ ravensscoops@gmail.com
+      </a>
+
+
+      <a
+        class="contact-link"
+        href="https://www.tiktok.com/@ravensscoops"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ♪ TikTok: @ravensscoops
+      </a>
+
+    </div>
 
 
     <div class="footer-ornament">
       ◆ ✦ ◆ ✦ ◆
     </div>
 
-
   </div>
-
 
 </footer>
 
