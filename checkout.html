@@ -17,15 +17,23 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
   width: 100%;
+  min-height: 100%;
   background: #08030d;
   color: white;
   font-family: Arial, sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-/* NAVIGATION */
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
   position: relative;
@@ -79,13 +87,19 @@ nav::before {
   top: 0;
   width: 36%;
   height: 100%;
+
   object-fit: cover;
   object-position: left center;
+
   pointer-events: none;
   z-index: 1;
-  filter: grayscale(1) contrast(1.65);
+
+  filter:
+    grayscale(1)
+    contrast(1.65);
+
   mix-blend-mode: multiply;
-  opacity: 0.88;
+  opacity: .88;
 }
 
 .lace-left {
@@ -170,6 +184,7 @@ nav::before {
 nav a {
   position: relative;
   z-index: 5;
+
   color: #f5f1f7;
   text-decoration: none;
 
@@ -181,7 +196,8 @@ nav a {
   font-size: 19px;
   font-weight: normal;
   letter-spacing: 1px;
-  margin: 0 24px;
+
+  margin: 0 19px;
 
   text-shadow:
     0 1px 4px rgba(0,0,0,.95);
@@ -194,8 +210,10 @@ nav a {
 nav a::after {
   content: "";
   position: absolute;
+
   left: 50%;
   bottom: -8px;
+
   width: 0;
   height: 1px;
 
@@ -228,23 +246,34 @@ nav a:hover::after {
 
 .nav-ornament {
   position: absolute;
+
   left: 50%;
   bottom: 2px;
+
   transform: translateX(-50%);
+
   color: #e0e2e8;
+
   font-size: 9px;
   letter-spacing: 8px;
+
   z-index: 6;
   opacity: .85;
+
   white-space: nowrap;
 }
 
 
-/* CHECKOUT */
+/* =========================
+   CHECKOUT
+========================= */
 
 main {
+  flex: 1;
+
   width: 92%;
   max-width: 1000px;
+
   margin: 50px auto 70px;
 }
 
@@ -257,13 +286,18 @@ h1 {
     serif;
 
   font-size: 44px;
+
   margin-bottom: 35px;
 }
 
 .checkout-layout {
   display: grid;
-  grid-template-columns: 1.4fr .8fr;
+
+  grid-template-columns:
+    1.4fr .8fr;
+
   gap: 25px;
+
   align-items: start;
 }
 
@@ -278,6 +312,7 @@ h1 {
 
   border: 1px solid #554560;
   border-radius: 18px;
+
   padding: 28px;
 
   box-shadow:
@@ -293,13 +328,18 @@ h1 {
     serif;
 
   font-size: 27px;
+
   margin-top: 0;
 }
 
 .cart-item {
   display: grid;
-  grid-template-columns: 115px 1fr auto;
+
+  grid-template-columns:
+    115px 1fr auto;
+
   gap: 18px;
+
   align-items: center;
 
   padding: 20px 0;
@@ -314,8 +354,11 @@ h1 {
 .cart-image {
   width: 115px;
   height: 115px;
+
   object-fit: cover;
+
   border-radius: 12px;
+
   border: 1px solid #554560;
 }
 
@@ -326,78 +369,107 @@ h1 {
     serif;
 
   font-size: 21px;
+
   margin-bottom: 7px;
 }
 
 .item-variant {
   color: #c9c0d0;
+
   margin-bottom: 10px;
 }
 
 .item-quantity {
   color: #aaa0af;
+
   font-size: 14px;
 }
 
 .item-price {
   font-size: 20px;
+
   font-weight: bold;
 }
 
 .remove-button {
   margin-top: 12px;
+
   padding: 0;
+
   background: none;
+
   border: 0;
+
   color: #d99582;
+
   text-decoration: underline;
+
   cursor: pointer;
+
   font-size: 14px;
 }
 
 .empty-cart {
   text-align: center;
+
   color: #c9c0d0;
+
   padding: 45px 10px;
+
   line-height: 1.7;
 }
 
 .continue-shopping {
   display: inline-block;
+
   margin-top: 15px;
+
   color: #d99582;
 }
 
 
-/* SUMMARY */
+/* =========================
+   SUMMARY
+========================= */
 
 .summary-row {
   display: flex;
+
   justify-content: space-between;
+
   gap: 15px;
+
   padding: 12px 0;
+
   color: #c9c0d0;
 }
 
 .summary-total {
   display: flex;
+
   justify-content: space-between;
+
   gap: 15px;
 
   border-top:
     1px solid #554560;
 
   margin-top: 8px;
+
   padding-top: 20px;
 
   font-size: 23px;
+
   font-weight: bold;
 }
 
 .checkout-button {
   display: block;
+
   width: 100%;
+
   margin-top: 25px;
+
   padding: 16px;
 
   background:
@@ -420,7 +492,9 @@ h1 {
     serif;
 
   font-size: 18px;
+
   text-align: center;
+
   text-decoration: none;
 
   box-shadow:
@@ -439,21 +513,236 @@ h1 {
 
 .checkout-button.disabled {
   background: #514b55;
+
   color: #aaa;
+
   pointer-events: none;
+
   border-color: #625b66;
 }
 
 .secure {
   text-align: center;
+
   color: #9f95a5;
+
   font-size: 13px;
+
   line-height: 1.5;
+
   margin-top: 15px;
 }
 
 
-/* MOBILE */
+/* =========================
+   CONTACT FOOTER
+========================= */
+
+.contact-footer {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 22px 20px 18px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #55206f 0%,
+      #411456 48%,
+      #291033 100%
+    );
+
+  border-top: 1px solid #bfc3cc;
+
+  border-bottom:
+    1px solid rgba(225,228,235,.20);
+
+  box-shadow:
+    0 -8px 25px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.06);
+
+  overflow: hidden;
+}
+
+.footer-lace {
+  position: absolute;
+
+  top: 0;
+
+  width: 36%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: left center;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  filter:
+    grayscale(1)
+    contrast(1.65);
+
+  mix-blend-mode: multiply;
+
+  opacity: .88;
+}
+
+.footer-lace-left {
+  left: 0;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
+
+.footer-lace-right {
+  right: 0;
+
+  transform: scaleX(-1);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
+
+.footer-center-shade {
+  position: absolute;
+
+  top: 0;
+  left: 22%;
+
+  width: 56%;
+  height: 100%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(31,7,41,.94) 0%,
+      rgba(31,7,41,.80) 48%,
+      rgba(31,7,41,.36) 72%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.footer-content {
+  position: relative;
+
+  z-index: 5;
+}
+
+.footer-content h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 24px;
+
+  margin: 0 0 7px;
+}
+
+.footer-content p {
+  color: #d2c9d6;
+
+  margin: 0 0 12px;
+
+  font-size: 14px;
+}
+
+.contact-links {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+.contact-link {
+  color: #f5f1f7;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px rgba(220,205,255,.85);
+}
+
+.footer-ornament {
+  color: #e0e2e8;
+
+  font-size: 8px;
+
+  letter-spacing: 7px;
+
+  margin-top: 12px;
+
+  opacity: .85;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media screen and (max-width: 600px) {
 
@@ -462,31 +751,43 @@ h1 {
   }
 
   nav a {
-    font-size: 14px;
-    margin: 0 5px;
+    font-size: 12px;
+
+    margin: 0 3px;
+
     letter-spacing: 0;
   }
 
   .nav-lace {
     width: 30%;
-    filter: grayscale(1) contrast(1.6);
-    opacity: 0.82;
+
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: .82;
   }
 
   .nav-center-shade {
     left: 15%;
+
     width: 70%;
   }
 
   .nav-ornament {
     font-size: 7px;
+
     letter-spacing: 4px;
+
     bottom: 1px;
   }
 
   main {
     width: 92%;
+
     margin-top: 40px;
+
+    margin-bottom: 55px;
   }
 
   h1 {
@@ -503,11 +804,13 @@ h1 {
   }
 
   .cart-item {
-    grid-template-columns: 85px 1fr;
+    grid-template-columns:
+      85px 1fr;
   }
 
   .cart-image {
     width: 85px;
+
     height: 85px;
   }
 
@@ -515,14 +818,68 @@ h1 {
     grid-column: 2;
   }
 
+
+  /* MOBILE FOOTER */
+
+  .contact-footer {
+    padding: 18px 15px 15px;
+  }
+
+  .footer-lace {
+    width: 30%;
+
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: .82;
+  }
+
+  .footer-center-shade {
+    left: 15%;
+
+    width: 70%;
+  }
+
+  .footer-content h2 {
+    font-size: 21px;
+  }
+
+  .footer-content p {
+    font-size: 13px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .contact-link {
+    font-size: 14px;
+  }
+
+  .footer-ornament {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    margin-top: 9px;
+  }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -540,11 +897,19 @@ h1 {
 
   <span class="nav-center-shade"></span>
 
+
   <a href="index.html">Home</a>
+
   <a href="boxes.html">Boxes</a>
+
   <a href="about.html">About Us</a>
+
+  <a href="faq.html">FAQ</a>
+
   <a href="contact.html">Contact</a>
+
   <a href="checkout.html">Checkout</a>
+
 
   <span class="nav-ornament">
     ◆ ✦ ◆ ✦ ◆
@@ -552,6 +917,10 @@ h1 {
 
 </nav>
 
+
+<!-- =========================
+     CHECKOUT
+========================= -->
 
 <main>
 
@@ -562,6 +931,8 @@ h1 {
 
   <div class="checkout-layout">
 
+
+    <!-- CART -->
 
     <div class="cart-box">
 
@@ -574,6 +945,8 @@ h1 {
 
     </div>
 
+
+    <!-- ORDER SUMMARY -->
 
     <div class="summary-box">
 
@@ -631,9 +1004,7 @@ h1 {
 
 
       <div class="secure">
-
         Secure payment processing provided by Square.
-
       </div>
 
     </div>
@@ -644,6 +1015,72 @@ h1 {
 </main>
 
 
+<!-- =========================
+     CONTACT FOOTER
+========================= -->
+
+<footer class="contact-footer">
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-left"
+    alt=""
+  >
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-right"
+    alt=""
+  >
+
+  <span class="footer-center-shade"></span>
+
+
+  <div class="footer-content">
+
+    <h2>
+      Ravens Scoops
+    </h2>
+
+    <p>
+      Have a question? We'd love to hear from you.
+    </p>
+
+
+    <div class="contact-links">
+
+      <a
+        class="contact-link"
+        href="mailto:ravensscoops@gmail.com"
+      >
+        ✉ ravensscoops@gmail.com
+      </a>
+
+
+      <a
+        class="contact-link"
+        href="https://www.tiktok.com/@ravensscoops"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ♪ TikTok: @ravensscoops
+      </a>
+
+    </div>
+
+
+    <div class="footer-ornament">
+      ◆ ✦ ◆ ✦ ◆
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     CART JAVASCRIPT
+========================= -->
 
 <script>
 
