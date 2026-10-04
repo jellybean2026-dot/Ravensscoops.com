@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Contact Us — Ravens Scoops</title>
 
@@ -18,24 +18,20 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  width: 100%;
-
   background: #08030d;
   color: white;
-
   font-family: Arial, sans-serif;
 }
 
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
   position: relative;
-
   width: 100%;
-
   text-align: center;
-
   padding: 30px 10px;
 
   background:
@@ -46,18 +42,14 @@ nav {
       #291033 100%
     );
 
-  border-top:
-    1px solid rgba(225, 228, 235, 0.20);
-
-  border-bottom:
-    1px solid #bfc3cc;
+  border-top: 1px solid rgba(225,228,235,.20);
+  border-bottom: 1px solid #bfc3cc;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 8px 25px rgba(0,0,0,.7),
+    inset 0 1px 0 rgba(255,255,255,.06);
 
   overflow: hidden;
-
   z-index: 10;
 }
 
@@ -110,7 +102,7 @@ nav::before {
 
   mix-blend-mode: multiply;
 
-  opacity: 0.88;
+  opacity: .88;
 }
 
 
@@ -184,9 +176,9 @@ nav::before {
   background:
     radial-gradient(
       ellipse at center,
-      rgba(31, 7, 41, .94) 0%,
-      rgba(31, 7, 41, .80) 48%,
-      rgba(31, 7, 41, .36) 72%,
+      rgba(31,7,41,.94) 0%,
+      rgba(31,7,41,.80) 48%,
+      rgba(31,7,41,.36) 72%,
       transparent 100%
     );
 
@@ -213,8 +205,6 @@ nav a {
     serif;
 
   font-size: 19px;
-
-  font-weight: normal;
 
   letter-spacing: 1px;
 
@@ -268,7 +258,7 @@ nav a:hover::after {
 }
 
 
-/* CENTER ORNAMENT */
+/* NAV ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -292,109 +282,144 @@ nav a:hover::after {
 }
 
 
-/* MAIN CONTACT PAGE */
+/* =========================
+   CONTACT PAGE
+========================= */
 
-main {
-  width: 90%;
+.contact-page {
+  width: calc(100% - 30px);
 
-  max-width: 800px;
+  max-width: 760px;
 
-  margin: 60px auto;
+  margin: 65px auto;
+
+  text-align: center;
 }
 
 
-/* TITLE */
-
-h1 {
-  text-align: center;
+.contact-page h1 {
+  margin: 0 0 12px;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 46px;
+  font-size: 42px;
 
-  margin-bottom: 12px;
+  font-weight: normal;
+
+  color: #f4edf7;
+
+  text-shadow:
+    0 0 18px rgba(135,75,170,.45);
 }
 
 
-.subtitle {
-  text-align: center;
+.ornament {
+  color: #c9b6d5;
 
-  color: #c9c0d0;
+  font-size: 10px;
 
-  font-size: 18px;
+  letter-spacing: 8px;
 
-  line-height: 1.6;
+  margin-bottom: 25px;
+}
 
-  margin-bottom: 40px;
+
+.intro {
+  color: #d4ccd8;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  margin: 0 auto 35px;
+
+  max-width: 600px;
 }
 
 
 /* CONTACT BOX */
 
 .contact-box {
-  background:
-    linear-gradient(
-      145deg,
-      #13091b,
-      #0d0612
-    );
+  position: relative;
 
-  border:
-    1px solid #554560;
+  padding: 38px 30px;
+
+  border: 1px solid #716478;
 
   border-radius: 18px;
 
-  padding: 45px;
-
-  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(79,29,100,.32) 0%,
+      rgba(20,7,27,.92) 70%
+    );
 
   box-shadow:
-    0 18px 45px rgba(0,0,0,.45),
-    inset 0 1px 0 rgba(255,255,255,.025);
+    0 15px 40px rgba(0,0,0,.55),
+    0 0 30px rgba(105,55,135,.15);
 }
 
 
-.contact-box h2 {
+/* CONTACT ITEM */
+
+.contact-item {
+  padding: 22px 10px;
+}
+
+
+.contact-item + .contact-item {
+  border-top:
+    1px solid rgba(190,180,198,.25);
+}
+
+
+.contact-icon {
+  font-size: 28px;
+
+  margin-bottom: 8px;
+}
+
+
+.contact-item h2 {
+  margin: 5px 0 10px;
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 30px;
+  font-size: 24px;
 
-  margin-top: 0;
+  font-weight: normal;
+
+  color: #eee5f2;
 }
 
 
-.contact-box p {
-  color: #d0c8d3;
+.contact-item p {
+  margin: 0 0 12px;
 
-  font-size: 17px;
+  color: #bfb5c5;
 
-  line-height: 1.7;
-
-  margin-bottom: 30px;
+  font-size: 14px;
 }
 
 
-/* EMAIL BUTTON */
+/* CONTACT LINKS */
 
-.email-button {
+.contact-link {
   display: inline-block;
 
-  padding: 16px 30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #8c55a7,
-      #5c2b76
-    );
-
-  color: white;
+  color: #ffffff;
 
   text-decoration: none;
 
@@ -405,71 +430,47 @@ h1 {
 
   font-size: 18px;
 
-  letter-spacing: .5px;
+  padding-bottom: 4px;
 
-  border:
-    1px solid rgba(220,220,230,.55);
-
-  border-radius: 8px;
-
-  box-shadow:
-    0 8px 22px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.12);
+  border-bottom:
+    1px solid rgba(255,255,255,.55);
 
   transition:
-    transform .2s ease,
-    box-shadow .2s ease,
-    background .2s ease;
+    color .2s ease,
+    text-shadow .2s ease;
 }
 
 
-.email-button:hover {
-  transform: translateY(-2px);
+.contact-link:hover {
+  color: #ffffff;
 
-  background:
-    linear-gradient(
-      135deg,
-      #a36cc0,
-      #693685
-    );
-
-  box-shadow:
-    0 10px 26px rgba(0,0,0,.45),
-    0 0 15px rgba(147,93,181,.25);
+  text-shadow:
+    0 0 8px rgba(220,205,255,.85),
+    0 0 15px rgba(130,70,175,.55);
 }
 
 
-/* EMAIL ADDRESS */
+/* BOTTOM MESSAGE */
 
-.email-address {
-  margin-top: 20px;
+.bottom-message {
+  margin-top: 35px;
 
-  color: #c9c0d0;
-
-  font-size: 16px;
-}
-
-
-/* END MESSAGE */
-
-.raven-message {
-  text-align: center;
+  color: #a99eaf;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 24px;
+  font-size: 14px;
 
-  margin-top: 40px;
-
-  text-shadow:
-    0 0 10px rgba(150,95,185,.35);
+  line-height: 1.6;
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media screen and (max-width: 600px) {
 
@@ -494,7 +495,7 @@ h1 {
       grayscale(1)
       contrast(1.6);
 
-    opacity: 0.82;
+    opacity: .82;
   }
 
 
@@ -514,28 +515,42 @@ h1 {
   }
 
 
-  main {
-    margin-top: 40px;
+  .contact-page {
+    width: calc(100% - 30px);
+
+    margin: 45px auto;
   }
 
 
-  h1 {
-    font-size: 38px;
+  .contact-page h1 {
+    font-size: 34px;
   }
 
 
-  .subtitle {
+  .intro {
     font-size: 16px;
   }
 
 
   .contact-box {
-    padding: 30px 20px;
+    padding: 20px 15px;
   }
 
 
-  .email-button {
-    width: 100%;
+  .contact-item {
+    padding: 22px 5px;
+  }
+
+
+  .contact-item h2 {
+    font-size: 21px;
+  }
+
+
+  .contact-link {
+    font-size: 16px;
+
+    overflow-wrap: anywhere;
   }
 
 }
@@ -548,6 +563,10 @@ h1 {
 <body>
 
 
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
 
   <img
@@ -556,40 +575,24 @@ h1 {
     alt=""
   >
 
-
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
 
-
   <span class="nav-center-shade"></span>
 
 
-  <a href="index.html">
-    Home
-  </a>
+  <a href="index.html">Home</a>
 
+  <a href="boxes.html">Boxes</a>
 
-  <a href="boxes.html">
-    Boxes
-  </a>
+  <a href="about.html">About Us</a>
 
+  <a href="contact.html">Contact</a>
 
-  <a href="about.html">
-    About Us
-  </a>
-
-
-  <a href="contact.html">
-    Contact
-  </a>
-
-
-  <a href="checkout.html">
-    Checkout
-  </a>
+  <a href="checkout.html">Checkout</a>
 
 
   <span class="nav-ornament">
@@ -599,8 +602,11 @@ h1 {
 </nav>
 
 
+<!-- =========================
+     CONTACT
+========================= -->
 
-<main>
+<main class="contact-page">
 
 
   <h1>
@@ -608,51 +614,85 @@ h1 {
   </h1>
 
 
-  <div class="subtitle">
-
-    Have a question about Ravens Scoops, an order, or something
-    you've seen in our shop? We'd love to hear from you.
-
+  <div class="ornament">
+    ◆ ✦ ◆ ✦ ◆
   </div>
+
+
+  <p class="intro">
+
+    Have a question about Ravens Scoops, our mystery bundles,
+    or an order? We'd love to hear from you. You can reach us
+    by email or find us on TikTok.
+
+  </p>
 
 
   <div class="contact-box">
 
 
-    <h2>
-      Send Us an Email
-    </h2>
+    <!-- EMAIL -->
+
+    <div class="contact-item">
+
+      <div class="contact-icon">
+        ✉
+      </div>
+
+      <h2>
+        Email
+      </h2>
+
+      <p>
+        Questions, orders, or anything else — send us a message.
+      </p>
+
+      <a
+        class="contact-link"
+        href="mailto:ravensscoops@gmail.com"
+      >
+        ravensscoops@gmail.com
+      </a>
+
+    </div>
 
 
-    <p>
+    <!-- TIKTOK -->
 
-      Email is currently the best way to get in touch with us.
-      Send us a message and we'll get back to you as soon as we can.
+    <div class="contact-item">
 
-    </p>
+      <div class="contact-icon">
+        ♪
+      </div>
 
+      <h2>
+        TikTok
+      </h2>
 
-    <a
-      class="email-button"
-      href="mailto:ravensscoops@gmail.com"
-    >
-      Email Ravens Scoops
-    </a>
+      <p>
+        Follow the raven for new scoops, product reveals,
+        behind-the-scenes fun, and new arrivals.
+      </p>
 
+      <a
+        class="contact-link"
+        href="https://www.tiktok.com/@ravensscoops"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        @ravensscoops
+      </a>
 
-    <div class="email-address">
-      ravensscoops@gmail.com
     </div>
 
 
   </div>
 
 
-  <div class="raven-message">
-
-    We'll send a raven back as soon as we can. 🖤
-
-  </div>
+  <p class="bottom-message">
+    Thank you for supporting our family-run small business.
+    🖤
+  </p>
 
 
 </main>
