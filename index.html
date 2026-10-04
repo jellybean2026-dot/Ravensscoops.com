@@ -1,4 +1,7 @@
-head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -218,8 +221,6 @@ nav a {
 }
 
 
-/* SILVER HOVER UNDERLINE */
-
 nav a::after {
   content: "";
 
@@ -282,7 +283,7 @@ nav a:hover::after {
 }
 
 
-/* HOME IMAGE */
+/* HOME RAVEN IMAGE */
 
 .home-image {
   display: block;
@@ -303,113 +304,88 @@ nav a:hover::after {
 }
 
 
-/* MOBILE */
+/* CONTACT FOOTER */
 
-@media screen and (max-width: 600px) {
+.contact-footer {
+  position: relative;
 
-  nav {
-    padding: 20px 3px;
-  }
+  width: 100%;
 
+  text-align: center;
 
-  nav a {
-    font-size: 14px;
-    margin: 0 5px;
-    letter-spacing: 0;
-  }
+  padding: 35px 20px 30px;
 
+  background:
+    radial-gradient(
+      circle at center,
+      #55206f 0%,
+      #411456 48%,
+      #291033 100%
+    );
 
-  .nav-lace {
-    width: 30%;
+  border-top: 1px solid #bfc3cc;
+  border-bottom: 1px solid rgba(225,228,235,.20);
 
-    filter:
-      grayscale(1)
-      contrast(1.6);
+  box-shadow:
+    0 -8px 25px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.06);
 
-    opacity: 0.82;
-  }
-
-
-  .nav-center-shade {
-    left: 15%;
-    width: 70%;
-  }
-
-
-  .nav-ornament {
-    font-size: 7px;
-    letter-spacing: 4px;
-    bottom: 1px;
-  }
-
-
-  .home-image {
-    width: 100%;
-
-    margin-top: 28px;
-
-    border-left: 0;
-    border-right: 0;
-
-    box-shadow:
-      0 10px 35px rgba(0,0,0,.7),
-      0 0 25px rgba(120,75,150,.18);
-  }
-
+  overflow: hidden;
 }
 
-</style>
 
-</head>
+/* FOOTER LACE */
 
+.footer-lace {
+  position: absolute;
 
-<body>
+  top: 0;
 
+  width: 36%;
+  height: 100%;
 
-<nav>
+  object-fit: cover;
+  object-position: left center;
 
-  <img
-    src="lace.jpg"
-    class="nav-lace lace-left"
-    alt=""
-  >
+  pointer-events: none;
 
+  z-index: 1;
 
-  <img
-    src="lace.jpg"
-    class="nav-lace lace-right"
-    alt=""
-  >
+  filter:
+    grayscale(1)
+    contrast(1.65);
 
+  mix-blend-mode: multiply;
 
-  <span class="nav-center-shade"></span>
-
-
-  <a href="index.html">Home</a>
-
-  <a href="boxes.html?v=2">Boxes</a>
-
-  <a href="about.html">About</a>
-
-  <a href="contact.html">Contact</a>
-
-  <a href="checkout.html">Checkout</a>
+  opacity: 0.88;
+}
 
 
-  <span class="nav-ornament">
-    ◆ ✦ ◆ ✦ ◆
-  </span>
+.footer-lace-left {
+  left: 0;
 
-</nav>
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
 
 
-<img
-  class="home-image"
-  src="file_00000000844881f58d4b5c059559045b.png"
-  alt="Ravens Scoops"
->
-
-
-</body>
-
-</html>
+.footer-lace
