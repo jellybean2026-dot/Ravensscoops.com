@@ -25,7 +25,9 @@ body {
 }
 
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
   position: relative;
@@ -208,7 +210,7 @@ nav a {
 
   letter-spacing: 1px;
 
-  margin: 0 24px;
+  margin: 0 19px;
 
   text-shadow:
     0 1px 4px rgba(0,0,0,.95);
@@ -281,7 +283,9 @@ nav a:hover::after {
 }
 
 
-/* MAIN PAGE */
+/* =========================
+   MAIN PAGE
+========================= */
 
 main {
   width: 90%;
@@ -398,7 +402,226 @@ h1 {
 }
 
 
-/* MOBILE */
+/* =========================
+   CONTACT FOOTER
+========================= */
+
+.contact-footer {
+  position: relative;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 22px 20px 18px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #55206f 0%,
+      #411456 48%,
+      #291033 100%
+    );
+
+  border-top: 1px solid #bfc3cc;
+  border-bottom: 1px solid rgba(225,228,235,.20);
+
+  box-shadow:
+    0 -8px 25px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.06);
+
+  overflow: hidden;
+}
+
+
+/* FOOTER LACE */
+
+.footer-lace {
+  position: absolute;
+
+  top: 0;
+
+  width: 36%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: left center;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  filter:
+    grayscale(1)
+    contrast(1.65);
+
+  mix-blend-mode: multiply;
+
+  opacity: 0.88;
+}
+
+
+.footer-lace-left {
+  left: 0;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
+
+
+.footer-lace-right {
+  right: 0;
+
+  transform: scaleX(-1);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+}
+
+
+/* FOOTER CENTER SHADE */
+
+.footer-center-shade {
+  position: absolute;
+
+  top: 0;
+  left: 22%;
+
+  width: 56%;
+  height: 100%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(31,7,41,.94) 0%,
+      rgba(31,7,41,.80) 48%,
+      rgba(31,7,41,.36) 72%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+.footer-content {
+  position: relative;
+
+  z-index: 5;
+}
+
+
+.footer-content h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 24px;
+
+  margin: 0 0 7px;
+}
+
+
+.footer-content p {
+  color: #d2c9d6;
+
+  margin: 0 0 12px;
+
+  font-size: 14px;
+}
+
+
+.contact-links {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+
+.contact-link {
+  color: #f5f1f7;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+}
+
+
+.contact-link:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px rgba(220,205,255,.85);
+}
+
+
+.footer-ornament {
+  color: #e0e2e8;
+
+  font-size: 8px;
+
+  letter-spacing: 7px;
+
+  margin-top: 12px;
+
+  opacity: .85;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media screen and (max-width: 600px) {
 
@@ -408,9 +631,9 @@ h1 {
 
 
   nav a {
-    font-size: 14px;
+    font-size: 12px;
 
-    margin: 0 5px;
+    margin: 0 3px;
 
     letter-spacing: 0;
   }
@@ -429,6 +652,7 @@ h1 {
 
   .nav-center-shade {
     left: 15%;
+
     width: 70%;
   }
 
@@ -484,6 +708,60 @@ h1 {
     font-size: 23px;
   }
 
+
+  .contact-footer {
+    padding: 18px 15px 15px;
+  }
+
+
+  .footer-lace {
+    width: 30%;
+
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: 0.82;
+  }
+
+
+  .footer-center-shade {
+    left: 15%;
+
+    width: 70%;
+  }
+
+
+  .footer-content h2 {
+    font-size: 21px;
+  }
+
+
+  .footer-content p {
+    font-size: 13px;
+  }
+
+
+  .contact-links {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+
+  .contact-link {
+    font-size: 14px;
+  }
+
+
+  .footer-ornament {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    margin-top: 9px;
+  }
+
 }
 
 </style>
@@ -493,6 +771,10 @@ h1 {
 
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -528,6 +810,11 @@ h1 {
   </a>
 
 
+  <a href="faq.html">
+    FAQ
+  </a>
+
+
   <a href="contact.html">
     Contact
   </a>
@@ -545,6 +832,9 @@ h1 {
 </nav>
 
 
+<!-- =========================
+     ABOUT US
+========================= -->
 
 <main>
 
@@ -620,6 +910,72 @@ h1 {
 
 
 </main>
+
+
+<!-- =========================
+     CONTACT FOOTER
+========================= -->
+
+<footer class="contact-footer">
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-left"
+    alt=""
+  >
+
+
+  <img
+    src="lace.jpg"
+    class="footer-lace footer-lace-right"
+    alt=""
+  >
+
+
+  <span class="footer-center-shade"></span>
+
+
+  <div class="footer-content">
+
+    <h2>
+      Ravens Scoops
+    </h2>
+
+
+    <p>
+      Have a question? We'd love to hear from you.
+    </p>
+
+
+    <div class="contact-links">
+
+      <a
+        class="contact-link"
+        href="mailto:ravensscoops@gmail.com"
+      >
+        ✉ ravensscoops@gmail.com
+      </a>
+
+
+      <a
+        class="contact-link"
+        href="https://www.tiktok.com/@ravensscoops"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ♪ TikTok: @ravensscoops
+      </a>
+
+    </div>
+
+
+    <div class="footer-ornament">
+      ◆ ✦ ◆ ✦ ◆
+    </div>
+
+  </div>
+
+</footer>
 
 
 </body>
