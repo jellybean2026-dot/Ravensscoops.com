@@ -5,12 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>FAQ — Ravens Scoops</title>
-
-<meta
-  name="description"
-  content="Frequently asked questions about Ravens Scoops mystery bundles, turnaround times, shipping, returns, requests, and order issues."
->
+<title>About Us — Ravens Scoops</title>
 
 <style>
 
@@ -22,8 +17,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
   min-height: 100%;
+  width: 100%;
   background: #08030d;
   color: white;
   font-family: Arial, sans-serif;
@@ -38,9 +33,7 @@ nav {
   position: relative;
   width: 100%;
   text-align: center;
-
-  /* Smaller banner */
-  padding: 22px 10px;
+  padding: 30px 10px;
 
   background:
     radial-gradient(
@@ -61,11 +54,16 @@ nav {
   z-index: 10;
 }
 
+
+/* SILVER SHINE */
+
 nav::before {
   content: "";
   position: absolute;
+
   top: 0;
   left: 10%;
+
   width: 80%;
   height: 1px;
 
@@ -85,7 +83,9 @@ nav::before {
 
 .nav-lace {
   position: absolute;
+
   top: 0;
+
   width: 36%;
   height: 100%;
 
@@ -93,6 +93,7 @@ nav::before {
   object-position: left center;
 
   pointer-events: none;
+
   z-index: 1;
 
   filter:
@@ -100,8 +101,10 @@ nav::before {
     contrast(1.65);
 
   mix-blend-mode: multiply;
-  opacity: .88;
+
+  opacity: 0.88;
 }
+
 
 .lace-left {
   left: 0;
@@ -129,8 +132,10 @@ nav::before {
     );
 }
 
+
 .lace-right {
   right: 0;
+
   transform: scaleX(-1);
 
   -webkit-mask-image:
@@ -157,25 +162,28 @@ nav::before {
 }
 
 
-/* CENTER SHADE */
+/* CLEAN CENTER BEHIND LINKS */
 
 .nav-center-shade {
   position: absolute;
+
   top: 0;
   left: 22%;
+
   width: 56%;
   height: 100%;
 
   background:
     radial-gradient(
       ellipse at center,
-      rgba(31,7,41,.94) 0%,
-      rgba(31,7,41,.80) 48%,
-      rgba(31,7,41,.36) 72%,
+      rgba(31, 7, 41, .94) 0%,
+      rgba(31, 7, 41, .80) 48%,
+      rgba(31, 7, 41, .36) 72%,
       transparent 100%
     );
 
   pointer-events: none;
+
   z-index: 2;
 }
 
@@ -184,9 +192,11 @@ nav::before {
 
 nav a {
   position: relative;
+
   z-index: 5;
 
   color: #f5f1f7;
+
   text-decoration: none;
 
   font-family:
@@ -195,6 +205,9 @@ nav a {
     serif;
 
   font-size: 19px;
+
+  font-weight: normal;
+
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -207,8 +220,10 @@ nav a {
     text-shadow .25s ease;
 }
 
+
 nav a::after {
   content: "";
+
   position: absolute;
 
   left: 50%;
@@ -230,6 +245,7 @@ nav a::after {
   transition: width .25s ease;
 }
 
+
 nav a:hover {
   color: #ffffff;
 
@@ -238,12 +254,13 @@ nav a:hover {
     0 0 15px rgba(130,70,175,.6);
 }
 
+
 nav a:hover::after {
   width: 100%;
 }
 
 
-/* ORNAMENT */
+/* CENTER ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -267,222 +284,126 @@ nav a:hover::after {
 
 
 /* =========================
-   PAGE HEADER
+   MAIN PAGE
 ========================= */
 
-.page-header {
-  text-align: center;
-
-  max-width: 800px;
-
-  margin: auto;
-
-  padding: 55px 20px 30px;
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 48px auto 60px;
 }
 
-.page-header h1 {
-  margin: 0 0 12px;
+
+/* RAVEN IMAGE */
+
+.about-image {
+  display: block;
+
+  width: 100%;
+  max-width: 800px;
+
+  height: auto;
+
+  margin: 0 auto 40px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(215,218,228,.42);
+
+  box-shadow:
+    0 0 0 4px rgba(70,27,88,.14),
+    0 18px 45px rgba(0,0,0,.55),
+    0 0 28px rgba(120,75,150,.16);
+}
+
+
+/* TITLE */
+
+h1 {
+  text-align: center;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 44px;
+  font-size: 46px;
 
-  font-weight: normal;
-}
-
-.header-ornament {
-  color: #c9a8da;
-
-  font-size: 10px;
-
-  letter-spacing: 8px;
-
-  margin-bottom: 18px;
-}
-
-.page-header p {
-  margin: auto;
-
-  max-width: 650px;
-
-  color: #cbc3ce;
-
-  font-size: 16px;
-
-  line-height: 1.7;
+  margin: 0 0 12px;
 }
 
 
-/* =========================
-   FAQ
-========================= */
+.subtitle {
+  text-align: center;
 
-.faq-container {
-  width: 90%;
+  color: #c9c0d0;
 
-  max-width: 850px;
+  font-size: 18px;
 
-  margin: 0 auto 65px;
+  margin-bottom: 40px;
 }
 
-.faq-item {
+
+/* ABOUT BOX */
+
+.about-box {
   background:
     linear-gradient(
       145deg,
-      #100916,
-      #0c0611
+      #13091b,
+      #0d0612
     );
 
-  border: 1px solid #716478;
+  border: 1px solid #554560;
 
-  border-radius: 14px;
+  border-radius: 18px;
 
-  margin-bottom: 16px;
-
-  overflow: hidden;
+  padding: 40px;
 
   box-shadow:
-    0 10px 28px rgba(0,0,0,.30);
+    0 18px 45px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.025);
 }
 
-.faq-item summary {
-  position: relative;
 
-  padding: 20px 55px 20px 22px;
-
-  cursor: pointer;
-
-  list-style: none;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 19px;
-
-  color: #f5f1f7;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-item summary::after {
-  content: "+";
-
-  position: absolute;
-
-  right: 22px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  color: #d99582;
-
-  font-family: Arial, sans-serif;
-
-  font-size: 26px;
-}
-
-.faq-item[open] summary::after {
-  content: "−";
-}
-
-.faq-item[open] summary {
-  border-bottom:
-    1px solid rgba(113,100,120,.55);
-}
-
-.faq-answer {
-  padding: 18px 22px 22px;
-
+.about-box p {
   color: #d0c8d3;
 
-  font-size: 15px;
+  font-size: 18px;
 
-  line-height: 1.7;
-}
+  line-height: 1.8;
 
-.faq-answer p {
-  margin: 0;
-}
+  margin-top: 0;
 
-.faq-answer strong {
-  color: #ffffff;
-}
-
-.faq-answer a {
-  color: #d9a6e9;
-
-  text-decoration: none;
-}
-
-.faq-answer a:hover {
-  text-decoration: underline;
+  margin-bottom: 25px;
 }
 
 
-/* =========================
-   CONTACT AREA
-========================= */
+/* END MESSAGE */
 
-.need-help {
-  width: 90%;
-
-  max-width: 850px;
-
-  margin: -30px auto 60px;
-
-  padding: 25px;
-
+.raven-message {
   text-align: center;
-
-  background: #0d0712;
-
-  border:
-    1px solid rgba(113,100,120,.75);
-
-  border-radius: 14px;
-}
-
-.need-help h2 {
-  margin: 0 0 10px;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 25px;
+  font-size: 26px;
 
-  font-weight: normal;
-}
+  color: white;
 
-.need-help p {
-  margin: 0;
+  margin-top: 35px;
 
-  color: #cbc3ce;
+  margin-bottom: 5px;
 
-  line-height: 1.6;
-}
-
-.need-help a {
-  color: #d9a6e9;
-
-  text-decoration: none;
-}
-
-.need-help a:hover {
-  text-decoration: underline;
+  text-shadow:
+    0 0 10px rgba(150,95,185,.35);
 }
 
 
 /* =========================
-   FOOTER
+   CONTACT FOOTER
 ========================= */
 
 .contact-footer {
@@ -490,9 +411,9 @@ nav a:hover::after {
 
   width: 100%;
 
-  padding: 38px 20px;
-
   text-align: center;
+
+  padding: 22px 20px 18px;
 
   background:
     radial-gradient(
@@ -503,12 +424,17 @@ nav a:hover::after {
     );
 
   border-top: 1px solid #bfc3cc;
+  border-bottom: 1px solid rgba(225,228,235,.20);
 
   box-shadow:
-    0 -8px 25px rgba(0,0,0,.55);
+    0 -8px 25px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.06);
 
   overflow: hidden;
 }
+
+
+/* FOOTER LACE */
 
 .footer-lace {
   position: absolute;
@@ -531,18 +457,67 @@ nav a:hover::after {
 
   mix-blend-mode: multiply;
 
-  opacity: .88;
+  opacity: 0.88;
 }
+
 
 .footer-lace-left {
   left: 0;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
 }
+
 
 .footer-lace-right {
   right: 0;
 
   transform: scaleX(-1);
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black 0%,
+      black 35%,
+      rgba(0,0,0,.95) 50%,
+      rgba(0,0,0,.7) 65%,
+      rgba(0,0,0,.3) 82%,
+      transparent 100%
+    );
 }
+
+
+/* FOOTER CENTER SHADE */
 
 .footer-center-shade {
   position: absolute;
@@ -567,48 +542,50 @@ nav a:hover::after {
   z-index: 2;
 }
 
+
 .footer-content {
   position: relative;
 
   z-index: 5;
 }
 
-.footer-content h2 {
-  margin: 0 0 8px;
 
+.footer-content h2 {
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 27px;
+  font-size: 24px;
 
-  font-weight: normal;
-
-  color: #f5f1f7;
+  margin: 0 0 7px;
 }
 
-.footer-content p {
-  margin: 0 0 16px;
 
-  color: #d0c8d3;
+.footer-content p {
+  color: #d2c9d6;
+
+  margin: 0 0 12px;
 
   font-size: 14px;
 }
+
 
 .contact-links {
   display: flex;
 
   justify-content: center;
+
   align-items: center;
 
   flex-wrap: wrap;
 
-  gap: 12px 28px;
+  gap: 18px;
 }
 
+
 .contact-link {
-  color: #ffffff;
+  color: #f5f1f7;
 
   text-decoration: none;
 
@@ -617,24 +594,26 @@ nav a:hover::after {
     "Times New Roman",
     serif;
 
-  font-size: 16px;
-
-  text-shadow:
-    0 1px 4px rgba(0,0,0,.95);
+  font-size: 15px;
 }
+
 
 .contact-link:hover {
-  text-decoration: underline;
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px rgba(220,205,255,.85);
 }
 
-.footer-ornament {
-  margin-top: 18px;
 
+.footer-ornament {
   color: #e0e2e8;
 
-  font-size: 9px;
+  font-size: 8px;
 
-  letter-spacing: 8px;
+  letter-spacing: 7px;
+
+  margin-top: 12px;
 
   opacity: .85;
 }
@@ -647,10 +626,9 @@ nav a:hover::after {
 @media screen and (max-width: 600px) {
 
   nav {
-
-    /* Smaller mobile banner */
-    padding: 16px 3px;
+    padding: 20px 3px;
   }
+
 
   nav a {
     font-size: 12px;
@@ -660,17 +638,24 @@ nav a:hover::after {
     letter-spacing: 0;
   }
 
+
   .nav-lace {
     width: 30%;
 
-    opacity: .82;
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: 0.82;
   }
+
 
   .nav-center-shade {
     left: 15%;
 
     width: 70%;
   }
+
 
   .nav-ornament {
     font-size: 7px;
@@ -680,57 +665,65 @@ nav a:hover::after {
     bottom: 1px;
   }
 
-  .page-header {
-    padding: 40px 18px 25px;
-  }
 
-  .page-header h1 {
-    font-size: 34px;
-  }
-
-  .page-header p {
-    font-size: 14px;
-  }
-
-  .faq-container {
+  main {
     width: 92%;
 
-    margin-bottom: 55px;
+    margin-top: 35px;
   }
 
-  .faq-item summary {
-    padding: 17px 48px 17px 17px;
 
+  .about-image {
+    margin-bottom: 30px;
+
+    border-radius: 12px;
+  }
+
+
+  h1 {
+    font-size: 38px;
+  }
+
+
+  .subtitle {
     font-size: 16px;
+
+    margin-bottom: 30px;
   }
 
-  .faq-item summary::after {
-    right: 17px;
+
+  .about-box {
+    padding: 25px 20px;
   }
 
-  .faq-answer {
-    padding: 16px 17px 19px;
 
-    font-size: 14px;
+  .about-box p {
+    font-size: 16px;
+
+    line-height: 1.7;
   }
 
-  .need-help {
-    width: 92%;
 
-    margin-top: -25px;
+  .raven-message {
+    font-size: 23px;
   }
 
-  .need-help h2 {
-    font-size: 22px;
-  }
 
   .contact-footer {
-    padding: 32px 15px;
+    padding: 18px 15px 15px;
   }
+
 
   .footer-lace {
     width: 30%;
+
+    filter:
+      grayscale(1)
+      contrast(1.6);
+
+    opacity: 0.82;
   }
+
 
   .footer-center-shade {
     left: 15%;
@@ -738,18 +731,35 @@ nav a:hover::after {
     width: 70%;
   }
 
+
   .footer-content h2 {
-    font-size: 24px;
+    font-size: 21px;
   }
+
+
+  .footer-content p {
+    font-size: 13px;
+  }
+
 
   .contact-links {
     flex-direction: column;
 
-    gap: 10px;
+    gap: 8px;
   }
+
 
   .contact-link {
     font-size: 14px;
+  }
+
+
+  .footer-ornament {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    margin-top: 9px;
   }
 
 }
@@ -774,26 +784,45 @@ nav a:hover::after {
     alt=""
   >
 
+
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
 
+
   <span class="nav-center-shade"></span>
 
 
-  <a href="index.html">Home</a>
+  <a href="index.html">
+    Home
+  </a>
 
-  <a href="boxes.html">Boxes</a>
 
-  <a href="about.html">About Us</a>
+  <a href="boxes.html">
+    Boxes
+  </a>
 
-  <a href="faq.html">FAQ</a>
 
-  <a href="contact.html">Contact</a>
+  <a href="about.html">
+    About Us
+  </a>
 
-  <a href="checkout.html">Checkout</a>
+
+  <a href="faq.html">
+    FAQ
+  </a>
+
+
+  <a href="contact.html">
+    Contact
+  </a>
+
+
+  <a href="checkout.html">
+    Checkout
+  </a>
 
 
   <span class="nav-ornament">
@@ -804,237 +833,83 @@ nav a:hover::after {
 
 
 <!-- =========================
-     PAGE HEADER
+     ABOUT US
 ========================= -->
 
-<section class="page-header">
+<main>
+
+
+  <img
+    src="Screenshot%202026-09-25%20232257.png"
+    alt="Raven perched in a gothic graveyard"
+    class="about-image"
+  >
+
 
   <h1>
-    Frequently Asked Questions
+    About Us
   </h1>
 
-  <div class="header-ornament">
-    ◆ ✦ ◆ ✦ ◆
+
+  <div class="subtitle">
+    A little witchy. A little weird. Always a mystery.
   </div>
 
-  <p>
-    Have a question about ordering from Ravens Scoops?
-    Here you'll find information about our turnaround time,
-    shipping, mystery bundles, returns, and more.
-  </p>
 
-</section>
+  <div class="about-box">
 
 
-<!-- =========================
-     FAQ
-========================= -->
+    <p>
 
-<section class="faq-container">
+      Ravens Scoops started with the three of us—a mother and two
+      daughters who have always shared a love for anything macabre,
+      paranormal, metaphysical, and true crime. We love wandering
+      through metaphysical shops, finding weird and unusual things,
+      and, of course, we all love a good surprise.
+
+    </p>
 
 
-  <!-- TURNAROUND -->
+    <p>
 
-  <details class="faq-item">
+      That love for the strange, mysterious, and unexpected is really
+      where Ravens Scoops came from. We wanted to create something
+      together that combined all the things we enjoy—from crystals
+      and witchy finds to spooky, macabre, paranormal, true crime,
+      and sometimes just cute or completely random things that make
+      us smile.
 
-    <summary>
-      What is your turnaround time?
-    </summary>
+    </p>
 
-    <div class="faq-answer">
 
-      <p>
-        Our turnaround time is typically
-        <strong>1–3 weeks</strong> because each Ravens Scoops
-        order is individually hand-picked and curated.
-        We strive to have orders prepared and shipped within
-        <strong>7 days of ordering</strong>, but please allow
-        up to 3 weeks for your order to be prepared.
-      </p>
+    <p>
 
+      And because we love surprises ourselves, mystery is a huge part
+      of what we do. With our mystery ball bundles, you choose how many
+      picks you want and let the raven decide what you get. Half the
+      fun is not knowing what's coming until you open it.
+
+    </p>
+
+
+    <p>
+
+      Ravens Scoops is something we're building together as a family,
+      and we're excited to share a little bit of our weirdness with
+      everyone who loves these things as much as we do.
+
+    </p>
+
+
+    <div class="raven-message">
+      Let the raven choose. 🖤
     </div>
 
-  </details>
 
+  </div>
 
-  <!-- SHIPPING COST -->
 
-  <details class="faq-item">
-
-    <summary>
-      How much is shipping?
-    </summary>
-
-    <div class="faq-answer">
-
-      <p>
-        Shipping costs are based on your location and will
-        be calculated during checkout.
-      </p>
-
-    </div>
-
-  </details>
-
-
-  <!-- SHIPPING AREA -->
-
-  <details class="faq-item">
-
-    <summary>
-      Where do you ship?
-    </summary>
-
-    <div class="faq-answer">
-
-      <p>
-        Ravens Scoops currently ships
-        <strong>within the United States only.</strong>
-        At this time, we do not offer international shipping.
-      </p>
-
-    </div>
-
-  </details>
-
-
-  <!-- RETURNS -->
-
-  <details class="faq-item">
-
-    <summary>
-      Do you accept returns or exchanges?
-    </summary>
-
-    <div class="faq-answer">
-
-      <p>
-        Due to the nature of our mystery bundles, we do not
-        accept returns or exchanges because of an item you
-        do not like or would not have personally chosen.
-        The mystery is part of the Ravens Scoops experience,
-        and the items inside are selected at random.
-      </p>
-
-    </div>
-
-  </details>
-
-
-  <!-- REQUESTS -->
-
-  <details class="faq-item">
-
-    <summary>
-      Can I request specific items?
-    </summary>
-
-    <div class="faq-answer">
-
-      <p>
-        No. We are unable to accommodate requests for specific
-        items. Each bundle is individually hand-picked and
-        curated while still keeping the contents a mystery.
-      </p>
-
-    </div>
-
-  </details>
-
-
-  <!-- DUPLICATES -->
-
-  <details class="faq-item">
-
-    <summary>
-      Will every mystery bundle be different?
-    </summary>
-
-    <div class="faq-answer">
-
-      <p>
-        We strive to make every mystery bundle different and
-        provide a unique experience with each order. However,
-        because our inventory changes and items are selected
-        from what is available, we
-        <strong>cannot guarantee that you will never receive a repeat item</strong>,
-        especially across multiple orders.
-      </p>
-
-    </div>
-
-  </details>
-
-
-  <!-- DAMAGED / MISSING -->
-
-  <details class="faq-item">
-
-    <summary>
-      What if an item arrives damaged or is missing from my order?
-    </summary>
-
-    <div class="faq-answer">
-
-      <p>
-        If an item arrives damaged or you believe something is
-        missing from your order, please contact Ravens Scoops at
-        <a href="mailto:ravensscoops@gmail.com">
-          ravensscoops@gmail.com
-        </a>.
-        Please include your order information and details about
-        the issue so we can look into it and help.
-      </p>
-
-    </div>
-
-  </details>
-
-
-  <!-- LOST PACKAGE -->
-
-  <details class="faq-item">
-
-    <summary>
-      What if my package is lost or delayed during shipping?
-    </summary>
-
-    <div class="faq-answer">
-
-      <p>
-        Once your order has shipped, Ravens Scoops has access
-        to the same carrier tracking information available to
-        you. If your tracking shows a shipping delay, delivery
-        issue, or a package that may be lost, please contact
-        the shipping carrier directly for assistance.
-      </p>
-
-    </div>
-
-  </details>
-
-
-</section>
-
-
-<!-- =========================
-     MORE QUESTIONS
-========================= -->
-
-<section class="need-help">
-
-  <h2>
-    Still Have a Question?
-  </h2>
-
-  <p>
-    We're happy to help. Contact Ravens Scoops at
-    <a href="mailto:ravensscoops@gmail.com">
-      ravensscoops@gmail.com
-    </a>.
-  </p>
-
-</section>
+</main>
 
 
 <!-- =========================
@@ -1049,11 +924,13 @@ nav a:hover::after {
     alt=""
   >
 
+
   <img
     src="lace.jpg"
     class="footer-lace footer-lace-right"
     alt=""
   >
+
 
   <span class="footer-center-shade"></span>
 
@@ -1063,6 +940,7 @@ nav a:hover::after {
     <h2>
       Ravens Scoops
     </h2>
+
 
     <p>
       Have a question? We'd love to hear from you.
