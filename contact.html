@@ -202,7 +202,7 @@ nav::before {
     "Times New Roman",
     serif;
 
-  font-size: 19px;
+  font-size: 22px;
   font-weight: normal;
   letter-spacing: 1px;
 
@@ -398,12 +398,29 @@ nav::before {
 }
 
 
-/* CONTACT BOX */
+/* ==================================================
+   CONTACT / SOCIAL BOXES
+================================================== */
 
-.contact-box {
+.contact-sections {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 22px;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+}
+
+.contact-box,
+.social-box {
   position: relative;
 
-  padding: 38px 30px;
+  width: 100%;
+
+  padding: 32px 25px;
 
   border: 1px solid #716478;
 
@@ -419,15 +436,35 @@ nav::before {
   box-shadow:
     0 15px 40px rgba(0,0,0,.55),
     0 0 30px rgba(105,55,135,.15);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.box-heading {
+  margin: 0 0 20px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 18px;
+
+  font-weight: normal;
+
+  letter-spacing: 2px;
+
+  color: #c9b6d5;
 }
 
 .contact-item {
-  padding: 22px 10px;
-}
-
-.contact-item + .contact-item {
-  border-top:
-    1px solid rgba(190,180,198,.25);
+  padding: 5px 10px 10px;
 }
 
 .contact-icon {
@@ -457,6 +494,8 @@ nav::before {
   color: #bfb5c5;
 
   font-size: 14px;
+
+  line-height: 1.5;
 }
 
 
@@ -768,7 +807,6 @@ nav::before {
 
 /* ==================================================
    MOBILE
-   DESKTOP ABOVE REMAINS UNCHANGED
 ================================================== */
 
 @media screen and (max-width:700px) {
@@ -778,7 +816,7 @@ nav::before {
   }
 
 
-  /* MOBILE NAV ALIGNMENT + MORE SPACING */
+  /* MOBILE NAV */
 
   .nav-links {
     align-items: center;
@@ -793,9 +831,8 @@ nav::before {
     height: 22px;
     line-height: 22px;
 
-    font-size: 12px;
+    font-size: 15px;
 
-    /* Increased from 5px to 7px */
     margin: 0 7px;
 
     letter-spacing: 0;
@@ -869,12 +906,27 @@ nav::before {
     font-size: 16px;
   }
 
-  .contact-box {
-    padding: 20px 15px;
+  .contact-sections {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    max-width: 100%;
+  }
+
+  .contact-box,
+  .social-box {
+    padding: 25px 15px;
+  }
+
+  .box-heading {
+    font-size: 17px;
+
+    margin-bottom: 18px;
   }
 
   .contact-item {
-    padding: 22px 5px;
+    padding: 5px 5px 10px;
   }
 
   .contact-item h2 {
@@ -900,9 +952,6 @@ nav::before {
 
     gap: 25px;
   }
-
-
-  /* SMALLER PAYMENT IMAGE ON MOBILE ONLY */
 
   .payment-image-wrap {
     width: 175px;
@@ -933,16 +982,11 @@ nav::before {
 
 @media screen and (max-width:450px) {
 
-  /*
-    Keep a little more room between the navigation
-    words even on small phones.
-  */
-
   .nav-link,
   .shop-button {
     margin: 0 5px;
 
-    font-size: 11px;
+    font-size: 14px;
   }
 
 
@@ -963,9 +1007,6 @@ nav::before {
   .footer-payment h3 {
     text-align: left;
   }
-
-
-  /* KEEP PAYMENT IMAGE SMALL ON SMALL PHONES */
 
   .payment-image-wrap {
     width: 175px;
@@ -1115,60 +1156,78 @@ nav::before {
   </p>
 
 
-  <div class="contact-box">
+  <div class="contact-sections">
 
 
-    <!-- EMAIL -->
+    <!-- CONTACT BOX -->
 
-    <div class="contact-item">
+    <div class="contact-box">
 
-      <div class="contact-icon">
-        ✉
-      </div>
-
-      <h2>
-        Email
+      <h2 class="box-heading">
+        CONTACT
       </h2>
 
-      <p>
-        Questions, orders, or anything else — send us a message.
-      </p>
 
-      <a
-        class="contact-link"
-        href="mailto:ravensscoops@gmail.com"
-      >
-        ravensscoops@gmail.com
-      </a>
+      <div class="contact-item">
+
+        <div class="contact-icon">
+          ✉
+        </div>
+
+        <h2>
+          Email
+        </h2>
+
+        <p>
+          Questions, orders, or anything else — send us a message.
+        </p>
+
+        <a
+          class="contact-link"
+          href="mailto:ravensscoops@gmail.com"
+        >
+          ravensscoops@gmail.com
+        </a>
+
+      </div>
 
     </div>
 
 
-    <!-- TIKTOK -->
+    <!-- SOCIALS BOX -->
 
-    <div class="contact-item">
+    <div class="social-box">
 
-      <div class="contact-icon">
-        ♪
-      </div>
-
-      <h2>
-        TikTok
+      <h2 class="box-heading">
+        SOCIALS
       </h2>
 
-      <p>
-        Follow the raven for new scoops, product reveals,
-        behind-the-scenes fun, and new arrivals.
-      </p>
 
-      <a
-        class="contact-link"
-        href="https://www.tiktok.com/@ravensscoops"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        @ravensscoops
-      </a>
+      <div class="contact-item">
+
+        <div class="contact-icon">
+          ♪
+        </div>
+
+        <h2>
+          TikTok
+        </h2>
+
+        <p>
+          Follow the raven for new scoops, product reveals,
+          behind-the-scenes fun, and new arrivals.
+        </p>
+
+        <a
+          class="contact-link"
+          href="https://www.tiktok.com/@ravensscoops"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @ravensscoops
+        </a>
+
+      </div>
 
     </div>
 
