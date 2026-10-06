@@ -31,9 +31,9 @@ body {
 }
 
 
-/* =========================
+/* ==================================================
    NAVIGATION
-========================= */
+================================================== */
 
 nav {
   position: relative;
@@ -49,15 +49,15 @@ nav {
       #291033 100%
     );
 
-  border-top: 1px solid rgba(225, 228, 235, 0.20);
+  border-top: 1px solid rgba(225,228,235,.20);
   border-bottom: 1px solid #bfc3cc;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 8px 25px rgba(0,0,0,.7),
+    inset 0 1px 0 rgba(255,255,255,.06);
 
-  overflow: hidden;
-  z-index: 10;
+  overflow: visible;
+  z-index: 20;
 }
 
 nav::before {
@@ -168,9 +168,9 @@ nav::before {
   background:
     radial-gradient(
       ellipse at center,
-      rgba(31, 7, 41, .94) 0%,
-      rgba(31, 7, 41, .80) 48%,
-      rgba(31, 7, 41, .36) 72%,
+      rgba(31,7,41,.94) 0%,
+      rgba(31,7,41,.80) 48%,
+      rgba(31,7,41,.36) 72%,
       transparent 100%
     );
 
@@ -181,9 +181,18 @@ nav::before {
 
 /* NAV LINKS */
 
-nav a {
+.nav-links {
   position: relative;
   z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link,
+.shop-button {
+  position: relative;
 
   color: #f5f1f7;
   text-decoration: none;
@@ -193,7 +202,7 @@ nav a {
     "Times New Roman",
     serif;
 
-  font-size: 19px;
+  font-size: 22px;
   font-weight: normal;
   letter-spacing: 1px;
 
@@ -202,34 +211,15 @@ nav a {
   text-shadow:
     0 1px 4px rgba(0,0,0,.95);
 
-  transition:
-    color .25s ease,
-    text-shadow .25s ease;
+  background: none;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-
-  left: 50%;
-  bottom: -8px;
-
-  width: 0;
-  height: 1px;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      #ffffff,
-      transparent
-    );
-
-  transform: translateX(-50%);
-  transition: width .25s ease;
-}
-
-nav a:hover {
+.nav-link:hover,
+.shop-button:hover {
   color: #ffffff;
 
   text-shadow:
@@ -237,12 +227,93 @@ nav a:hover {
     0 0 15px rgba(130,70,175,.6);
 }
 
-nav a:hover::after {
+
+/* ==================================================
+   SHOP DROPDOWN
+================================================== */
+
+.shop-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.shop-menu {
+  display: none;
+
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  min-width: 190px;
+
+  padding-top: 12px;
+
+  background: transparent;
+
+  z-index: 100;
+}
+
+.shop-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
   width: 100%;
+  height: 14px;
+}
+
+.shop-dropdown:hover .shop-menu,
+.shop-dropdown:focus-within .shop-menu {
+  display: block;
+}
+
+.shop-menu a {
+  display: block;
+
+  padding: 13px 18px;
+
+  color: #eee8f1;
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  background: #13091b;
+
+  border-left: 1px solid #6c5479;
+  border-right: 1px solid #6c5479;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  white-space: nowrap;
+}
+
+.shop-menu a:first-child {
+  border-top: 1px solid #6c5479;
+  border-radius: 8px 8px 0 0;
+}
+
+.shop-menu a:last-child {
+  border-bottom: 1px solid #6c5479;
+  border-radius: 0 0 8px 8px;
+}
+
+.shop-menu a:hover {
+  background: #411456;
+  color: white;
 }
 
 
-/* CENTER ORNAMENT */
+/* NAV ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -258,15 +329,16 @@ nav a:hover::after {
   letter-spacing: 8px;
 
   z-index: 6;
+
   opacity: .85;
 
   white-space: nowrap;
 }
 
 
-/* =========================
+/* ==================================================
    CHECKOUT
-========================= */
+================================================== */
 
 main {
   flex: 1;
@@ -428,9 +500,9 @@ h1 {
 }
 
 
-/* =========================
+/* ==================================================
    SUMMARY
-========================= */
+================================================== */
 
 .summary-row {
   display: flex;
@@ -534,63 +606,53 @@ h1 {
 }
 
 
-/* =========================
-   CONTACT FOOTER
-========================= */
+/* ==================================================
+   FOOTER
+================================================== */
 
-.contact-footer {
+.site-footer {
   position: relative;
-
-  flex-shrink: 0;
-
   width: 100%;
-
-  text-align: center;
-
-  padding: 22px 20px 18px;
 
   background:
     radial-gradient(
-      circle at center,
-      #55206f 0%,
-      #411456 48%,
-      #291033 100%
+      ellipse at top center,
+      #351243 0%,
+      #1c0925 48%,
+      #0d0511 100%
     );
 
-  border-top: 1px solid #bfc3cc;
-
-  border-bottom:
-    1px solid rgba(225,228,235,.20);
+  border-top: 1px solid #91809b;
 
   box-shadow:
-    0 -8px 25px rgba(0,0,0,.55),
-    inset 0 1px 0 rgba(255,255,255,.06);
+    0 -8px 25px rgba(0,0,0,.5);
 
   overflow: hidden;
+
+  flex-shrink: 0;
 }
 
 .footer-lace {
   position: absolute;
-
   top: 0;
 
-  width: 36%;
+  width: 26%;
   height: 100%;
 
   object-fit: cover;
-  object-position: left center;
+  object-position: left top;
 
   pointer-events: none;
 
-  z-index: 1;
-
   filter:
     grayscale(1)
-    contrast(1.65);
+    contrast(1.7);
 
   mix-blend-mode: multiply;
 
-  opacity: .88;
+  opacity: .28;
+
+  z-index: 1;
 }
 
 .footer-lace-left {
@@ -599,23 +661,17 @@ h1 {
   -webkit-mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 
   mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 }
 
@@ -627,151 +683,254 @@ h1 {
   -webkit-mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 
   mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 }
 
-.footer-center-shade {
-  position: absolute;
-
-  top: 0;
-  left: 22%;
-
-  width: 56%;
-  height: 100%;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(31,7,41,.94) 0%,
-      rgba(31,7,41,.80) 48%,
-      rgba(31,7,41,.36) 72%,
-      transparent 100%
-    );
-
-  pointer-events: none;
-
-  z-index: 2;
-}
-
-.footer-content {
+.footer-inner {
   position: relative;
 
-  z-index: 5;
+  z-index: 3;
+
+  width: 92%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 20px 0 16px;
+
+  display: grid;
+
+  grid-template-columns:
+    .8fr 1.3fr 1.2fr;
+
+  gap: 55px;
+
+  align-items: start;
 }
 
-.footer-content h2 {
+.footer-column h3 {
+  margin: 0 0 10px;
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 24px;
+  font-size: 16px;
 
-  margin: 0 0 7px;
+  font-weight: normal;
+
+  color: #ffffff;
+
+  letter-spacing: 1px;
 }
 
-.footer-content p {
-  color: #d2c9d6;
+.footer-column ul {
+  list-style: none;
 
-  margin: 0 0 12px;
-
-  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
 
-.contact-links {
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 18px;
+.footer-column li {
+  margin-bottom: 6px;
 }
 
-.contact-link {
-  color: #f5f1f7;
+.footer-column a {
+  color: #c9c0cd;
 
   text-decoration: none;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-size: 13px;
 
-  font-size: 15px;
+  transition:
+    color .2s ease,
+    text-shadow .2s ease;
 }
 
-.contact-link:hover {
+.footer-column a:hover {
   color: #ffffff;
 
   text-shadow:
-    0 0 8px rgba(220,205,255,.85);
+    0 0 8px rgba(200,170,220,.55);
+}
+
+
+/* PAYMENT METHODS */
+
+.footer-payment {
+  text-align: center;
+}
+
+.footer-payment h3 {
+  text-align: center;
+}
+
+.payment-image-wrap {
+  width: 245px;
+  height: 82px;
+
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.payment-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 82px;
+
+  object-fit: contain;
+
+  background: transparent;
+}
+
+
+/* FOOTER CONTACT */
+
+.footer-contact p {
+  margin: 0 0 7px;
+
+  color: #c9c0cd;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+.footer-contact a {
+  overflow-wrap: anywhere;
+}
+
+
+/* COPYRIGHT */
+
+.footer-bottom {
+  position: relative;
+
+  z-index: 3;
+
+  padding: 8px 15px 10px;
+
+  text-align: center;
+
+  border-top:
+    1px solid rgba(210,200,215,.14);
+
+  background:
+    rgba(4,1,6,.38);
+
+  color: #a99eae;
+
+  font-size: 10px;
 }
 
 .footer-ornament {
-  color: #e0e2e8;
+  margin-bottom: 3px;
 
-  font-size: 8px;
+  color: #d9d3dd;
 
-  letter-spacing: 7px;
+  font-size: 6px;
 
-  margin-top: 12px;
+  letter-spacing: 5px;
 
-  opacity: .85;
+  opacity: .75;
 }
 
 
-/* =========================
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width:700px) {
 
   nav {
     padding: 20px 3px;
   }
 
-  nav a {
-    font-size: 12px;
 
-    margin: 0 3px;
+  /* MOBILE NAV */
 
-    letter-spacing: 0;
+  .nav-links {
+    align-items: center;
   }
 
+  .nav-link,
+  .shop-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 22px;
+    line-height: 22px;
+
+    font-size: 15px;
+
+    margin: 0 7px;
+
+    letter-spacing: 0;
+
+    white-space: nowrap;
+  }
+
+  .shop-dropdown {
+    display: flex;
+    align-items: center;
+
+    height: 22px;
+  }
+
+
+  /* MOBILE SHOP DROPDOWN */
+
+  .shop-menu {
+    min-width: 160px;
+
+    padding-top: 10px;
+  }
+
+  .shop-menu a {
+    display: block;
+
+    height: auto;
+    line-height: normal;
+
+    font-size: 13px;
+
+    padding: 12px 14px;
+  }
+
+
+  /* MOBILE SHORTER LACE */
+
   .nav-lace {
-    width: 30%;
-
-    filter:
-      grayscale(1)
-      contrast(1.6);
-
-    opacity: .82;
+    width: 20%;
   }
 
   .nav-center-shade {
-    left: 15%;
-
-    width: 70%;
+    left: 6%;
+    width: 88%;
   }
 
   .nav-ornament {
@@ -781,6 +940,9 @@ h1 {
 
     bottom: 1px;
   }
+
+
+  /* CHECKOUT */
 
   main {
     width: 92%;
@@ -821,50 +983,85 @@ h1 {
 
   /* MOBILE FOOTER */
 
-  .contact-footer {
-    padding: 18px 15px 15px;
+  .footer-inner {
+    width: 88%;
+
+    padding: 22px 0 18px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 25px;
+  }
+
+  .payment-image-wrap {
+    width: 175px;
+    height: 62px;
+  }
+
+  .payment-image {
+    max-height: 62px;
+  }
+
+  .footer-contact {
+    grid-column:
+      1 / -1;
   }
 
   .footer-lace {
-    width: 30%;
+    width: 45%;
 
-    filter:
-      grayscale(1)
-      contrast(1.6);
-
-    opacity: .82;
+    opacity: .20;
   }
 
-  .footer-center-shade {
-    left: 15%;
+}
 
-    width: 70%;
-  }
 
-  .footer-content h2 {
-    font-size: 21px;
-  }
+/* ==================================================
+   SMALL PHONES
+================================================== */
 
-  .footer-content p {
-    font-size: 13px;
-  }
+@media screen and (max-width:450px) {
 
-  .contact-links {
-    flex-direction: column;
+  .nav-link,
+  .shop-button {
+    margin: 0 5px;
 
-    gap: 8px;
-  }
-
-  .contact-link {
     font-size: 14px;
   }
 
-  .footer-ornament {
-    font-size: 7px;
 
-    letter-spacing: 4px;
+  /* FOOTER */
 
-    margin-top: 9px;
+  .footer-inner {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 22px 0 18px;
+  }
+
+  .footer-payment {
+    text-align: left;
+  }
+
+  .footer-payment h3 {
+    text-align: left;
+  }
+
+  .payment-image-wrap {
+    width: 175px;
+    height: 62px;
+
+    margin: 0;
+  }
+
+  .payment-image {
+    max-height: 62px;
+  }
+
+  .footer-contact {
+    grid-column: auto;
   }
 
 }
@@ -877,9 +1074,9 @@ h1 {
 <body>
 
 
-<!-- =========================
+<!-- ==================================================
      NAVIGATION
-========================= -->
+================================================== -->
 
 <nav>
 
@@ -898,17 +1095,73 @@ h1 {
   <span class="nav-center-shade"></span>
 
 
-  <a href="index.html">Home</a>
+  <div class="nav-links">
 
-  <a href="boxes.html">Boxes</a>
+    <a
+      href="index.html"
+      class="nav-link"
+    >
+      Home
+    </a>
 
-  <a href="about.html">About Us</a>
 
-  <a href="faq.html">FAQ</a>
+    <div class="shop-dropdown">
 
-  <a href="contact.html">Contact</a>
+      <button
+        class="shop-button"
+        type="button"
+      >
+        Shop ▾
+      </button>
 
-  <a href="checkout.html">Checkout</a>
+
+      <div class="shop-menu">
+
+        <a href="boxes.html">
+          All Products
+        </a>
+
+        <a href="mystery-boxes.html">
+          Mystery Boxes
+        </a>
+
+        <a href="candles.html">
+          Candles
+        </a>
+
+        <a href="books.html">
+          Books
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <a
+      href="faq.html"
+      class="nav-link"
+    >
+      FAQ
+    </a>
+
+
+    <a
+      href="contact.html"
+      class="nav-link"
+    >
+      Contact
+    </a>
+
+
+    <a
+      href="checkout.html"
+      class="nav-link"
+    >
+      Checkout
+    </a>
+
+  </div>
 
 
   <span class="nav-ornament">
@@ -918,9 +1171,9 @@ h1 {
 </nav>
 
 
-<!-- =========================
+<!-- ==================================================
      CHECKOUT
-========================= -->
+================================================== -->
 
 <main>
 
@@ -1015,11 +1268,11 @@ h1 {
 </main>
 
 
-<!-- =========================
-     CONTACT FOOTER
-========================= -->
+<!-- ==================================================
+     FOOTER
+================================================== -->
 
-<footer class="contact-footer">
+<footer class="site-footer">
 
   <img
     src="lace.jpg"
@@ -1033,54 +1286,115 @@ h1 {
     alt=""
   >
 
-  <span class="footer-center-shade"></span>
+
+  <div class="footer-inner">
 
 
-  <div class="footer-content">
+    <!-- QUICK LINKS -->
 
-    <h2>
-      Ravens Scoops
-    </h2>
+    <section class="footer-column">
 
-    <p>
-      Have a question? We'd love to hear from you.
-    </p>
+      <h3>
+        QUICK LINKS
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="about.html">
+            About Us
+          </a>
+        </li>
+
+        <li>
+          <a href="faq.html">
+            FAQ
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
 
 
-    <div class="contact-links">
+    <!-- PAYMENT METHODS -->
 
-      <a
-        class="contact-link"
-        href="mailto:ravensscoops@gmail.com"
-      >
-        ✉ ravensscoops@gmail.com
-      </a>
+    <section class="footer-column footer-payment">
+
+      <h3>
+        PAYMENT METHODS ACCEPTED
+      </h3>
+
+      <div class="payment-image-wrap">
+
+        <img
+          src="final%20white.png"
+          alt="Square payments accepted: Visa, Mastercard, Discover and American Express"
+          class="payment-image"
+        >
+
+      </div>
+
+    </section>
 
 
-      <a
-        class="contact-link"
-        href="https://www.tiktok.com/@ravensscoops"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ♪ TikTok: @ravensscoops
-      </a>
+    <!-- CONTACT -->
 
-    </div>
+    <section class="footer-column footer-contact">
 
+      <h3>
+        CONTACT
+      </h3>
+
+      <p>
+        Have a question? We'd love to hear from you.
+      </p>
+
+      <p>
+        <a href="mailto:ravensscoops@gmail.com">
+          ✉ ravensscoops@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <a
+          href="https://www.tiktok.com/@ravensscoops"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ♪ TikTok: @ravensscoops
+        </a>
+      </p>
+
+    </section>
+
+
+  </div>
+
+
+  <div class="footer-bottom">
 
     <div class="footer-ornament">
       ◆ ✦ ◆ ✦ ◆
     </div>
 
+    © 2026 Ravens Scoops. All Rights Reserved.
+
   </div>
+
 
 </footer>
 
 
-<!-- =========================
+<!-- ==================================================
      CART JAVASCRIPT
-========================= -->
+================================================== -->
 
 <script>
 
