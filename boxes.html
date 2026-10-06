@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Boxes — Ravens Scoops</title>
+<title>Shop — Ravens Scoops</title>
 
 <style>
 
@@ -17,7 +17,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
   min-height: 100%;
   background: #08030d;
   color: white;
@@ -49,15 +48,15 @@ nav {
       #291033 100%
     );
 
-  border-top: 1px solid rgba(225, 228, 235, 0.20);
+  border-top: 1px solid rgba(225,228,235,.20);
   border-bottom: 1px solid #bfc3cc;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 8px 25px rgba(0,0,0,.7),
+    inset 0 1px 0 rgba(255,255,255,.06);
 
-  overflow: hidden;
-  z-index: 10;
+  overflow: visible;
+  z-index: 20;
 }
 
 nav::before {
@@ -79,18 +78,13 @@ nav::before {
   z-index: 3;
 }
 
-
-/* BLACK LACE */
-
 .nav-lace {
   position: absolute;
   top: 0;
   width: 36%;
   height: 100%;
-
   object-fit: cover;
   object-position: left center;
-
   pointer-events: none;
   z-index: 1;
 
@@ -155,9 +149,6 @@ nav::before {
     );
 }
 
-
-/* CENTER SHADE */
-
 .nav-center-shade {
   position: absolute;
   top: 0;
@@ -178,13 +169,18 @@ nav::before {
   z-index: 2;
 }
 
-
-/* NAV LINKS */
-
-nav a {
+.nav-links {
   position: relative;
   z-index: 5;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link,
+.shop-button {
+  position: relative;
   color: #f5f1f7;
   text-decoration: none;
 
@@ -194,6 +190,7 @@ nav a {
     serif;
 
   font-size: 19px;
+  font-weight: normal;
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -201,34 +198,14 @@ nav a {
   text-shadow:
     0 1px 4px rgba(0,0,0,.95);
 
-  transition:
-    color .25s ease,
-    text-shadow .25s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-
-  left: 50%;
-  bottom: -8px;
-
-  width: 0;
-  height: 1px;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      #ffffff,
-      transparent
-    );
-
-  transform: translateX(-50%);
-  transition: width .25s ease;
-}
-
-nav a:hover {
+.nav-link:hover,
+.shop-button:hover {
   color: #ffffff;
 
   text-shadow:
@@ -236,486 +213,295 @@ nav a:hover {
     0 0 15px rgba(130,70,175,.6);
 }
 
-nav a:hover::after {
-  width: 100%;
+
+/* SHOP DROPDOWN */
+
+.shop-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.shop-menu {
+  display: none;
+
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 190px;
+
+  background: #13091b;
+
+  border: 1px solid #6c5479;
+  border-radius: 8px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.75);
+
+  overflow: hidden;
+  z-index: 100;
+}
+
+.shop-dropdown:hover .shop-menu,
+.shop-dropdown:focus-within .shop-menu {
+  display: block;
+}
+
+.shop-menu a {
+  display: block;
+
+  padding: 13px 18px;
+
+  color: #eee8f1;
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+  white-space: nowrap;
+}
+
+.shop-menu a:last-child {
+  border-bottom: none;
+}
+
+.shop-menu a:hover {
+  background: #411456;
+  color: white;
 }
 
 .nav-ornament {
   position: absolute;
-
   left: 50%;
   bottom: 2px;
-
   transform: translateX(-50%);
 
   color: #e0e2e8;
-
   font-size: 9px;
   letter-spacing: 8px;
 
   z-index: 6;
   opacity: .85;
-
-  white-space: nowrap;
 }
 
 
 /* =========================
-   MAIN CONTENT
+   SHOP PAGE
 ========================= */
 
 main {
   flex: 1;
-  width: 100%;
+
+  width: 92%;
+  max-width: 1150px;
+
+  margin: 55px auto 75px;
 }
 
-
-/* =========================
-   PAGE TITLE
-========================= */
-
-.page-title {
+.shop-heading {
   text-align: center;
-  padding: 45px 15px 35px;
+  margin-bottom: 50px;
 }
 
-.page-title h1 {
+.shop-heading h1 {
+  margin: 0 0 12px;
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 42px;
-
-  margin: 0 0 10px;
+  font-size: 48px;
+  font-weight: normal;
 }
 
-.page-title p {
+.shop-heading p {
+  margin: 0 auto;
+
+  max-width: 650px;
+
   color: #c9c0d0;
-  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 
-/* =========================
-   PRODUCTS
-========================= */
+/* CATEGORY GRID */
 
-.products {
-  width: 90%;
-  max-width: 1050px;
-
-  margin: auto;
-
+.shop-categories {
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(3, 1fr);
 
-  gap: 18px;
-
-  padding-bottom: 50px;
-}
-
-.product {
-  background: #0d0712;
-
-  border: 1px solid #716478;
-  border-radius: 18px;
-
-  padding: 12px;
-
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-
-  min-width: 0;
-
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.35);
-}
-
-.product-image {
-  width: 100%;
-
-  aspect-ratio: 1 / 1;
-
-  object-fit: cover;
-
-  border-radius: 13px;
-
-  display: block;
-}
-
-.product h2 {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 24px;
-}
-
-.description {
-  color: #cbc3ce;
-
-  line-height: 1.5;
-
-  font-size: 15px;
-}
-
-.price {
-  font-size: 20px;
-
-  font-weight: bold;
-
-  margin: 16px;
-}
-
-.adult-card-warning {
-  color: #e7b5a7;
-
-  font-size: 13px;
-
-  font-weight: bold;
-
-  line-height: 1.4;
-
-  margin: 0 0 15px;
-}
-
-.choose {
-  width: 100%;
-
-  padding: 12px;
-
-  background: #d99582;
-
-  color: white;
-
-  border: 0;
-
-  border-radius: 7px;
-
-  font-size: 15px;
-
-  cursor: pointer;
-
-  margin-top: auto;
-}
-
-.choose:hover {
-  background: #e1a08d;
+  gap: 28px;
 }
 
 
-/* =========================
-   MODALS
-========================= */
+/* CATEGORY CARD */
 
-.modal {
-  display: none;
-
-  position: fixed;
-
-  inset: 0;
-
-  background: rgba(0,0,0,.9);
-
-  z-index: 1000;
-
-  overflow-y: auto;
-
-  padding: 20px;
-}
-
-.modal-box {
-  max-width: 650px;
-
-  margin: auto;
-
-  background: #0d0712;
-
-  padding: 25px;
-
-  border-radius: 20px;
-
-  border: 1px solid #716478;
-}
-
-.close {
-  float: right;
-
-  font-size: 35px;
-
-  cursor: pointer;
-
+.category-card {
   position: relative;
 
-  z-index: 10;
-}
+  min-height: 390px;
 
-.modal-box h2 {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 32px;
-}
-
-.full-description {
-  color: #d0c8d3;
-
-  line-height: 1.6;
-}
-
-
-/* =========================
-   FAQ NOTICE IN POPUPS
-========================= */
-
-.faq-notice {
-  margin: 22px 0 18px;
-
-  padding: 12px 15px;
-
-  text-align: center;
-
-  background: rgba(85,32,111,.18);
-
-  border: 1px solid rgba(201,182,213,.45);
-
-  border-radius: 9px;
-
-  color: #d8d0dc;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-}
-
-.faq-notice a {
-  color: #d99582;
-
-  text-decoration: underline;
-
-  text-underline-offset: 2px;
-}
-
-.faq-notice a:hover {
-  color: #efb5a4;
-}
-
-
-/* BLACK CAT CHARITY */
-
-.colony-message {
-  background: #17101d;
-
-  border: 1px solid #716478;
-
-  border-radius: 12px;
-
-  padding: 18px;
-
-  margin: 20px 0;
-
-  color: #eee7f1;
-
-  line-height: 1.6;
-}
-
-.colony-message strong {
-  color: #d99582;
-}
-
-
-/* 18+ WARNING */
-
-.adult-warning {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(88,25,62,.55),
-      rgba(41,13,50,.75)
-    );
-
-  border: 1px solid #b87488;
-
-  border-radius: 12px;
-
-  padding: 18px;
-
-  margin: 20px 0;
-
-  color: #f2e7ec;
-
-  line-height: 1.6;
-}
-
-.adult-warning strong {
-  display: block;
-
-  color: #f1b3c2;
-
-  font-size: 19px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  margin-bottom: 8px;
-}
-
-
-/* =========================
-   OPTIONS
-========================= */
-
-label {
-  display: block;
-
-  margin: 25px 0 8px;
-
-  font-weight: bold;
-}
-
-select {
-  width: 100%;
-
-  padding: 14px;
-
-  background: #17101d;
-
-  color: white;
-
-  border: 1px solid #716478;
-
-  border-radius: 7px;
-
-  font-size: 16px;
-}
-
-.quantity {
   display: flex;
+  align-items: flex-end;
 
+  overflow: hidden;
+
+  border: 1px solid #554560;
+  border-radius: 15px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #291433 0%,
+      #13091b 55%,
+      #0c050f 100%
+    );
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.48);
+
+  text-decoration: none;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #9474a5;
+
+  box-shadow:
+    0 22px 48px rgba(0,0,0,.62),
+    0 0 18px rgba(112,62,143,.18);
+}
+
+
+/* TEMPORARY CATEGORY ART AREA */
+
+.category-art {
+  position: absolute;
+
+  inset: 0 0 110px 0;
+
+  display: flex;
   align-items: center;
+  justify-content: center;
 
-  margin-top: 10px;
-}
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-.quantity button {
-  width: 45px;
-  height: 45px;
+  font-size: 70px;
 
-  background: #17101d;
+  color: rgba(255,255,255,.75);
 
-  color: white;
-
-  border: 1px solid #716478;
-
-  font-size: 20px;
-}
-
-.quantity button:disabled {
-  color: #716b75;
-
-  cursor: not-allowed;
-}
-
-.quantity span {
-  width: 55px;
-
-  text-align: center;
-
-  font-size: 18px;
-}
-
-.total {
-  font-size: 25px;
-
-  font-weight: bold;
-
-  margin-top: 25px;
-}
-
-.availability {
-  margin-top: 16px;
-
-  color: #d99582;
-
-  font-weight: bold;
-
-  font-size: 15px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(85,32,111,.28),
+      transparent 65%
+    );
 }
 
 
-/* ADD TO CART */
+/* CATEGORY NAME */
 
-.add-cart {
+.category-info {
+  position: relative;
+
+  z-index: 3;
+
   width: 100%;
 
-  padding: 15px;
+  padding: 24px 20px;
 
-  margin-top: 20px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #8c55a7,
-      #5c2b76
-    );
-
-  color: white;
-
-  border:
-    1px solid rgba(220,220,230,.55);
-
-  border-radius: 7px;
-
-  font-size: 18px;
-
-  cursor: pointer;
-}
-
-.add-cart:hover {
-  background:
-    linear-gradient(
-      135deg,
-      #a36cc0,
-      #693685
-    );
-}
-
-.add-cart:disabled {
-  background: #514b55;
-
-  color: #ccc;
-
-  cursor: not-allowed;
-}
-
-.cart-message {
   text-align: center;
 
-  margin-top: 12px;
+  background:
+    linear-gradient(
+      to top,
+      rgba(7,2,10,.98),
+      rgba(16,6,21,.93)
+    );
 
-  color: #d0c8d3;
+  border-top:
+    1px solid rgba(210,190,220,.20);
+}
 
-  min-height: 20px;
+.category-info h2 {
+  margin: 0 0 7px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 26px;
+  font-weight: normal;
+}
+
+.category-info span {
+  color: #c9c0d0;
+  font-size: 14px;
+}
+
+
+/* COMING SOON */
+
+.coming-soon {
+  cursor: default;
+}
+
+.coming-soon:hover {
+  transform: none;
+}
+
+.coming-badge {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  z-index: 5;
+
+  padding: 7px 11px;
+
+  border: 1px solid #8e739b;
+  border-radius: 20px;
+
+  background: rgba(8,3,13,.85);
+
+  color: #ddd2e2;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 
 /* =========================
-   FOOTER
+   TEMPORARY FOOTER
 ========================= */
 
 .contact-footer {
   position: relative;
-
-  flex-shrink: 0;
 
   width: 100%;
 
@@ -732,13 +518,12 @@ select {
     );
 
   border-top: 1px solid #bfc3cc;
-  border-bottom: 1px solid rgba(225,228,235,.20);
 
   box-shadow:
-    0 -8px 25px rgba(0,0,0,.55),
-    inset 0 1px 0 rgba(255,255,255,.06);
+    0 -8px 25px rgba(0,0,0,.55);
 
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .footer-lace {
@@ -767,56 +552,11 @@ select {
 
 .footer-lace-left {
   left: 0;
-
-  -webkit-mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
-
-  mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
 }
 
 .footer-lace-right {
   right: 0;
-
   transform: scaleX(-1);
-
-  -webkit-mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
-
-  mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
 }
 
 .footer-center-shade {
@@ -838,13 +578,11 @@ select {
     );
 
   pointer-events: none;
-
   z-index: 2;
 }
 
 .footer-content {
   position: relative;
-
   z-index: 5;
 }
 
@@ -891,18 +629,10 @@ select {
   font-size: 15px;
 }
 
-.contact-link:hover {
-  color: #ffffff;
-
-  text-shadow:
-    0 0 8px rgba(220,205,255,.85);
-}
-
 .footer-ornament {
   color: #e0e2e8;
 
   font-size: 8px;
-
   letter-spacing: 7px;
 
   margin-top: 12px;
@@ -915,147 +645,79 @@ select {
    MOBILE
 ========================= */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 
   nav {
     padding: 20px 3px;
   }
 
-  nav a {
+  .nav-link,
+  .shop-button {
     font-size: 12px;
-
-    margin: 0 3px;
-
+    margin: 0 5px;
     letter-spacing: 0;
+  }
+
+  .shop-menu {
+    top: 24px;
+    min-width: 160px;
+  }
+
+  .shop-menu a {
+    font-size: 13px;
+    padding: 12px 14px;
   }
 
   .nav-lace {
     width: 30%;
-
-    filter:
-      grayscale(1)
-      contrast(1.6);
-
-    opacity: .82;
   }
 
   .nav-center-shade {
     left: 15%;
-
     width: 70%;
   }
 
   .nav-ornament {
     font-size: 7px;
-
     letter-spacing: 4px;
-
-    bottom: 1px;
   }
 
-  .page-title {
-    padding: 35px 15px 25px;
-  }
-
-  .page-title h1 {
-    font-size: 34px;
-  }
-
-  .page-title p {
-    font-size: 14px;
-  }
-
-  .products {
+  main {
     width: 92%;
-
-    max-width: 340px;
-
-    gap: 8px;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    margin: 40px auto 55px;
   }
 
-  .product {
-    padding: 7px;
-
-    border-radius: 13px;
+  .shop-heading {
+    margin-bottom: 32px;
   }
 
-  .product-image {
-    width: 100%;
-
-    border-radius: 10px;
+  .shop-heading h1 {
+    font-size: 39px;
   }
 
-  .product h2 {
-    font-size: 16px;
-
-    margin-top: 12px;
-
-    margin-bottom: 8px;
+  .shop-heading p {
+    font-size: 15px;
   }
 
-  .description {
-    font-size: 11px;
-
-    line-height: 1.4;
+  .shop-categories {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
-  .adult-card-warning {
-    font-size: 10px;
+  .category-card {
+    min-height: 330px;
   }
 
-  .price {
-    font-size: 16px;
-
-    margin: 11px 3px;
+  .category-art {
+    font-size: 60px;
   }
 
-  .choose {
-    padding: 10px 3px;
-
-    font-size: 11px;
-  }
-
-  .modal-box {
-    padding: 18px;
-  }
-
-  .modal-box h2 {
-    font-size: 27px;
-  }
-
-  .modal-box .product-image {
-    width: 100%;
-  }
-
-  .faq-notice {
-    font-size: 12px;
-
-    padding: 11px 10px;
-
-    margin: 18px 0 14px;
+  .category-info h2 {
+    font-size: 24px;
   }
 
   .contact-footer {
     padding: 18px 15px 15px;
-  }
-
-  .footer-lace {
-    width: 30%;
-
-    filter:
-      grayscale(1)
-      contrast(1.6);
-
-    opacity: .82;
-  }
-
-  .footer-center-shade {
-    left: 15%;
-
-    width: 70%;
   }
 
   .footer-content h2 {
@@ -1068,7 +730,6 @@ select {
 
   .contact-links {
     flex-direction: column;
-
     gap: 8px;
   }
 
@@ -1076,27 +737,16 @@ select {
     font-size: 14px;
   }
 
-  .footer-ornament {
-    font-size: 7px;
-
-    letter-spacing: 4px;
-
-    margin-top: 9px;
-  }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -1114,17 +764,71 @@ select {
 
   <span class="nav-center-shade"></span>
 
-  <a href="index.html">Home</a>
 
-  <a href="boxes.html">Boxes</a>
+  <div class="nav-links">
 
-  <a href="about.html">About Us</a>
+    <a
+      href="index.html"
+      class="nav-link"
+    >
+      Home
+    </a>
 
-  <a href="faq.html">FAQ</a>
 
-  <a href="contact.html">Contact</a>
+    <div class="shop-dropdown">
 
-  <a href="checkout.html">Checkout</a>
+      <button class="shop-button">
+        Shop ▾
+      </button>
+
+      <div class="shop-menu">
+
+        <a href="boxes.html">
+          All Products
+        </a>
+
+        <a href="mystery-boxes.html">
+          Mystery Boxes
+        </a>
+
+        <a href="candles.html">
+          Candles
+        </a>
+
+        <a href="books.html">
+          Books
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <a
+      href="faq.html"
+      class="nav-link"
+    >
+      FAQ
+    </a>
+
+
+    <a
+      href="contact.html"
+      class="nav-link"
+    >
+      Contact
+    </a>
+
+
+    <a
+      href="checkout.html"
+      class="nav-link"
+    >
+      Checkout
+    </a>
+
+  </div>
+
 
   <span class="nav-ornament">
     ◆ ✦ ◆ ✦ ◆
@@ -1133,564 +837,116 @@ select {
 </nav>
 
 
-<!-- =========================
-     MAIN CONTENT
-========================= -->
+<!-- SHOP -->
 
 <main>
 
+  <section class="shop-heading">
 
-<div class="page-title">
+    <h1>
+      Shop
+    </h1>
 
-  <h1>
-    Boxes
-  </h1>
-
-  <p>
-    Choose your mystery experience and see what the raven scoops for you.
-  </p>
-
-</div>
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<div class="products">
-
-
-  <!-- WITCHY -->
-
-  <div class="product">
-
-    <img
-      src="coffin%20image.jpg"
-      alt="Witchy Mystery Ball Bundle"
-      class="product-image"
-    >
-
-    <h2>
-      Witchy Mystery Ball Bundle
-    </h2>
-
-    <p class="description">
-      Let the raven choose! Each mystery ball is hand-picked
-      with a surprise item ranging from witchy and weird to
-      macabre, cute, and sometimes wonderfully campy.
+    <p>
+      Explore the strange, mysterious, witchy, and unexpected.
+      Choose a collection below and see what the raven has waiting for you.
     </p>
 
-    <div class="price">
-      From $36.00
+  </section>
+
+
+  <section class="shop-categories">
+
+
+    <!-- MYSTERY BOXES -->
+
+    <a
+      href="mystery-boxes.html"
+      class="category-card"
+    >
+
+      <div class="category-art">
+        ✦
+      </div>
+
+      <div class="category-info">
+
+        <h2>
+          Mystery Boxes
+        </h2>
+
+        <span>
+          Shop Mystery Boxes
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <!-- CANDLES -->
+
+    <div class="category-card coming-soon">
+
+      <span class="coming-badge">
+        Coming Soon
+      </span>
+
+      <div class="category-art">
+        🕯
+      </div>
+
+      <div class="category-info">
+
+        <h2>
+          Candles
+        </h2>
+
+        <span>
+          Shop Candles
+        </span>
+
+      </div>
+
     </div>
 
-    <button
-      class="choose"
-      onclick="openProduct()"
-    >
-      CHOOSE OPTIONS
-    </button>
 
-  </div>
+    <!-- BOOKS -->
 
+    <div class="category-card coming-soon">
 
-  <!-- BLACK CAT -->
+      <span class="coming-badge">
+        Coming Soon
+      </span>
 
-  <div class="product">
+      <div class="category-art">
+        📖
+      </div>
 
-    <img
-      src="Screenshot%202026-10-04%20120916.png"
-      alt="Black Cat Box"
-      class="product-image"
-    >
+      <div class="category-info">
 
-    <h2>
-      Black Cat Box
-    </h2>
+        <h2>
+          Books
+        </h2>
 
-    <p class="description">
-      A specially curated mystery box for cat lovers!
-      Each Black Cat Box contains 6 hand-picked cat-themed
-      items with a mix of cute, quirky, spooky, and fun
-      feline finds.
-    </p>
+        <span>
+          Shop Books
+        </span>
 
-    <div class="price">
-      6 Items — $36.00
+      </div>
+
     </div>
 
-    <button
-      class="choose"
-      onclick="openCatProduct()"
-    >
-      CHOOSE OPTIONS
-    </button>
 
-  </div>
-
-
-  <!-- WITCHES AFTER DARK -->
-
-  <div class="product">
-
-    <img
-      src="Screenshot%202026-10-04%20132612.png"
-      alt="Witches After Dark"
-      class="product-image"
-    >
-
-    <h2>
-      Witches After Dark
-    </h2>
-
-    <p class="description">
-      An adults-only curated mystery box with darker,
-      bolder, and more mature surprises. Each box contains
-      6 hand-picked items, individually curated while
-      keeping the contents a mystery.
-    </p>
-
-    <p class="adult-card-warning">
-      18+ ONLY • Mature Content
-    </p>
-
-    <div class="price">
-      6 Items — $36.00
-    </div>
-
-    <button
-      class="choose"
-      onclick="openAfterDarkProduct()"
-    >
-      CHOOSE OPTIONS
-    </button>
-
-  </div>
-
-
-</div>
+  </section>
 
 </main>
 
 
-<!-- =========================
-     WITCHY POPUP
-========================= -->
-
-<div
-  id="productModal"
-  class="modal"
->
-
-  <div class="modal-box">
-
-    <span
-      class="close"
-      onclick="closeProduct()"
-    >
-      &times;
-    </span>
-
-    <img
-      src="coffin%20image.jpg"
-      alt="Witchy Mystery Ball Bundle"
-      class="product-image"
-    >
-
-    <h2>
-      Witchy Mystery Ball Bundle
-    </h2>
-
-    <p class="full-description">
-
-      Ready to see what the raven chooses for you? Our Witchy
-      Mystery Ball Bundles are all about the surprise. Each
-      mystery ball is randomly hand-picked and contains an item
-      from our collection of witchy, weird, macabre, cute, and
-      sometimes delightfully campy finds.
-
-      <br><br>
-
-      No two bundles are guaranteed to be the same, which is part
-      of the fun! Your picks could lean spooky, mystical, strange,
-      adorable, or somewhere completely unexpected in between.
-
-      <br><br>
-
-      Choose how many mystery balls you want and let the raven
-      do the rest.
-
-    </p>
-
-
-    <!-- FAQ NOTICE -->
-
-    <div class="faq-notice">
-      Please read all
-      <a href="faq.html">FAQs</a>
-      before ordering.
-    </div>
-
-
-    <label for="bundle">
-      Number of Picks
-    </label>
-
-    <select
-      id="bundle"
-      onchange="updatePrice()"
-    >
-
-      <option value="36">
-        6 Picks — $36.00
-      </option>
-
-      <option
-        value="66"
-        disabled
-      >
-        12 Picks — $66.00 — SOLD OUT
-      </option>
-
-      <option
-        value="96"
-        disabled
-      >
-        18 Picks — $96.00 — SOLD OUT
-      </option>
-
-      <option
-        value="120"
-        disabled
-      >
-        24 Picks — $120.00 — SOLD OUT
-      </option>
-
-    </select>
-
-    <div class="availability">
-      1 Available
-    </div>
-
-    <label>
-      Quantity
-    </label>
-
-    <div class="quantity">
-
-      <button disabled>
-        −
-      </button>
-
-      <span>
-        1
-      </span>
-
-      <button disabled>
-        +
-      </button>
-
-    </div>
-
-    <div class="total">
-
-      Total:
-
-      <span id="total">
-        $36.00
-      </span>
-
-    </div>
-
-    <button
-      id="addCartButton"
-      class="add-cart"
-      onclick="addWitchyToCart()"
-    >
-      ADD TO CART
-    </button>
-
-    <div
-      id="cartMessage"
-      class="cart-message"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     BLACK CAT POPUP
-========================= -->
-
-<div
-  id="catProductModal"
-  class="modal"
->
-
-  <div class="modal-box">
-
-    <span
-      class="close"
-      onclick="closeCatProduct()"
-    >
-      &times;
-    </span>
-
-    <img
-      src="Screenshot%202026-10-04%20120916.png"
-      alt="Black Cat Box"
-      class="product-image"
-    >
-
-    <h2>
-      Black Cat Box
-    </h2>
-
-    <p class="full-description">
-
-      Our Black Cat Box is a specially curated mystery box
-      created for cat lovers. Each box contains
-      <strong>6 hand-picked cat-themed items</strong> chosen
-      from our collection of cute, quirky, spooky, and fun
-      feline finds.
-
-      <br><br>
-
-      Every box is individually curated while still keeping
-      the contents a surprise. We strive to make each box
-      unique, but repeat items across multiple orders cannot
-      be guaranteed against.
-
-    </p>
-
-
-    <div class="colony-message">
-
-      <strong>
-        50% of every Black Cat Box purchase goes toward
-        helping our stray cat colony.
-      </strong>
-
-      <br><br>
-
-      Your purchase helps us provide food, spaying and neutering,
-      medical care, and support for finding loving homes for the
-      cats and kittens in our colony.
-
-    </div>
-
-
-    <!-- FAQ NOTICE -->
-
-    <div class="faq-notice">
-      Please read all
-      <a href="faq.html">FAQs</a>
-      before ordering.
-    </div>
-
-
-    <label for="catBundle">
-      Box
-    </label>
-
-    <select id="catBundle">
-
-      <option value="36">
-        6 Items — $36.00
-      </option>
-
-    </select>
-
-    <div class="availability">
-      1 Available
-    </div>
-
-    <label>
-      Quantity
-    </label>
-
-    <div class="quantity">
-
-      <button disabled>
-        −
-      </button>
-
-      <span>
-        1
-      </span>
-
-      <button disabled>
-        +
-      </button>
-
-    </div>
-
-    <div class="total">
-
-      Total:
-
-      <span>
-        $36.00
-      </span>
-
-    </div>
-
-    <button
-      id="catAddCartButton"
-      class="add-cart"
-      onclick="addCatToCart()"
-    >
-      ADD TO CART
-    </button>
-
-    <div
-      id="catCartMessage"
-      class="cart-message"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     WITCHES AFTER DARK POPUP
-========================= -->
-
-<div
-  id="afterDarkModal"
-  class="modal"
->
-
-  <div class="modal-box">
-
-    <span
-      class="close"
-      onclick="closeAfterDarkProduct()"
-    >
-      &times;
-    </span>
-
-    <img
-      src="Screenshot%202026-10-04%20132612.png"
-      alt="Witches After Dark"
-      class="product-image"
-    >
-
-    <h2>
-      Witches After Dark
-    </h2>
-
-
-    <div class="adult-warning">
-
-      <strong>
-        18+ ONLY — Mature Content
-      </strong>
-
-      Witches After Dark is intended only for adults age 18
-      and older. Mystery items may contain nudity, profanity,
-      mature humor, adult themes, suggestive content, and other
-      items or content that cannot be included in our regular
-      mystery boxes.
-
-    </div>
-
-
-    <p class="full-description">
-
-      When the sun goes down, the raven gets a little darker.
-      Witches After Dark is an adults-only curated mystery box
-      filled with darker, bolder, and more mature surprises.
-
-      <br><br>
-
-      Each box contains
-      <strong>6 hand-picked items</strong> and is individually
-      curated while keeping the exact contents a mystery until
-      you open it.
-
-    </p>
-
-
-    <!-- FAQ NOTICE -->
-
-    <div class="faq-notice">
-      Please read all
-      <a href="faq.html">FAQs</a>
-      before ordering.
-    </div>
-
-
-    <label for="afterDarkBundle">
-      Box
-    </label>
-
-    <select id="afterDarkBundle">
-
-      <option value="36">
-        6 Items — $36.00
-      </option>
-
-    </select>
-
-    <div class="availability">
-      1 Available
-    </div>
-
-    <label>
-      Quantity
-    </label>
-
-    <div class="quantity">
-
-      <button disabled>
-        −
-      </button>
-
-      <span>
-        1
-      </span>
-
-      <button disabled>
-        +
-      </button>
-
-    </div>
-
-    <div class="total">
-
-      Total:
-
-      <span>
-        $36.00
-      </span>
-
-    </div>
-
-    <button
-      id="afterDarkAddCartButton"
-      class="add-cart"
-      onclick="addAfterDarkToCart()"
-    >
-      ADD TO CART
-    </button>
-
-    <div
-      id="afterDarkCartMessage"
-      class="cart-message"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- CURRENT FOOTER
+     We'll replace this with the new expanded footer
+     after the Shop page is approved.
+-->
 
 <footer class="contact-footer">
 
@@ -1719,6 +975,7 @@ select {
       Have a question? We'd love to hear from you.
     </p>
 
+
     <div class="contact-links">
 
       <a
@@ -1739,6 +996,7 @@ select {
 
     </div>
 
+
     <div class="footer-ornament">
       ◆ ✦ ◆ ✦ ◆
     </div>
@@ -1748,382 +1006,5 @@ select {
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-
-/* =========================
-   CART HELPERS
-========================= */
-
-function getCart() {
-
-  try {
-
-    return JSON.parse(
-      localStorage.getItem("ravensScoopsCart")
-    ) || [];
-
-  }
-
-  catch (error) {
-
-    return [];
-
-  }
-
-}
-
-
-function saveCart(cart) {
-
-  localStorage.setItem(
-    "ravensScoopsCart",
-    JSON.stringify(cart)
-  );
-
-}
-
-
-function itemIsInCart(id) {
-
-  const cart = getCart();
-
-  return cart.some(
-    item => item.id === id
-  );
-
-}
-
-
-function addItemToCart(item) {
-
-  const cart = getCart();
-
-  const alreadyInCart =
-    cart.some(
-      cartItem => cartItem.id === item.id
-    );
-
-  if (!alreadyInCart) {
-
-    cart.push(item);
-
-    saveCart(cart);
-
-  }
-
-}
-
-
-/* =========================
-   WITCHY
-========================= */
-
-function openProduct() {
-
-  document
-    .getElementById("productModal")
-    .style.display = "block";
-
-  updateWitchyCartButton();
-
-}
-
-
-function closeProduct() {
-
-  document
-    .getElementById("productModal")
-    .style.display = "none";
-
-}
-
-
-function updatePrice() {
-
-  document
-    .getElementById("total")
-    .textContent = "$36.00";
-
-}
-
-
-function addWitchyToCart() {
-
-  const item = {
-
-    id: "witchy-6",
-
-    name: "Witchy Mystery Ball Bundle",
-
-    variant: "6 Picks",
-
-    price: 36,
-
-    quantity: 1,
-
-    image: "coffin%20image.jpg"
-
-  };
-
-
-  addItemToCart(item);
-
-  updateWitchyCartButton();
-
-}
-
-
-function updateWitchyCartButton() {
-
-  const button =
-    document.getElementById("addCartButton");
-
-  const message =
-    document.getElementById("cartMessage");
-
-
-  if (itemIsInCart("witchy-6")) {
-
-    button.disabled = true;
-
-    button.textContent =
-      "IN CART";
-
-    message.innerHTML =
-      'This is the only one available. ' +
-      '<a href="checkout.html" style="color:#d99582;">View Cart</a>';
-
-  }
-
-  else {
-
-    button.disabled = false;
-
-    button.textContent =
-      "ADD TO CART";
-
-    message.textContent = "";
-
-  }
-
-}
-
-
-/* =========================
-   BLACK CAT
-========================= */
-
-function openCatProduct() {
-
-  document
-    .getElementById("catProductModal")
-    .style.display = "block";
-
-  updateCatCartButton();
-
-}
-
-
-function closeCatProduct() {
-
-  document
-    .getElementById("catProductModal")
-    .style.display = "none";
-
-}
-
-
-function addCatToCart() {
-
-  const item = {
-
-    id: "black-cat-box",
-
-    name: "Black Cat Box",
-
-    variant: "6 Items",
-
-    price: 36,
-
-    quantity: 1,
-
-    image:
-      "Screenshot%202026-10-04%20120916.png"
-
-  };
-
-
-  addItemToCart(item);
-
-  updateCatCartButton();
-
-}
-
-
-function updateCatCartButton() {
-
-  const button =
-    document.getElementById("catAddCartButton");
-
-  const message =
-    document.getElementById("catCartMessage");
-
-
-  if (itemIsInCart("black-cat-box")) {
-
-    button.disabled = true;
-
-    button.textContent =
-      "IN CART";
-
-    message.innerHTML =
-      'This is the only one available. ' +
-      '<a href="checkout.html" style="color:#d99582;">View Cart</a>';
-
-  }
-
-  else {
-
-    button.disabled = false;
-
-    button.textContent =
-      "ADD TO CART";
-
-    message.textContent = "";
-
-  }
-
-}
-
-
-/* =========================
-   WITCHES AFTER DARK
-========================= */
-
-function openAfterDarkProduct() {
-
-  document
-    .getElementById("afterDarkModal")
-    .style.display = "block";
-
-  updateAfterDarkCartButton();
-
-}
-
-
-function closeAfterDarkProduct() {
-
-  document
-    .getElementById("afterDarkModal")
-    .style.display = "none";
-
-}
-
-
-function addAfterDarkToCart() {
-
-  const item = {
-
-    id: "witches-after-dark",
-
-    name: "Witches After Dark",
-
-    variant: "6 Items",
-
-    price: 36,
-
-    quantity: 1,
-
-    image:
-      "Screenshot%202026-10-04%20132612.png"
-
-  };
-
-
-  addItemToCart(item);
-
-  updateAfterDarkCartButton();
-
-}
-
-
-function updateAfterDarkCartButton() {
-
-  const button =
-    document.getElementById("afterDarkAddCartButton");
-
-  const message =
-    document.getElementById("afterDarkCartMessage");
-
-
-  if (itemIsInCart("witches-after-dark")) {
-
-    button.disabled = true;
-
-    button.textContent =
-      "IN CART";
-
-    message.innerHTML =
-      'This is the only one available. ' +
-      '<a href="checkout.html" style="color:#d99582;">View Cart</a>';
-
-  }
-
-  else {
-
-    button.disabled = false;
-
-    button.textContent =
-      "ADD TO CART";
-
-    message.textContent = "";
-
-  }
-
-}
-
-
-/* =========================
-   CLICK OUTSIDE TO CLOSE
-========================= */
-
-window.onclick = function(event) {
-
-  const witchyModal =
-    document.getElementById("productModal");
-
-  const catModal =
-    document.getElementById("catProductModal");
-
-  const afterDarkModal =
-    document.getElementById("afterDarkModal");
-
-
-  if (event.target === witchyModal) {
-    closeProduct();
-  }
-
-
-  if (event.target === catModal) {
-    closeCatProduct();
-  }
-
-
-  if (event.target === afterDarkModal) {
-    closeAfterDarkProduct();
-  }
-
-};
-
-
-</script>
-
-
 </body>
-
 </html>
