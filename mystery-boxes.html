@@ -202,7 +202,7 @@ nav::before {
     "Times New Roman",
     serif;
 
-  font-size: 19px;
+  font-size: 22px;
   font-weight: normal;
   letter-spacing: 1px;
 
@@ -1032,9 +1032,7 @@ select {
 
   opacity: .75;
 }
-
-
-/* ==================================================
+  /* ==================================================
    TABLET / MOBILE
 ================================================== */
 
@@ -1044,13 +1042,32 @@ select {
     padding: 20px 3px;
   }
 
+  .nav-links {
+    align-items: center;
+  }
+
   .nav-link,
   .shop-button {
-    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    margin: 0 5px;
+    height: 22px;
+    line-height: 22px;
+
+    font-size: 15px;
+
+    margin: 0 7px;
 
     letter-spacing: 0;
+
+    white-space: nowrap;
+  }
+
+  .shop-dropdown {
+    display: flex;
+    align-items: center;
+    height: 22px;
   }
 
   .shop-menu {
@@ -1060,19 +1077,24 @@ select {
   }
 
   .shop-menu a {
+    display: block;
+
+    height: auto;
+    line-height: normal;
+
     font-size: 13px;
 
     padding: 12px 14px;
   }
 
   .nav-lace {
-    width: 30%;
+    width: 20%;
   }
 
   .nav-center-shade {
-    left: 15%;
+    left: 6%;
 
-    width: 70%;
+    width: 88%;
   }
 
   .nav-ornament {
@@ -1186,12 +1208,12 @@ select {
   }
 
   .payment-image-wrap {
-    width: 220px;
-    height: 76px;
+    width: 175px;
+    height: 62px;
   }
 
   .payment-image {
-    max-height: 76px;
+    max-height: 62px;
   }
 
   .footer-contact {
@@ -1216,9 +1238,9 @@ select {
 
   .nav-link,
   .shop-button {
-    margin: 0 3px;
+    margin: 0 5px;
 
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .footer-inner {
@@ -1238,14 +1260,14 @@ select {
   }
 
   .payment-image-wrap {
-    width: 220px;
-    height: 76px;
+    width: 175px;
+    height: 62px;
 
     margin: 0;
   }
 
   .payment-image {
-    max-height: 76px;
+    max-height: 62px;
   }
 
   .footer-contact {
@@ -1497,923 +1519,3 @@ select {
 </div>
 
 </main>
-
-
-<!-- =========================
-     WITCHY POPUP
-========================= -->
-
-<div
-  id="productModal"
-  class="modal"
->
-
-  <div class="modal-box">
-
-    <span
-      class="close"
-      onclick="closeProduct()"
-    >
-      &times;
-    </span>
-
-    <img
-      src="coffin%20image.jpg"
-      alt="Witchy Mystery Ball Bundle"
-      class="product-image"
-    >
-
-    <h2>
-      Witchy Mystery Ball Bundle
-    </h2>
-
-    <p class="full-description">
-
-      Ready to see what the raven chooses for you? Our Witchy
-      Mystery Ball Bundles are all about the surprise. Each
-      mystery ball is randomly hand-picked and contains an item
-      from our collection of witchy, weird, macabre, cute, and
-      sometimes delightfully campy finds.
-
-      <br><br>
-
-      No two bundles are guaranteed to be the same, which is part
-      of the fun! Your picks could lean spooky, mystical, strange,
-      adorable, or somewhere completely unexpected in between.
-
-      <br><br>
-
-      Choose how many mystery balls you want and let the raven
-      do the rest.
-
-    </p>
-
-
-    <!-- FAQ NOTICE -->
-
-    <div class="faq-notice">
-      Please read all
-      <a href="faq.html">FAQs</a>
-      before ordering.
-    </div>
-
-
-    <label for="bundle">
-      Number of Picks
-    </label>
-
-    <select
-      id="bundle"
-      onchange="updatePrice()"
-    >
-
-      <option value="36">
-        6 Picks — $36.00
-      </option>
-
-      <option
-        value="66"
-        disabled
-      >
-        12 Picks — $66.00 — SOLD OUT
-      </option>
-
-      <option
-        value="96"
-        disabled
-      >
-        18 Picks — $96.00 — SOLD OUT
-      </option>
-
-      <option
-        value="120"
-        disabled
-      >
-        24 Picks — $120.00 — SOLD OUT
-      </option>
-
-    </select>
-
-    <div class="availability">
-      1 Available
-    </div>
-
-    <label>
-      Quantity
-    </label>
-
-    <div class="quantity">
-
-      <button disabled>
-        −
-      </button>
-
-      <span>
-        1
-      </span>
-
-      <button disabled>
-        +
-      </button>
-
-    </div>
-
-    <div class="total">
-
-      Total:
-
-      <span id="total">
-        $36.00
-      </span>
-
-    </div>
-
-    <button
-      id="addCartButton"
-      class="add-cart"
-      onclick="addWitchyToCart()"
-    >
-      ADD TO CART
-    </button>
-
-    <div
-      id="cartMessage"
-      class="cart-message"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     BLACK CAT POPUP
-========================= -->
-
-<div
-  id="catProductModal"
-  class="modal"
->
-
-  <div class="modal-box">
-
-    <span
-      class="close"
-      onclick="closeCatProduct()"
-    >
-      &times;
-    </span>
-
-    <img
-      src="Screenshot%202026-10-04%20120916.png"
-      alt="Black Cat Box"
-      class="product-image"
-    >
-
-    <h2>
-      Black Cat Box
-    </h2>
-
-    <p class="full-description">
-
-      Our Black Cat Box is a specially curated mystery box
-      created for cat lovers. Each box contains
-      <strong>6 hand-picked cat-themed items</strong> chosen
-      from our collection of cute, quirky, spooky, and fun
-      feline finds.
-
-      <br><br>
-
-      Every box is individually curated while still keeping
-      the contents a surprise. We strive to make each box
-      unique, but repeat items across multiple orders cannot
-      be guaranteed against.
-
-    </p>
-
-
-    <div class="colony-message">
-
-      <strong>
-        50% of every Black Cat Box purchase goes toward
-        helping our stray cat colony.
-      </strong>
-
-      <br><br>
-
-      Your purchase helps us provide food, spaying and neutering,
-      medical care, and support for finding loving homes for the
-      cats and kittens in our colony.
-
-    </div>
-
-
-    <!-- FAQ NOTICE -->
-
-    <div class="faq-notice">
-      Please read all
-      <a href="faq.html">FAQs</a>
-      before ordering.
-    </div>
-
-
-    <label for="catBundle">
-      Box
-    </label>
-
-    <select id="catBundle">
-
-      <option value="36">
-        6 Items — $36.00
-      </option>
-
-    </select>
-
-    <div class="availability">
-      1 Available
-    </div>
-
-    <label>
-      Quantity
-    </label>
-
-    <div class="quantity">
-
-      <button disabled>
-        −
-      </button>
-
-      <span>
-        1
-      </span>
-
-      <button disabled>
-        +
-      </button>
-
-    </div>
-
-    <div class="total">
-
-      Total:
-
-      <span>
-        $36.00
-      </span>
-
-    </div>
-
-    <button
-      id="catAddCartButton"
-      class="add-cart"
-      onclick="addCatToCart()"
-    >
-      ADD TO CART
-    </button>
-
-    <div
-      id="catCartMessage"
-      class="cart-message"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     WITCHES AFTER DARK POPUP
-========================= -->
-
-<div
-  id="afterDarkModal"
-  class="modal"
->
-
-  <div class="modal-box">
-
-    <span
-      class="close"
-      onclick="closeAfterDarkProduct()"
-    >
-      &times;
-    </span>
-
-    <img
-      src="Screenshot%202026-10-04%20132612.png"
-      alt="Witches After Dark"
-      class="product-image"
-    >
-
-    <h2>
-      Witches After Dark
-    </h2>
-
-
-    <div class="adult-warning">
-
-      <strong>
-        18+ ONLY — Mature Content
-      </strong>
-
-      Witches After Dark is intended only for adults age 18
-      and older. Mystery items may contain nudity, profanity,
-      mature humor, adult themes, suggestive content, and other
-      items or content that cannot be included in our regular
-      mystery boxes.
-
-    </div>
-
-
-    <p class="full-description">
-
-      When the sun goes down, the raven gets a little darker.
-      Witches After Dark is an adults-only curated mystery box
-      filled with darker, bolder, and more mature surprises.
-
-      <br><br>
-
-      Each box contains
-      <strong>6 hand-picked items</strong> and is individually
-      curated while keeping the exact contents a mystery until
-      you open it.
-
-    </p>
-
-
-    <!-- FAQ NOTICE -->
-
-    <div class="faq-notice">
-      Please read all
-      <a href="faq.html">FAQs</a>
-      before ordering.
-    </div>
-
-
-    <label for="afterDarkBundle">
-      Box
-    </label>
-
-    <select id="afterDarkBundle">
-
-      <option value="36">
-        6 Items — $36.00
-      </option>
-
-    </select>
-
-    <div class="availability">
-      1 Available
-    </div>
-
-    <label>
-      Quantity
-    </label>
-
-    <div class="quantity">
-
-      <button disabled>
-        −
-      </button>
-
-      <span>
-        1
-      </span>
-
-      <button disabled>
-        +
-      </button>
-
-    </div>
-
-    <div class="total">
-
-      Total:
-
-      <span>
-        $36.00
-      </span>
-
-    </div>
-
-    <button
-      id="afterDarkAddCartButton"
-      class="add-cart"
-      onclick="addAfterDarkToCart()"
-    >
-      ADD TO CART
-    </button>
-
-    <div
-      id="afterDarkCartMessage"
-      class="cart-message"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- ==================================================
-     FOOTER
-================================================== -->
-
-<footer class="site-footer">
-
-  <img
-    src="lace.jpg"
-    class="footer-lace footer-lace-left"
-    alt=""
-  >
-
-  <img
-    src="lace.jpg"
-    class="footer-lace footer-lace-right"
-    alt=""
-  >
-
-
-  <div class="footer-inner">
-
-
-    <!-- QUICK LINKS -->
-
-    <section class="footer-column">
-
-      <h3>
-        QUICK LINKS
-      </h3>
-
-      <ul>
-
-        <li>
-          <a href="about.html">
-            About Us
-          </a>
-        </li>
-
-        <li>
-          <a href="faq.html">
-            FAQ
-          </a>
-        </li>
-
-        <li>
-          <a href="contact.html">
-            Contact
-          </a>
-        </li>
-
-      </ul>
-
-    </section>
-
-
-    <!-- PAYMENT METHODS -->
-
-    <section class="footer-column footer-payment">
-
-      <h3>
-        PAYMENT METHODS ACCEPTED
-      </h3>
-
-      <div class="payment-image-wrap">
-
-        <img
-          src="final%20white.png"
-          alt="Square payments accepted: Visa, Mastercard, Discover and American Express"
-          class="payment-image"
-        >
-
-      </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section class="footer-column footer-contact">
-
-      <h3>
-        CONTACT
-      </h3>
-
-      <p>
-        Have a question? We'd love to hear from you.
-      </p>
-
-      <p>
-        <a href="mailto:ravensscoops@gmail.com">
-          ✉ ravensscoops@gmail.com
-        </a>
-      </p>
-
-      <p>
-        <a
-          href="https://www.tiktok.com/@ravensscoops"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ♪ TikTok: @ravensscoops
-        </a>
-      </p>
-
-    </section>
-
-
-  </div>
-
-
-  <div class="footer-bottom">
-
-    <div class="footer-ornament">
-      ◆ ✦ ◆ ✦ ◆
-    </div>
-
-    © 2026 Ravens Scoops. All Rights Reserved.
-
-  </div>
-
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-
-/* =========================
-   CART HELPERS
-========================= */
-
-function getCart() {
-
-  try {
-
-    return JSON.parse(
-      localStorage.getItem("ravensScoopsCart")
-    ) || [];
-
-  }
-
-  catch (error) {
-
-    return [];
-
-  }
-
-}
-
-
-function saveCart(cart) {
-
-  localStorage.setItem(
-    "ravensScoopsCart",
-    JSON.stringify(cart)
-  );
-
-}
-
-
-function itemIsInCart(id) {
-
-  const cart = getCart();
-
-  return cart.some(
-    item => item.id === id
-  );
-
-}
-
-
-function addItemToCart(item) {
-
-  const cart = getCart();
-
-  const alreadyInCart =
-    cart.some(
-      cartItem => cartItem.id === item.id
-    );
-
-  if (!alreadyInCart) {
-
-    cart.push(item);
-
-    saveCart(cart);
-
-  }
-
-}
-
-
-/* =========================
-   WITCHY
-========================= */
-
-function openProduct() {
-
-  document
-    .getElementById("productModal")
-    .style.display = "block";
-
-  updateWitchyCartButton();
-
-}
-
-
-function closeProduct() {
-
-  document
-    .getElementById("productModal")
-    .style.display = "none";
-
-}
-
-
-function updatePrice() {
-
-  document
-    .getElementById("total")
-    .textContent = "$36.00";
-
-}
-
-
-function addWitchyToCart() {
-
-  const item = {
-
-    id: "witchy-6",
-
-    name: "Witchy Mystery Ball Bundle",
-
-    variant: "6 Picks",
-
-    price: 36,
-
-    quantity: 1,
-
-    image: "coffin%20image.jpg"
-
-  };
-
-
-  addItemToCart(item);
-
-  updateWitchyCartButton();
-
-}
-
-
-function updateWitchyCartButton() {
-
-  const button =
-    document.getElementById("addCartButton");
-
-  const message =
-    document.getElementById("cartMessage");
-
-
-  if (itemIsInCart("witchy-6")) {
-
-    button.disabled = true;
-
-    button.textContent =
-      "IN CART";
-
-    message.innerHTML =
-      'This is the only one available. ' +
-      '<a href="checkout.html" style="color:#d99582;">View Cart</a>';
-
-  }
-
-  else {
-
-    button.disabled = false;
-
-    button.textContent =
-      "ADD TO CART";
-
-    message.textContent = "";
-
-  }
-
-}
-
-
-/* =========================
-   BLACK CAT
-========================= */
-
-function openCatProduct() {
-
-  document
-    .getElementById("catProductModal")
-    .style.display = "block";
-
-  updateCatCartButton();
-
-}
-
-
-function closeCatProduct() {
-
-  document
-    .getElementById("catProductModal")
-    .style.display = "none";
-
-}
-
-
-function addCatToCart() {
-
-  const item = {
-
-    id: "black-cat-box",
-
-    name: "Black Cat Box",
-
-    variant: "6 Items",
-
-    price: 36,
-
-    quantity: 1,
-
-    image:
-      "Screenshot%202026-10-04%20120916.png"
-
-  };
-
-
-  addItemToCart(item);
-
-  updateCatCartButton();
-
-}
-
-
-function updateCatCartButton() {
-
-  const button =
-    document.getElementById("catAddCartButton");
-
-  const message =
-    document.getElementById("catCartMessage");
-
-
-  if (itemIsInCart("black-cat-box")) {
-
-    button.disabled = true;
-
-    button.textContent =
-      "IN CART";
-
-    message.innerHTML =
-      'This is the only one available. ' +
-      '<a href="checkout.html" style="color:#d99582;">View Cart</a>';
-
-  }
-
-  else {
-
-    button.disabled = false;
-
-    button.textContent =
-      "ADD TO CART";
-
-    message.textContent = "";
-
-  }
-
-}
-
-
-/* =========================
-   WITCHES AFTER DARK
-========================= */
-
-function openAfterDarkProduct() {
-
-  document
-    .getElementById("afterDarkModal")
-    .style.display = "block";
-
-  updateAfterDarkCartButton();
-
-}
-
-
-function closeAfterDarkProduct() {
-
-  document
-    .getElementById("afterDarkModal")
-    .style.display = "none";
-
-}
-
-
-function addAfterDarkToCart() {
-
-  const item = {
-
-    id: "witches-after-dark",
-
-    name: "Witches After Dark",
-
-    variant: "6 Items",
-
-    price: 36,
-
-    quantity: 1,
-
-    image:
-      "Screenshot%202026-10-04%20132612.png"
-
-  };
-
-
-  addItemToCart(item);
-
-  updateAfterDarkCartButton();
-
-}
-
-
-function updateAfterDarkCartButton() {
-
-  const button =
-    document.getElementById("afterDarkAddCartButton");
-
-  const message =
-    document.getElementById("afterDarkCartMessage");
-
-
-  if (itemIsInCart("witches-after-dark")) {
-
-    button.disabled = true;
-
-    button.textContent =
-      "IN CART";
-
-    message.innerHTML =
-      'This is the only one available. ' +
-      '<a href="checkout.html" style="color:#d99582;">View Cart</a>';
-
-  }
-
-  else {
-
-    button.disabled = false;
-
-    button.textContent =
-      "ADD TO CART";
-
-    message.textContent = "";
-
-  }
-
-}
-
-
-/* =========================
-   CLICK OUTSIDE TO CLOSE
-========================= */
-
-window.onclick = function(event) {
-
-  const witchyModal =
-    document.getElementById("productModal");
-
-  const catModal =
-    document.getElementById("catProductModal");
-
-  const afterDarkModal =
-    document.getElementById("afterDarkModal");
-
-
-  if (event.target === witchyModal) {
-    closeProduct();
-  }
-
-
-  if (event.target === catModal) {
-    closeCatProduct();
-  }
-
-
-  if (event.target === afterDarkModal) {
-    closeAfterDarkProduct();
-  }
-
-};
-
-
-</script>
-
-
-</body>
-
-</html>
