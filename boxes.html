@@ -238,20 +238,13 @@ nav::before {
 
 .shop-menu {
   display: none;
-
   position: absolute;
-
   top: 100%;
   left: 50%;
-
   transform: translateX(-50%);
-
   min-width: 190px;
-
   padding-top: 12px;
-
   background: transparent;
-
   z-index: 100;
 }
 
@@ -260,12 +253,9 @@ nav::before {
 
 .shop-menu::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 14px;
 }
@@ -278,14 +268,10 @@ nav::before {
   display: block;
 }
 
-
 .shop-menu a {
   display: block;
-
   padding: 13px 18px;
-
   color: #eee8f1;
-
   text-decoration: none;
 
   font-family:
@@ -294,7 +280,6 @@ nav::before {
     serif;
 
   font-size: 15px;
-
   background: #13091b;
 
   border-left: 1px solid #6c5479;
@@ -324,17 +309,12 @@ nav::before {
 
 .nav-ornament {
   position: absolute;
-
   left: 50%;
   bottom: 2px;
-
   transform: translateX(-50%);
-
   color: #e0e2e8;
-
   font-size: 9px;
   letter-spacing: 8px;
-
   z-index: 6;
   opacity: .85;
 }
@@ -346,10 +326,8 @@ nav::before {
 
 main {
   flex: 1;
-
   width: 92%;
   max-width: 1150px;
-
   margin: 55px auto 75px;
 }
 
@@ -372,11 +350,8 @@ main {
 
 .shop-heading p {
   margin: 0 auto;
-
   max-width: 650px;
-
   color: #c9c0d0;
-
   font-size: 17px;
   line-height: 1.6;
 }
@@ -388,16 +363,13 @@ main {
 
 .shop-categories {
   display: grid;
-
   grid-template-columns:
     repeat(3, 1fr);
-
   gap: 28px;
 }
 
 .category-card {
   position: relative;
-
   min-height: 390px;
 
   display: flex;
@@ -429,7 +401,6 @@ main {
 
 .category-card:hover {
   transform: translateY(-5px);
-
   border-color: #9474a5;
 
   box-shadow:
@@ -551,7 +522,6 @@ main {
 
 .site-footer {
   position: relative;
-
   width: 100%;
 
   background:
@@ -577,7 +547,6 @@ main {
 
 .footer-lace {
   position: absolute;
-
   top: 0;
 
   width: 26%;
@@ -691,7 +660,6 @@ main {
 
 .footer-column ul {
   list-style: none;
-
   padding: 0;
   margin: 0;
 }
@@ -702,9 +670,7 @@ main {
 
 .footer-column a {
   color: #c9c0cd;
-
   text-decoration: none;
-
   font-size: 13px;
 
   transition:
@@ -731,12 +697,6 @@ main {
 .footer-payment h3 {
   text-align: center;
 }
-
-
-/*
-   Final payment graphic.
-   Keeps the size/height from the version we liked.
-*/
 
 .payment-image-wrap {
   width: 245px;
@@ -834,14 +794,40 @@ main {
     padding: 20px 3px;
   }
 
+
+  /* MOBILE NAV ALIGNMENT + SPACING */
+
+  .nav-links {
+    align-items: center;
+  }
+
   .nav-link,
   .shop-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 22px;
+    line-height: 22px;
+
     font-size: 12px;
 
-    margin: 0 5px;
+    margin: 0 7px;
 
     letter-spacing: 0;
+
+    white-space: nowrap;
   }
+
+  .shop-dropdown {
+    display: flex;
+    align-items: center;
+
+    height: 22px;
+  }
+
+
+  /* MOBILE SHOP DROPDOWN */
 
   .shop-menu {
     min-width: 160px;
@@ -849,29 +835,41 @@ main {
   }
 
   .shop-menu a {
+    display: block;
+
+    height: auto;
+    line-height: normal;
+
     font-size: 13px;
     padding: 12px 14px;
   }
 
+
+  /* MOBILE SHORTER LACE */
+
   .nav-lace {
-    width: 30%;
+    width: 20%;
   }
 
   .nav-center-shade {
-    left: 15%;
-    width: 70%;
+    left: 6%;
+    width: 88%;
   }
 
   .nav-ornament {
     font-size: 7px;
     letter-spacing: 4px;
+    bottom: 1px;
   }
 
 
-  /* SHOP */
+  /* ==================================================
+     SHOP — MOBILE ONLY
+     KEEP ALL 3 CARDS SIDE-BY-SIDE
+  ================================================== */
 
   main {
-    width: 92%;
+    width: calc(100% - 16px);
     margin: 40px auto 55px;
   }
 
@@ -888,20 +886,45 @@ main {
   }
 
   .shop-categories {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    width: 100%;
   }
 
   .category-card {
-    min-height: 330px;
+    min-width: 0;
+    min-height: 205px;
+    border-radius: 9px;
   }
 
   .category-art {
-    font-size: 60px;
+    inset: 0 0 78px 0;
+    font-size: 38px;
+  }
+
+  .category-info {
+    padding: 14px 4px;
   }
 
   .category-info h2 {
-    font-size: 24px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height: 1.15;
+  }
+
+  .category-info span {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .coming-badge {
+    top: 7px;
+    right: 5px;
+
+    padding: 4px 5px;
+
+    font-size: 7px;
+    letter-spacing: .3px;
   }
 
 
@@ -918,13 +941,16 @@ main {
     gap: 25px;
   }
 
+
+  /* SMALLER PAYMENT IMAGE ON MOBILE ONLY */
+
   .payment-image-wrap {
-    width: 220px;
-    height: 76px;
+    width: 175px;
+    height: 62px;
   }
 
   .payment-image {
-    max-height: 76px;
+    max-height: 62px;
   }
 
   .footer-contact {
@@ -948,9 +974,53 @@ main {
 
   .nav-link,
   .shop-button {
-    margin: 0 3px;
+    margin: 0 5px;
     font-size: 11px;
   }
+
+
+  /*
+    Keep all three shop cards on the same row.
+    These values only make them fit smaller phones.
+  */
+
+  .shop-categories {
+    gap: 6px;
+  }
+
+  .category-card {
+    min-height: 190px;
+  }
+
+  .category-art {
+    inset: 0 0 74px 0;
+    font-size: 34px;
+  }
+
+  .category-info {
+    padding: 12px 3px;
+  }
+
+  .category-info h2 {
+    font-size: 14px;
+  }
+
+  .category-info span {
+    font-size: 9px;
+  }
+
+  .coming-badge {
+    top: 6px;
+    right: 4px;
+
+    padding: 4px;
+
+    font-size: 6px;
+    letter-spacing: 0;
+  }
+
+
+  /* FOOTER */
 
   .footer-inner {
     grid-template-columns: 1fr;
@@ -969,14 +1039,14 @@ main {
   }
 
   .payment-image-wrap {
-    width: 220px;
-    height: 76px;
+    width: 175px;
+    height: 62px;
 
     margin: 0;
   }
 
   .payment-image {
-    max-height: 76px;
+    max-height: 62px;
   }
 
   .footer-contact {
