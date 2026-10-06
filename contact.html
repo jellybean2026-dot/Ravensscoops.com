@@ -768,7 +768,7 @@ nav::before {
 
 /* ==================================================
    MOBILE
-   DESKTOP HEADER ABOVE IS NOT CHANGED
+   DESKTOP ABOVE REMAINS UNCHANGED
 ================================================== */
 
 @media screen and (max-width:700px) {
@@ -777,11 +777,8 @@ nav::before {
     padding: 20px 3px;
   }
 
-  /*
-    MOBILE ONLY:
-    Keep all navigation items centered on the same
-    vertical line.
-  */
+
+  /* MOBILE NAV ALIGNMENT + MORE SPACING */
 
   .nav-links {
     align-items: center;
@@ -797,7 +794,10 @@ nav::before {
     line-height: 22px;
 
     font-size: 12px;
-    margin: 0 5px;
+
+    /* Increased from 5px to 7px */
+    margin: 0 7px;
+
     letter-spacing: 0;
 
     white-space: nowrap;
@@ -811,10 +811,11 @@ nav::before {
   }
 
 
-  /* SHOP DROPDOWN */
+  /* MOBILE SHOP DROPDOWN */
 
   .shop-menu {
     min-width: 160px;
+
     padding-top: 10px;
   }
 
@@ -830,11 +831,7 @@ nav::before {
   }
 
 
-  /*
-    MOBILE ONLY:
-    Shorter lace on both sides so the navigation
-    has more clean space.
-  */
+  /* MOBILE SHORTER LACE */
 
   .nav-lace {
     width: 20%;
@@ -847,7 +844,9 @@ nav::before {
 
   .nav-ornament {
     font-size: 7px;
+
     letter-spacing: 4px;
+
     bottom: 1px;
   }
 
@@ -889,7 +888,7 @@ nav::before {
   }
 
 
-  /* FOOTER */
+  /* MOBILE FOOTER */
 
   .footer-inner {
     width: 88%;
@@ -902,13 +901,16 @@ nav::before {
     gap: 25px;
   }
 
+
+  /* SMALLER PAYMENT IMAGE ON MOBILE ONLY */
+
   .payment-image-wrap {
-    width: 220px;
-    height: 76px;
+    width: 175px;
+    height: 62px;
   }
 
   .payment-image {
-    max-height: 76px;
+    max-height: 62px;
   }
 
   .footer-contact {
@@ -918,6 +920,7 @@ nav::before {
 
   .footer-lace {
     width: 45%;
+
     opacity: .20;
   }
 
@@ -930,11 +933,20 @@ nav::before {
 
 @media screen and (max-width:450px) {
 
+  /*
+    Keep a little more room between the navigation
+    words even on small phones.
+  */
+
   .nav-link,
   .shop-button {
-    margin: 0 3px;
+    margin: 0 5px;
+
     font-size: 11px;
   }
+
+
+  /* FOOTER */
 
   .footer-inner {
     grid-template-columns: 1fr;
@@ -952,15 +964,18 @@ nav::before {
     text-align: left;
   }
 
+
+  /* KEEP PAYMENT IMAGE SMALL ON SMALL PHONES */
+
   .payment-image-wrap {
-    width: 220px;
-    height: 76px;
+    width: 175px;
+    height: 62px;
 
     margin: 0;
   }
 
   .payment-image {
-    max-height: 76px;
+    max-height: 62px;
   }
 
   .footer-contact {
