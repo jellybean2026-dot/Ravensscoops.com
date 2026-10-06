@@ -237,7 +237,7 @@ nav::before {
 }
 
 
-/* Keeps dropdown open while moving mouse downward */
+/* Keeps dropdown open while moving mouse into menu */
 
 .shop-menu {
   display: none;
@@ -259,7 +259,7 @@ nav::before {
 }
 
 
-/* Invisible hover bridge */
+/* INVISIBLE HOVER BRIDGE */
 
 .shop-menu::before {
   content: "";
@@ -274,7 +274,7 @@ nav::before {
 }
 
 
-/* Keep open while hovering */
+/* KEEP DROPDOWN OPEN */
 
 .shop-dropdown:hover .shop-menu,
 .shop-dropdown:focus-within .shop-menu {
@@ -282,7 +282,7 @@ nav::before {
 }
 
 
-/* Dropdown links */
+/* DROPDOWN LINKS */
 
 .shop-menu a {
   display: block;
@@ -739,11 +739,16 @@ main {
 
 
 /*
-   Small horizontal payment graphic.
+   Payment graphic:
+   wide enough to read,
+   tall enough to balance with other footer sections,
+   but not taller than Quick Links / Contact.
 */
 
 .payment-image-wrap {
-  width: 185px;
+  width: 245px;
+  height: 82px;
+
   max-width: 100%;
 
   margin: 0 auto;
@@ -751,13 +756,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
 }
 
 .payment-image {
   display: block;
 
-  width: 100%;
+  width: auto;
   height: auto;
+
+  max-width: 100%;
+  max-height: 82px;
 
   object-fit: contain;
 
@@ -922,7 +932,12 @@ main {
   }
 
   .payment-image-wrap {
-    width: 170px;
+    width: 220px;
+    height: 76px;
+  }
+
+  .payment-image {
+    max-height: 76px;
   }
 
   .footer-contact {
@@ -969,9 +984,14 @@ main {
   }
 
   .payment-image-wrap {
-    width: 170px;
+    width: 220px;
+    height: 76px;
 
     margin: 0;
+  }
+
+  .payment-image {
+    max-height: 76px;
   }
 
   .footer-contact {
@@ -1308,7 +1328,7 @@ main {
 
 
         <img
-          src="new%20square.png"
+          src="white%20square.png"
           alt="Square payments accepted: Visa, Mastercard, Discover and American Express"
           class="payment-image"
         >
