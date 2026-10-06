@@ -62,10 +62,8 @@ nav {
 nav::before {
   content: "";
   position: absolute;
-
   top: 0;
   left: 10%;
-
   width: 80%;
   height: 1px;
 
@@ -81,21 +79,16 @@ nav::before {
 }
 
 
-/* LACE */
+/* NAV LACE */
 
 .nav-lace {
   position: absolute;
-
   top: 0;
-
   width: 36%;
   height: 100%;
-
   object-fit: cover;
   object-position: left center;
-
   pointer-events: none;
-
   z-index: 1;
 
   filter:
@@ -103,7 +96,6 @@ nav::before {
     contrast(1.65);
 
   mix-blend-mode: multiply;
-
   opacity: .88;
 }
 
@@ -135,7 +127,6 @@ nav::before {
 
 .lace-right {
   right: 0;
-
   transform: scaleX(-1);
 
   -webkit-mask-image:
@@ -162,14 +153,12 @@ nav::before {
 }
 
 
-/* CENTER SHADE */
+/* NAV CENTER */
 
 .nav-center-shade {
   position: absolute;
-
   top: 0;
   left: 22%;
-
   width: 56%;
   height: 100%;
 
@@ -183,7 +172,6 @@ nav::before {
     );
 
   pointer-events: none;
-
   z-index: 2;
 }
 
@@ -192,7 +180,6 @@ nav::before {
 
 .nav-links {
   position: relative;
-
   z-index: 5;
 
   display: flex;
@@ -205,7 +192,6 @@ nav::before {
   position: relative;
 
   color: #f5f1f7;
-
   text-decoration: none;
 
   font-family:
@@ -214,9 +200,7 @@ nav::before {
     serif;
 
   font-size: 19px;
-
   font-weight: normal;
-
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -225,9 +209,7 @@ nav::before {
     0 1px 4px rgba(0,0,0,.95);
 
   background: none;
-
   border: none;
-
   padding: 0;
 
   cursor: pointer;
@@ -249,7 +231,6 @@ nav::before {
 
 .shop-dropdown {
   position: relative;
-
   display: inline-block;
 }
 
@@ -268,7 +249,6 @@ nav::before {
   background: #13091b;
 
   border: 1px solid #6c5479;
-
   border-radius: 8px;
 
   box-shadow:
@@ -312,12 +292,8 @@ nav::before {
 
 .shop-menu a:hover {
   background: #411456;
-
   color: white;
 }
-
-
-/* ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -330,11 +306,9 @@ nav::before {
   color: #e0e2e8;
 
   font-size: 9px;
-
   letter-spacing: 8px;
 
   z-index: 6;
-
   opacity: .85;
 }
 
@@ -347,7 +321,6 @@ main {
   flex: 1;
 
   width: 92%;
-
   max-width: 1150px;
 
   margin: 55px auto 75px;
@@ -355,7 +328,6 @@ main {
 
 .shop-heading {
   text-align: center;
-
   margin-bottom: 50px;
 }
 
@@ -368,7 +340,6 @@ main {
     serif;
 
   font-size: 48px;
-
   font-weight: normal;
 }
 
@@ -380,7 +351,6 @@ main {
   color: #c9c0d0;
 
   font-size: 17px;
-
   line-height: 1.6;
 }
 
@@ -404,13 +374,11 @@ main {
   min-height: 390px;
 
   display: flex;
-
   align-items: flex-end;
 
   overflow: hidden;
 
   border: 1px solid #554560;
-
   border-radius: 15px;
 
   background:
@@ -451,9 +419,7 @@ main {
   inset: 0 0 110px 0;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   font-family:
@@ -507,13 +473,11 @@ main {
     serif;
 
   font-size: 26px;
-
   font-weight: normal;
 }
 
 .category-info span {
   color: #c9c0d0;
-
   font-size: 14px;
 }
 
@@ -539,7 +503,6 @@ main {
   padding: 7px 11px;
 
   border: 1px solid #8e739b;
-
   border-radius: 20px;
 
   background: rgba(8,3,13,.85);
@@ -549,13 +512,12 @@ main {
   font-size: 11px;
 
   letter-spacing: 1px;
-
   text-transform: uppercase;
 }
 
 
 /* ==================================================
-   EXPANDED FOOTER
+   COMPACT FOOTER
 ================================================== */
 
 .site-footer {
@@ -567,14 +529,14 @@ main {
     radial-gradient(
       ellipse at top center,
       #351243 0%,
-      #1c0925 42%,
+      #1c0925 48%,
       #0d0511 100%
     );
 
   border-top: 1px solid #91809b;
 
   box-shadow:
-    0 -10px 35px rgba(0,0,0,.55);
+    0 -8px 25px rgba(0,0,0,.5);
 
   overflow: hidden;
 
@@ -589,11 +551,10 @@ main {
 
   top: 0;
 
-  width: 30%;
+  width: 26%;
   height: 100%;
 
   object-fit: cover;
-
   object-position: left top;
 
   pointer-events: none;
@@ -604,7 +565,7 @@ main {
 
   mix-blend-mode: multiply;
 
-  opacity: .38;
+  opacity: .28;
 
   z-index: 1;
 }
@@ -616,7 +577,7 @@ main {
     linear-gradient(
       to right,
       black,
-      rgba(0,0,0,.65),
+      rgba(0,0,0,.55),
       transparent
     );
 
@@ -624,7 +585,7 @@ main {
     linear-gradient(
       to right,
       black,
-      rgba(0,0,0,.65),
+      rgba(0,0,0,.55),
       transparent
     );
 }
@@ -638,7 +599,7 @@ main {
     linear-gradient(
       to right,
       black,
-      rgba(0,0,0,.65),
+      rgba(0,0,0,.55),
       transparent
     );
 
@@ -646,13 +607,13 @@ main {
     linear-gradient(
       to right,
       black,
-      rgba(0,0,0,.65),
+      rgba(0,0,0,.55),
       transparent
     );
 }
 
 
-/* FOOTER MAIN */
+/* THREE FOOTER COLUMNS */
 
 .footer-inner {
   position: relative;
@@ -660,30 +621,31 @@ main {
   z-index: 3;
 
   width: 92%;
-
-  max-width: 1050px;
+  max-width: 1100px;
 
   margin: 0 auto;
 
-  padding: 48px 0 35px;
+  padding: 30px 0 26px;
 
   display: grid;
 
   grid-template-columns:
-    1fr 1fr 1.3fr;
+    1fr 1.15fr 1.35fr;
 
-  gap: 65px;
+  gap: 60px;
+
+  align-items: start;
 }
 
 .footer-column h3 {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 18px;
+  font-size: 17px;
 
   font-weight: normal;
 
@@ -692,16 +654,18 @@ main {
   letter-spacing: 1px;
 }
 
+
+/* QUICK LINKS */
+
 .footer-column ul {
   list-style: none;
 
   padding: 0;
-
   margin: 0;
 }
 
 .footer-column li {
-  margin-bottom: 11px;
+  margin-bottom: 8px;
 }
 
 .footer-column a {
@@ -709,7 +673,7 @@ main {
 
   text-decoration: none;
 
-  font-size: 14px;
+  font-size: 13px;
 
   transition:
     color .2s ease,
@@ -727,13 +691,13 @@ main {
 /* CONTACT */
 
 .footer-contact p {
-  margin: 0 0 12px;
+  margin: 0 0 9px;
 
   color: #c9c0cd;
 
-  font-size: 14px;
+  font-size: 13px;
 
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .footer-contact a {
@@ -746,57 +710,23 @@ main {
 ================================================== */
 
 .footer-payment {
-  position: relative;
-
-  z-index: 3;
-
-  width: 92%;
-
-  max-width: 1050px;
-
-  margin: 0 auto;
-
-  padding: 27px 0;
-
-  border-top:
-    1px solid rgba(210,200,215,.18);
-
-  text-align: center;
-}
-
-.footer-payment h3 {
-  margin: 0 0 18px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 15px;
-
-  font-weight: normal;
-
-  letter-spacing: 1px;
-
-  color: #e7e0e9;
+  text-align: left;
 }
 
 .payment-logos {
   display: flex;
 
-  justify-content: center;
-
   align-items: center;
 
   flex-wrap: wrap;
 
-  gap: 10px;
+  gap: 8px;
 }
 
 .payment-card {
-  height: 36px;
+  height: 34px;
 
-  min-width: 68px;
+  min-width: 64px;
 
   display: flex;
 
@@ -804,7 +734,7 @@ main {
 
   justify-content: center;
 
-  padding: 0 11px;
+  padding: 0 10px;
 
   background: #ffffff;
 
@@ -815,7 +745,9 @@ main {
   box-shadow:
     0 3px 8px rgba(0,0,0,.28);
 
-  font-family: Arial, sans-serif;
+  font-family:
+    Arial,
+    sans-serif;
 
   font-weight: bold;
 
@@ -833,63 +765,19 @@ main {
 .payment-mastercard {
   color: #252525;
 
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .payment-amex {
   color: #1473a8;
 
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .payment-discover {
   color: #333333;
 
-  font-size: 11px;
-}
-
-
-/* ==================================================
-   SMALL FOOTER LINKS
-================================================== */
-
-.footer-small-links {
-  position: relative;
-
-  z-index: 3;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 9px;
-
-  padding: 16px 15px 8px;
-
-  border-top:
-    1px solid rgba(210,200,215,.15);
-}
-
-.footer-small-links a {
-  color: #bdb2c2;
-
-  text-decoration: none;
-
-  font-size: 12px;
-}
-
-.footer-small-links a:hover {
-  color: white;
-}
-
-.footer-divider {
-  color: #65596a;
-
-  font-size: 11px;
+  font-size: 10px;
 }
 
 
@@ -902,28 +790,31 @@ main {
 
   z-index: 3;
 
-  padding: 7px 15px 17px;
+  padding: 12px 15px 14px;
 
   text-align: center;
+
+  border-top:
+    1px solid rgba(210,200,215,.14);
 
   background:
     rgba(4,1,6,.38);
 
   color: #a99eae;
 
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .footer-ornament {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 
   color: #d9d3dd;
 
-  font-size: 8px;
+  font-size: 7px;
 
-  letter-spacing: 7px;
+  letter-spacing: 6px;
 
-  opacity: .8;
+  opacity: .75;
 }
 
 
@@ -1019,12 +910,12 @@ main {
   .footer-inner {
     width: 88%;
 
-    padding: 38px 0 28px;
+    padding: 28px 0 23px;
 
     grid-template-columns:
       1fr 1fr;
 
-    gap: 32px 28px;
+    gap: 28px 25px;
   }
 
   .footer-contact {
@@ -1035,25 +926,21 @@ main {
   .footer-lace {
     width: 45%;
 
-    opacity: .24;
-  }
-
-  .footer-payment {
-    width: 88%;
-
-    padding: 24px 0;
+    opacity: .20;
   }
 
   .payment-card {
-    height: 34px;
+    height: 32px;
 
-    min-width: 60px;
+    min-width: 59px;
+
+    padding: 0 8px;
   }
 
 }
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 450px) {
 
   .nav-link,
   .shop-button {
@@ -1065,11 +952,17 @@ main {
   .footer-inner {
     grid-template-columns: 1fr;
 
-    gap: 28px;
+    gap: 24px;
+
+    padding: 26px 0 21px;
   }
 
   .footer-contact {
     grid-column: auto;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 10px;
   }
 
 }
@@ -1299,7 +1192,7 @@ main {
 
 
 <!-- ==================================================
-     FOOTER
+     COMPACT FOOTER
 ================================================== -->
 
 <footer class="site-footer">
@@ -1346,6 +1239,12 @@ main {
         </li>
 
         <li>
+          <a href="about.html">
+            About Us
+          </a>
+        </li>
+
+        <li>
           <a href="faq.html">
             FAQ
           </a>
@@ -1368,36 +1267,51 @@ main {
     </section>
 
 
-    <!-- SHOP -->
+    <!-- PAYMENT METHODS -->
 
-    <section class="footer-column">
+    <section class="footer-column footer-payment">
 
       <h3>
-        SHOP
+        PAYMENT METHODS ACCEPTED
       </h3>
 
 
-      <ul>
+      <div class="payment-logos">
 
-        <li>
-          <a href="mystery-boxes.html">
-            Mystery Boxes
-          </a>
-        </li>
 
-        <li>
-          <a href="boxes.html">
-            Candles
-          </a>
-        </li>
+        <div
+          class="payment-card payment-visa"
+          aria-label="Visa accepted"
+        >
+          VISA
+        </div>
 
-        <li>
-          <a href="boxes.html">
-            Books
-          </a>
-        </li>
 
-      </ul>
+        <div
+          class="payment-card payment-mastercard"
+          aria-label="Mastercard accepted"
+        >
+          Mastercard
+        </div>
+
+
+        <div
+          class="payment-card payment-amex"
+          aria-label="American Express accepted"
+        >
+          AMEX
+        </div>
+
+
+        <div
+          class="payment-card payment-discover"
+          aria-label="Discover accepted"
+        >
+          DISCOVER
+        </div>
+
+
+      </div>
 
     </section>
 
@@ -1443,95 +1357,7 @@ main {
   </div>
 
 
-  <!-- ==================================================
-       PAYMENT METHODS
-  ================================================== -->
-
-  <section class="footer-payment">
-
-    <h3>
-      PAYMENT METHODS ACCEPTED
-    </h3>
-
-
-    <div class="payment-logos">
-
-
-      <div
-        class="payment-card payment-visa"
-        aria-label="Visa accepted"
-      >
-        VISA
-      </div>
-
-
-      <div
-        class="payment-card payment-mastercard"
-        aria-label="Mastercard accepted"
-      >
-        Mastercard
-      </div>
-
-
-      <div
-        class="payment-card payment-amex"
-        aria-label="American Express accepted"
-      >
-        AMEX
-      </div>
-
-
-      <div
-        class="payment-card payment-discover"
-        aria-label="Discover accepted"
-      >
-        DISCOVER
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- ==================================================
-       SMALL BOTTOM LINKS
-  ================================================== -->
-
-  <div class="footer-small-links">
-
-
-    <a href="about.html">
-      About Us
-    </a>
-
-
-    <span class="footer-divider">
-      |
-    </span>
-
-
-    <a href="faq.html">
-      FAQ
-    </a>
-
-
-    <span class="footer-divider">
-      |
-    </span>
-
-
-    <a href="contact.html">
-      Contact Us
-    </a>
-
-
-  </div>
-
-
-  <!-- ==================================================
-       COPYRIGHT
-  ================================================== -->
+  <!-- COPYRIGHT ONLY -->
 
   <div class="footer-bottom">
 
