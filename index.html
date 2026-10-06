@@ -18,14 +18,22 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  min-height: 100%;
   background: #08030d;
   color: white;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 
-/* =========================
+/* ==================================================
    NAVIGATION
-========================= */
+================================================== */
 
 nav {
   position: relative;
@@ -41,27 +49,22 @@ nav {
       #291033 100%
     );
 
-  border-top: 1px solid rgba(225, 228, 235, 0.20);
+  border-top: 1px solid rgba(225,228,235,.20);
   border-bottom: 1px solid #bfc3cc;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 8px 25px rgba(0,0,0,.7),
+    inset 0 1px 0 rgba(255,255,255,.06);
 
-  overflow: hidden;
-  z-index: 10;
+  overflow: visible;
+  z-index: 20;
 }
-
-
-/* SILVER SHINE */
 
 nav::before {
   content: "";
   position: absolute;
-
   top: 0;
   left: 10%;
-
   width: 80%;
   height: 1px;
 
@@ -77,13 +80,11 @@ nav::before {
 }
 
 
-/* BLACK LACE */
+/* NAV LACE */
 
 .nav-lace {
   position: absolute;
-
   top: 0;
-
   width: 36%;
   height: 100%;
 
@@ -91,7 +92,6 @@ nav::before {
   object-position: left center;
 
   pointer-events: none;
-
   z-index: 1;
 
   filter:
@@ -99,10 +99,8 @@ nav::before {
     contrast(1.65);
 
   mix-blend-mode: multiply;
-
-  opacity: 0.88;
+  opacity: .88;
 }
-
 
 .lace-left {
   left: 0;
@@ -130,10 +128,8 @@ nav::before {
     );
 }
 
-
 .lace-right {
   right: 0;
-
   transform: scaleX(-1);
 
   -webkit-mask-image:
@@ -160,41 +156,45 @@ nav::before {
 }
 
 
-/* CENTER SHADE */
+/* NAV CENTER SHADE */
 
 .nav-center-shade {
   position: absolute;
-
   top: 0;
   left: 22%;
-
   width: 56%;
   height: 100%;
 
   background:
     radial-gradient(
       ellipse at center,
-      rgba(31, 7, 41, .94) 0%,
-      rgba(31, 7, 41, .80) 48%,
-      rgba(31, 7, 41, .36) 72%,
+      rgba(31,7,41,.94) 0%,
+      rgba(31,7,41,.80) 48%,
+      rgba(31,7,41,.36) 72%,
       transparent 100%
     );
 
   pointer-events: none;
-
   z-index: 2;
 }
 
 
-/* NAVIGATION LINKS */
+/* NAV LINKS */
 
-nav a {
+.nav-links {
   position: relative;
-
   z-index: 5;
 
-  color: #f5f1f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.nav-link,
+.shop-nav-button {
+  position: relative;
+
+  color: #f5f1f7;
   text-decoration: none;
 
   font-family:
@@ -204,7 +204,6 @@ nav a {
 
   font-size: 19px;
   font-weight: normal;
-
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -212,38 +211,15 @@ nav a {
   text-shadow:
     0 1px 4px rgba(0,0,0,.95);
 
-  transition:
-    color .25s ease,
-    text-shadow .25s ease;
+  background: none;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
 }
 
-
-nav a::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: -8px;
-
-  width: 0;
-  height: 1px;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      #ffffff,
-      transparent
-    );
-
-  transform: translateX(-50%);
-
-  transition: width .25s ease;
-}
-
-
-nav a:hover {
+.nav-link:hover,
+.shop-nav-button:hover {
   color: #ffffff;
 
   text-shadow:
@@ -252,8 +228,96 @@ nav a:hover {
 }
 
 
-nav a:hover::after {
+/* ==================================================
+   SHOP DROPDOWN
+================================================== */
+
+.shop-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.shop-menu {
+  display: none;
+
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  min-width: 190px;
+
+  padding-top: 12px;
+
+  background: transparent;
+
+  z-index: 100;
+}
+
+
+/* Invisible hover bridge */
+
+.shop-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
   width: 100%;
+  height: 14px;
+}
+
+
+/* Keep dropdown open while hovering */
+
+.shop-dropdown:hover .shop-menu,
+.shop-dropdown:focus-within .shop-menu {
+  display: block;
+}
+
+
+.shop-menu a {
+  display: block;
+
+  padding: 13px 18px;
+
+  color: #eee8f1;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+
+  background: #13091b;
+
+  border-left: 1px solid #6c5479;
+  border-right: 1px solid #6c5479;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  white-space: nowrap;
+}
+
+.shop-menu a:first-child {
+  border-top: 1px solid #6c5479;
+  border-radius: 8px 8px 0 0;
+}
+
+.shop-menu a:last-child {
+  border-bottom: 1px solid #6c5479;
+  border-radius: 0 0 8px 8px;
+}
+
+.shop-menu a:hover {
+  background: #411456;
+  color: white;
 }
 
 
@@ -273,16 +337,24 @@ nav a:hover::after {
   letter-spacing: 8px;
 
   z-index: 6;
-
   opacity: .85;
 
   white-space: nowrap;
 }
 
 
-/* =========================
+/* ==================================================
+   MAIN CONTENT
+================================================== */
+
+main {
+  flex: 1;
+}
+
+
+/* ==================================================
    MAIN RAVEN IMAGE
-========================= */
+================================================== */
 
 .home-image {
   display: block;
@@ -303,9 +375,9 @@ nav a:hover::after {
 }
 
 
-/* =========================
+/* ==================================================
    WELCOME SECTION
-========================= */
+================================================== */
 
 .welcome-section {
   width: calc(100% - 40px);
@@ -329,7 +401,6 @@ nav a:hover::after {
     );
 }
 
-
 .welcome-section h1 {
   margin: 0 0 14px;
 
@@ -350,7 +421,6 @@ nav a:hover::after {
     0 0 15px rgba(135,75,170,.45);
 }
 
-
 .welcome-ornament {
   color: #c9b6d5;
 
@@ -360,7 +430,6 @@ nav a:hover::after {
 
   margin-bottom: 22px;
 }
-
 
 .welcome-section p {
   max-width: 760px;
@@ -380,9 +449,11 @@ nav a:hover::after {
 }
 
 
-/* SHOP BUTTON */
+/* ==================================================
+   HOMEPAGE SHOP BUTTON
+================================================== */
 
-.shop-button {
+.home-shop-button {
   display: inline-block;
 
   padding: 14px 30px;
@@ -418,8 +489,7 @@ nav a:hover::after {
     box-shadow .2s ease;
 }
 
-
-.shop-button:hover {
+.home-shop-button:hover {
   transform: translateY(-2px);
 
   box-shadow:
@@ -428,35 +498,31 @@ nav a:hover::after {
 }
 
 
-/* =========================
-   CONTACT FOOTER
-========================= */
+/* ==================================================
+   FOOTER
+================================================== */
 
-.contact-footer {
+.site-footer {
   position: relative;
 
   width: 100%;
 
-  text-align: center;
-
-  padding: 22px 20px 18px;
-
   background:
     radial-gradient(
-      circle at center,
-      #55206f 0%,
-      #411456 48%,
-      #291033 100%
+      ellipse at top center,
+      #351243 0%,
+      #1c0925 48%,
+      #0d0511 100%
     );
 
-  border-top: 1px solid #bfc3cc;
-  border-bottom: 1px solid rgba(225,228,235,.20);
+  border-top: 1px solid #91809b;
 
   box-shadow:
-    0 -8px 25px rgba(0,0,0,.55),
-    inset 0 1px 0 rgba(255,255,255,.06);
+    0 -8px 25px rgba(0,0,0,.5);
 
   overflow: hidden;
+
+  flex-shrink: 0;
 }
 
 
@@ -467,25 +533,24 @@ nav a:hover::after {
 
   top: 0;
 
-  width: 36%;
+  width: 26%;
   height: 100%;
 
   object-fit: cover;
-  object-position: left center;
+  object-position: left top;
 
   pointer-events: none;
 
-  z-index: 1;
-
   filter:
     grayscale(1)
-    contrast(1.65);
+    contrast(1.7);
 
   mix-blend-mode: multiply;
 
-  opacity: 0.88;
-}
+  opacity: .28;
 
+  z-index: 1;
+}
 
 .footer-lace-left {
   left: 0;
@@ -493,26 +558,19 @@ nav a:hover::after {
   -webkit-mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 
   mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 }
-
 
 .footer-lace-right {
   right: 0;
@@ -522,185 +580,237 @@ nav a:hover::after {
   -webkit-mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 
   mask-image:
     linear-gradient(
       to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
+      black,
+      rgba(0,0,0,.55),
+      transparent
     );
 }
 
 
-/* FOOTER CENTER SHADE */
+/* ==================================================
+   FOOTER COLUMNS
+================================================== */
 
-.footer-center-shade {
-  position: absolute;
-
-  top: 0;
-  left: 22%;
-
-  width: 56%;
-  height: 100%;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(31,7,41,.94) 0%,
-      rgba(31,7,41,.80) 48%,
-      rgba(31,7,41,.36) 72%,
-      transparent 100%
-    );
-
-  pointer-events: none;
-
-  z-index: 2;
-}
-
-
-/* FOOTER CONTENT */
-
-.footer-content {
+.footer-inner {
   position: relative;
 
-  z-index: 5;
+  z-index: 3;
+
+  width: 92%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 20px 0 16px;
+
+  display: grid;
+
+  grid-template-columns:
+    .8fr 1.3fr 1.2fr;
+
+  gap: 55px;
+
+  align-items: start;
 }
 
-
-.footer-content h2 {
-  margin: 0 0 6px;
+.footer-column h3 {
+  margin: 0 0 10px;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 24px;
-
+  font-size: 16px;
   font-weight: normal;
 
+  color: #ffffff;
+
   letter-spacing: 1px;
-
-  color: white;
 }
 
 
-.footer-content p {
-  margin: 5px 0 10px;
+/* ==================================================
+   QUICK LINKS
+================================================== */
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+.footer-column ul {
+  list-style: none;
 
-  color: #d5ced9;
-
-  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
 
-
-/* EMAIL + TIKTOK */
-
-.contact-links {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 8px 30px;
-
-  margin-top: 8px;
+.footer-column li {
+  margin-bottom: 6px;
 }
 
-
-.contact-link {
-  color: white;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 15px;
+.footer-column a {
+  color: #c9c0cd;
 
   text-decoration: none;
 
-  border-bottom:
-    1px solid rgba(255,255,255,.55);
+  font-size: 13px;
 
-  padding-bottom: 3px;
+  transition:
+    color .2s ease,
+    text-shadow .2s ease;
 }
 
+.footer-column a:hover {
+  color: #ffffff;
 
-.contact-link:hover {
   text-shadow:
-    0 0 8px rgba(220,205,255,.85);
+    0 0 8px rgba(200,170,220,.55);
 }
 
+
+/* ==================================================
+   PAYMENT METHODS
+================================================== */
+
+.footer-payment {
+  text-align: center;
+}
+
+.footer-payment h3 {
+  text-align: center;
+}
+
+.payment-image-wrap {
+  width: 245px;
+  height: 82px;
+
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.payment-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 82px;
+
+  object-fit: contain;
+
+  background: transparent;
+}
+
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.footer-contact p {
+  margin: 0 0 7px;
+
+  color: #c9c0cd;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+.footer-contact a {
+  overflow-wrap: anywhere;
+}
+
+
+/* ==================================================
+   COPYRIGHT
+================================================== */
+
+.footer-bottom {
+  position: relative;
+
+  z-index: 3;
+
+  padding: 8px 15px 10px;
+
+  text-align: center;
+
+  border-top:
+    1px solid rgba(210,200,215,.14);
+
+  background:
+    rgba(4,1,6,.38);
+
+  color: #a99eae;
+
+  font-size: 10px;
+}
 
 .footer-ornament {
-  margin-top: 12px;
+  margin-bottom: 3px;
 
-  color: #e0e2e8;
+  color: #d9d3dd;
 
-  font-size: 8px;
+  font-size: 6px;
 
-  letter-spacing: 8px;
+  letter-spacing: 5px;
 
-  opacity: .85;
+  opacity: .75;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ==================================================
+   TABLET / MOBILE
+================================================== */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
 
   nav {
     padding: 20px 3px;
   }
 
-
-  nav a {
+  .nav-link,
+  .shop-nav-button {
     font-size: 12px;
 
-    margin: 0 3px;
+    margin: 0 5px;
 
     letter-spacing: 0;
   }
 
+  .shop-menu {
+    min-width: 160px;
+
+    padding-top: 10px;
+  }
+
+  .shop-menu a {
+    font-size: 13px;
+
+    padding: 12px 14px;
+  }
 
   .nav-lace {
     width: 30%;
-
-    filter:
-      grayscale(1)
-      contrast(1.6);
-
-    opacity: 0.82;
   }
-
 
   .nav-center-shade {
     left: 15%;
 
     width: 70%;
   }
-
 
   .nav-ornament {
     font-size: 7px;
@@ -710,6 +820,8 @@ nav a:hover::after {
     bottom: 1px;
   }
 
+
+  /* HOMEPAGE */
 
   .home-image {
     width: 100%;
@@ -725,7 +837,6 @@ nav a:hover::after {
       0 0 25px rgba(120,75,150,.18);
   }
 
-
   .welcome-section {
     width: calc(100% - 30px);
 
@@ -734,11 +845,9 @@ nav a:hover::after {
     margin-bottom: 45px;
   }
 
-
   .welcome-section h1 {
     font-size: 27px;
   }
-
 
   .welcome-section p {
     font-size: 16px;
@@ -746,69 +855,91 @@ nav a:hover::after {
     line-height: 1.7;
   }
 
-
-  .shop-button {
+  .home-shop-button {
     font-size: 16px;
 
     padding: 13px 24px;
   }
 
 
-  .contact-footer {
-    padding: 18px 15px 15px;
+  /* FOOTER */
+
+  .footer-inner {
+    width: 88%;
+
+    padding: 22px 0 18px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 25px;
   }
 
+  .payment-image-wrap {
+    width: 220px;
+    height: 76px;
+  }
+
+  .payment-image {
+    max-height: 76px;
+  }
+
+  .footer-contact {
+    grid-column:
+      1 / -1;
+  }
 
   .footer-lace {
-    width: 30%;
+    width: 45%;
 
-    filter:
-      grayscale(1)
-      contrast(1.6);
-
-    opacity: 0.82;
+    opacity: .20;
   }
 
+}
 
-  .footer-center-shade {
-    left: 15%;
 
-    width: 70%;
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media screen and (max-width: 450px) {
+
+  .nav-link,
+  .shop-nav-button {
+    margin: 0 3px;
+
+    font-size: 11px;
   }
 
+  .footer-inner {
+    grid-template-columns: 1fr;
 
-  .footer-content h2 {
-    font-size: 21px;
+    gap: 20px;
+
+    padding: 22px 0 18px;
   }
 
-
-  .footer-content p {
-    font-size: 13px;
-
-    margin: 4px 0 8px;
+  .footer-payment {
+    text-align: left;
   }
 
-
-  .contact-links {
-    flex-direction: column;
-
-    gap: 7px;
-
-    margin-top: 7px;
+  .footer-payment h3 {
+    text-align: left;
   }
 
+  .payment-image-wrap {
+    width: 220px;
+    height: 76px;
 
-  .contact-link {
-    font-size: 14px;
+    margin: 0;
   }
 
+  .payment-image {
+    max-height: 76px;
+  }
 
-  .footer-ornament {
-    margin-top: 10px;
-
-    font-size: 7px;
-
-    letter-spacing: 4px;
+  .footer-contact {
+    grid-column: auto;
   }
 
 }
@@ -821,9 +952,9 @@ nav a:hover::after {
 <body>
 
 
-<!-- =========================
+<!-- ==================================================
      NAVIGATION
-========================= -->
+================================================== -->
 
 <nav>
 
@@ -842,17 +973,75 @@ nav a:hover::after {
   <span class="nav-center-shade"></span>
 
 
-  <a href="index.html">Home</a>
+  <div class="nav-links">
 
-  <a href="boxes.html?v=2">Boxes</a>
+    <a
+      href="index.html"
+      class="nav-link"
+    >
+      Home
+    </a>
 
-  <a href="about.html">About Us</a>
 
-  <a href="faq.html">FAQ</a>
+    <!-- SHOP DROPDOWN -->
 
-  <a href="contact.html">Contact</a>
+    <div class="shop-dropdown">
 
-  <a href="checkout.html">Checkout</a>
+      <button
+        class="shop-nav-button"
+        type="button"
+      >
+        Shop ▾
+      </button>
+
+
+      <div class="shop-menu">
+
+        <a href="boxes.html">
+          All Products
+        </a>
+
+        <a href="mystery-boxes.html">
+          Mystery Boxes
+        </a>
+
+        <a href="candles.html">
+          Candles
+        </a>
+
+        <a href="books.html">
+          Books
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <a
+      href="faq.html"
+      class="nav-link"
+    >
+      FAQ
+    </a>
+
+
+    <a
+      href="contact.html"
+      class="nav-link"
+    >
+      Contact
+    </a>
+
+
+    <a
+      href="checkout.html"
+      class="nav-link"
+    >
+      Checkout
+    </a>
+
+  </div>
 
 
   <span class="nav-ornament">
@@ -862,56 +1051,62 @@ nav a:hover::after {
 </nav>
 
 
-<!-- =========================
-     RAVENS SCOOPS IMAGE
-========================= -->
+<!-- ==================================================
+     HOMEPAGE CONTENT
+================================================== -->
 
-<img
-  class="home-image"
-  src="Screenshot%202026-09-25%20232257.png"
-  alt="Ravens Scoops"
->
+<main>
 
 
-<!-- =========================
-     WELCOME / ABOUT
-========================= -->
+  <!-- RAVENS SCOOPS IMAGE -->
 
-<section class="welcome-section">
-
-  <h1>
-    Welcome to Ravens Scoops
-  </h1>
-
-  <div class="welcome-ornament">
-    ◆ ✦ ◆ ✦ ◆
-  </div>
-
-  <p>
-    Ravens Scoops is a family-run business created by a mother
-    and two daughters with a love for all things macabre,
-    paranormal, metaphysical, and mysterious. From crystals and
-    witchy treasures to spooky, unusual, and sometimes completely
-    random finds, you never quite know what the raven will choose
-    for you.
-  </p>
-
-
-  <a
-    class="shop-button"
-    href="boxes.html?v=2"
+  <img
+    class="home-image"
+    src="Screenshot%202026-09-25%20232257.png"
+    alt="Ravens Scoops"
   >
-    Shop Mystery Bundles
-  </a>
-
-</section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+  <!-- WELCOME / ABOUT -->
 
-<footer class="contact-footer">
+  <section class="welcome-section">
+
+    <h1>
+      Welcome to Ravens Scoops
+    </h1>
+
+    <div class="welcome-ornament">
+      ◆ ✦ ◆ ✦ ◆
+    </div>
+
+    <p>
+      Ravens Scoops is a family-run business created by a mother
+      and two daughters with a love for all things macabre,
+      paranormal, metaphysical, and mysterious. From crystals and
+      witchy treasures to spooky, unusual, and sometimes completely
+      random finds, you never quite know what the raven will choose
+      for you.
+    </p>
+
+
+    <a
+      class="home-shop-button"
+      href="boxes.html"
+    >
+      Shop
+    </a>
+
+  </section>
+
+
+</main>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="site-footer">
 
   <img
     src="lace.jpg"
@@ -925,47 +1120,110 @@ nav a:hover::after {
     alt=""
   >
 
-  <span class="footer-center-shade"></span>
+
+  <div class="footer-inner">
 
 
-  <div class="footer-content">
+    <!-- QUICK LINKS -->
 
-    <h2>
-      Ravens Scoops
-    </h2>
+    <section class="footer-column">
 
-    <p>
-      Have a question? We'd love to hear from you.
-    </p>
+      <h3>
+        QUICK LINKS
+      </h3>
+
+      <ul>
+
+        <li>
+          <a href="about.html">
+            About Us
+          </a>
+        </li>
+
+        <li>
+          <a href="faq.html">
+            FAQ
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
 
 
-    <div class="contact-links">
+    <!-- PAYMENT METHODS -->
 
-      <a
-        class="contact-link"
-        href="mailto:ravensscoops@gmail.com"
-      >
-        ✉ ravensscoops@gmail.com
-      </a>
+    <section class="footer-column footer-payment">
+
+      <h3>
+        PAYMENT METHODS ACCEPTED
+      </h3>
+
+      <div class="payment-image-wrap">
+
+        <img
+          src="final%20white.png"
+          alt="Square payments accepted: Visa, Mastercard, Discover and American Express"
+          class="payment-image"
+        >
+
+      </div>
+
+    </section>
 
 
-      <a
-        class="contact-link"
-        href="https://www.tiktok.com/@ravensscoops"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ♪ TikTok: @ravensscoops
-      </a>
+    <!-- CONTACT -->
 
-    </div>
+    <section class="footer-column footer-contact">
 
+      <h3>
+        CONTACT
+      </h3>
+
+      <p>
+        Have a question? We'd love to hear from you.
+      </p>
+
+      <p>
+        <a href="mailto:ravensscoops@gmail.com">
+          ✉ ravensscoops@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <a
+          href="https://www.tiktok.com/@ravensscoops"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ♪ TikTok: @ravensscoops
+        </a>
+      </p>
+
+    </section>
+
+
+  </div>
+
+
+  <!-- COPYRIGHT -->
+
+  <div class="footer-bottom">
 
     <div class="footer-ornament">
       ◆ ✦ ◆ ✦ ◆
     </div>
 
+    © 2026 Ravens Scoops. All Rights Reserved.
+
   </div>
+
 
 </footer>
 
