@@ -86,9 +86,12 @@ nav::before {
   top: 0;
   width: 36%;
   height: 100%;
+
   object-fit: cover;
   object-position: left center;
+
   pointer-events: none;
+
   z-index: 1;
 
   filter:
@@ -96,6 +99,7 @@ nav::before {
     contrast(1.65);
 
   mix-blend-mode: multiply;
+
   opacity: .88;
 }
 
@@ -127,6 +131,7 @@ nav::before {
 
 .lace-right {
   right: 0;
+
   transform: scaleX(-1);
 
   -webkit-mask-image:
@@ -153,12 +158,13 @@ nav::before {
 }
 
 
-/* NAV CENTER */
+/* NAV CENTER SHADE */
 
 .nav-center-shade {
   position: absolute;
   top: 0;
   left: 22%;
+
   width: 56%;
   height: 100%;
 
@@ -172,6 +178,7 @@ nav::before {
     );
 
   pointer-events: none;
+
   z-index: 2;
 }
 
@@ -180,6 +187,7 @@ nav::before {
 
 .nav-links {
   position: relative;
+
   z-index: 5;
 
   display: flex;
@@ -192,6 +200,7 @@ nav::before {
   position: relative;
 
   color: #f5f1f7;
+
   text-decoration: none;
 
   font-family:
@@ -201,6 +210,7 @@ nav::before {
 
   font-size: 19px;
   font-weight: normal;
+
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -209,7 +219,9 @@ nav::before {
     0 1px 4px rgba(0,0,0,.95);
 
   background: none;
+
   border: none;
+
   padding: 0;
 
   cursor: pointer;
@@ -231,38 +243,61 @@ nav::before {
 
 .shop-dropdown {
   position: relative;
+
   display: inline-block;
 }
+
+
+/*
+   The dropdown begins immediately below the Shop
+   container. Padding creates an invisible hover bridge
+   so the menu stays open while the mouse moves downward.
+*/
 
 .shop-menu {
   display: none;
 
   position: absolute;
 
-  top: 28px;
+  top: 100%;
   left: 50%;
 
   transform: translateX(-50%);
 
   min-width: 190px;
 
-  background: #13091b;
+  padding-top: 12px;
 
-  border: 1px solid #6c5479;
-  border-radius: 8px;
-
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.75);
-
-  overflow: hidden;
+  background: transparent;
 
   z-index: 100;
 }
+
+
+/* INVISIBLE HOVER BRIDGE */
+
+.shop-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 14px;
+}
+
+
+/* KEEP MENU OPEN WHILE HOVERING */
 
 .shop-dropdown:hover .shop-menu,
 .shop-dropdown:focus-within .shop-menu {
   display: block;
 }
+
+
+/* DROPDOWN LINKS */
 
 .shop-menu a {
   display: block;
@@ -280,20 +315,35 @@ nav::before {
 
   font-size: 15px;
 
-  border-bottom:
-    1px solid rgba(255,255,255,.08);
+  background: #13091b;
+
+  border-left: 1px solid #6c5479;
+  border-right: 1px solid #6c5479;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 
   white-space: nowrap;
 }
 
+.shop-menu a:first-child {
+  border-top: 1px solid #6c5479;
+
+  border-radius: 8px 8px 0 0;
+}
+
 .shop-menu a:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid #6c5479;
+
+  border-radius: 0 0 8px 8px;
 }
 
 .shop-menu a:hover {
   background: #411456;
+
   color: white;
 }
+
+
+/* NAV ORNAMENT */
 
 .nav-ornament {
   position: absolute;
@@ -306,9 +356,11 @@ nav::before {
   color: #e0e2e8;
 
   font-size: 9px;
+
   letter-spacing: 8px;
 
   z-index: 6;
+
   opacity: .85;
 }
 
@@ -321,6 +373,7 @@ main {
   flex: 1;
 
   width: 92%;
+
   max-width: 1150px;
 
   margin: 55px auto 75px;
@@ -328,6 +381,7 @@ main {
 
 .shop-heading {
   text-align: center;
+
   margin-bottom: 50px;
 }
 
@@ -340,6 +394,7 @@ main {
     serif;
 
   font-size: 48px;
+
   font-weight: normal;
 }
 
@@ -351,6 +406,7 @@ main {
   color: #c9c0d0;
 
   font-size: 17px;
+
   line-height: 1.6;
 }
 
@@ -374,11 +430,13 @@ main {
   min-height: 390px;
 
   display: flex;
+
   align-items: flex-end;
 
   overflow: hidden;
 
   border: 1px solid #554560;
+
   border-radius: 15px;
 
   background:
@@ -419,7 +477,9 @@ main {
   inset: 0 0 110px 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-family:
@@ -473,16 +533,20 @@ main {
     serif;
 
   font-size: 26px;
+
   font-weight: normal;
 }
 
 .category-info span {
   color: #c9c0d0;
+
   font-size: 14px;
 }
 
 
-/* COMING SOON */
+/* ==================================================
+   COMING SOON
+================================================== */
 
 .coming-soon {
   cursor: default;
@@ -503,6 +567,7 @@ main {
   padding: 7px 11px;
 
   border: 1px solid #8e739b;
+
   border-radius: 20px;
 
   background: rgba(8,3,13,.85);
@@ -512,12 +577,13 @@ main {
   font-size: 11px;
 
   letter-spacing: 1px;
+
   text-transform: uppercase;
 }
 
 
 /* ==================================================
-   COMPACT FOOTER
+   FOOTER
 ================================================== */
 
 .site-footer {
@@ -613,7 +679,9 @@ main {
 }
 
 
-/* THREE FOOTER COLUMNS */
+/* ==================================================
+   FOOTER COLUMNS
+================================================== */
 
 .footer-inner {
   position: relative;
@@ -621,31 +689,32 @@ main {
   z-index: 3;
 
   width: 92%;
+
   max-width: 1100px;
 
   margin: 0 auto;
 
-  padding: 30px 0 26px;
+  padding: 22px 0 18px;
 
   display: grid;
 
   grid-template-columns:
-    1fr 1.15fr 1.35fr;
+    .8fr 1.3fr 1.2fr;
 
-  gap: 60px;
+  gap: 55px;
 
   align-items: start;
 }
 
 .footer-column h3 {
-  margin: 0 0 14px;
+  margin: 0 0 11px;
 
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 17px;
+  font-size: 16px;
 
   font-weight: normal;
 
@@ -655,17 +724,20 @@ main {
 }
 
 
-/* QUICK LINKS */
+/* ==================================================
+   QUICK LINKS
+================================================== */
 
 .footer-column ul {
   list-style: none;
 
   padding: 0;
+
   margin: 0;
 }
 
 .footer-column li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .footer-column a {
@@ -688,96 +760,69 @@ main {
 }
 
 
-/* CONTACT */
-
-.footer-contact p {
-  margin: 0 0 9px;
-
-  color: #c9c0cd;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-}
-
-.footer-contact a {
-  overflow-wrap: anywhere;
-}
-
-
 /* ==================================================
    PAYMENT METHODS
 ================================================== */
 
 .footer-payment {
-  text-align: left;
+  text-align: center;
 }
 
-.payment-logos {
-  display: flex;
-
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 8px;
+.footer-payment h3 {
+  text-align: center;
 }
 
-.payment-card {
-  height: 34px;
 
-  min-width: 64px;
+/*
+   The payment graphic is intentionally displayed
+   as a short, wide strip instead of a tall image.
+*/
+
+.payment-image-wrap {
+  width: 260px;
+  max-width: 100%;
+
+  height: 90px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  padding: 0 10px;
-
-  background: #ffffff;
-
-  border: 1px solid #d9d9d9;
-
-  border-radius: 5px;
-
-  box-shadow:
-    0 3px 8px rgba(0,0,0,.28);
-
-  font-family:
-    Arial,
-    sans-serif;
-
-  font-weight: bold;
-
-  line-height: 1;
 }
 
-.payment-visa {
-  color: #172b85;
+.payment-image {
+  display: block;
 
-  font-size: 18px;
+  width: 100%;
+  height: 100%;
 
-  font-style: italic;
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius: 4px;
 }
 
-.payment-mastercard {
-  color: #252525;
 
-  font-size: 10px;
+/* ==================================================
+   CONTACT
+================================================== */
+
+.footer-contact p {
+  margin: 0 0 7px;
+
+  color: #c9c0cd;
+
+  font-size: 13px;
+
+  line-height: 1.45;
 }
 
-.payment-amex {
-  color: #1473a8;
-
-  font-size: 10px;
-}
-
-.payment-discover {
-  color: #333333;
-
-  font-size: 10px;
+.footer-contact a {
+  overflow-wrap: anywhere;
 }
 
 
@@ -790,7 +835,7 @@ main {
 
   z-index: 3;
 
-  padding: 12px 15px 14px;
+  padding: 8px 15px 10px;
 
   text-align: center;
 
@@ -802,24 +847,24 @@ main {
 
   color: #a99eae;
 
-  font-size: 11px;
+  font-size: 10px;
 }
 
 .footer-ornament {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 
   color: #d9d3dd;
 
-  font-size: 7px;
+  font-size: 6px;
 
-  letter-spacing: 6px;
+  letter-spacing: 5px;
 
   opacity: .75;
 }
 
 
 /* ==================================================
-   MOBILE
+   TABLET / MOBILE
 ================================================== */
 
 @media screen and (max-width: 700px) {
@@ -838,9 +883,9 @@ main {
   }
 
   .shop-menu {
-    top: 24px;
-
     min-width: 160px;
+
+    padding-top: 10px;
   }
 
   .shop-menu a {
@@ -910,12 +955,22 @@ main {
   .footer-inner {
     width: 88%;
 
-    padding: 28px 0 23px;
+    padding: 24px 0 20px;
 
     grid-template-columns:
       1fr 1fr;
 
-    gap: 28px 25px;
+    gap: 25px;
+  }
+
+  .footer-payment {
+    text-align: center;
+  }
+
+  .payment-image-wrap {
+    width: 220px;
+
+    height: 76px;
   }
 
   .footer-contact {
@@ -929,16 +984,12 @@ main {
     opacity: .20;
   }
 
-  .payment-card {
-    height: 32px;
-
-    min-width: 59px;
-
-    padding: 0 8px;
-  }
-
 }
 
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
 
 @media screen and (max-width: 450px) {
 
@@ -952,17 +1003,29 @@ main {
   .footer-inner {
     grid-template-columns: 1fr;
 
-    gap: 24px;
+    gap: 20px;
 
-    padding: 26px 0 21px;
+    padding: 22px 0 18px;
+  }
+
+  .footer-payment {
+    text-align: left;
+  }
+
+  .footer-payment h3 {
+    text-align: left;
+  }
+
+  .payment-image-wrap {
+    width: 235px;
+
+    height: 81px;
+
+    margin: 0;
   }
 
   .footer-contact {
     grid-column: auto;
-  }
-
-  .footer-column h3 {
-    margin-bottom: 10px;
   }
 
 }
@@ -981,17 +1044,20 @@ main {
 
 <nav>
 
+
   <img
     src="lace.jpg"
     class="nav-lace lace-left"
     alt=""
   >
 
+
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
+
 
   <span class="nav-center-shade"></span>
 
@@ -1011,6 +1077,7 @@ main {
 
     <div class="shop-dropdown">
 
+
       <button
         class="shop-button"
         type="button"
@@ -1021,23 +1088,29 @@ main {
 
       <div class="shop-menu">
 
+
         <a href="boxes.html">
           All Products
         </a>
+
 
         <a href="mystery-boxes.html">
           Mystery Boxes
         </a>
 
+
         <a href="candles.html">
           Candles
         </a>
+
 
         <a href="books.html">
           Books
         </a>
 
+
       </div>
+
 
     </div>
 
@@ -1073,6 +1146,7 @@ main {
     ◆ ✦ ◆ ✦ ◆
   </span>
 
+
 </nav>
 
 
@@ -1085,14 +1159,17 @@ main {
 
   <section class="shop-heading">
 
+
     <h1>
       Shop
     </h1>
+
 
     <p>
       Explore the strange, mysterious, witchy, and unexpected.
       Choose a collection below and see what the raven has waiting for you.
     </p>
+
 
   </section>
 
@@ -1107,6 +1184,7 @@ main {
       class="category-card"
     >
 
+
       <div class="category-art">
         ✦
       </div>
@@ -1114,15 +1192,19 @@ main {
 
       <div class="category-info">
 
+
         <h2>
           Mystery Boxes
         </h2>
+
 
         <span>
           Shop Mystery Boxes
         </span>
 
+
       </div>
+
 
     </a>
 
@@ -1130,6 +1212,7 @@ main {
     <!-- CANDLES -->
 
     <div class="category-card coming-soon">
+
 
       <span class="coming-badge">
         Coming Soon
@@ -1143,15 +1226,19 @@ main {
 
       <div class="category-info">
 
+
         <h2>
           Candles
         </h2>
+
 
         <span>
           Shop Candles
         </span>
 
+
       </div>
+
 
     </div>
 
@@ -1159,6 +1246,7 @@ main {
     <!-- BOOKS -->
 
     <div class="category-card coming-soon">
+
 
       <span class="coming-badge">
         Coming Soon
@@ -1172,15 +1260,19 @@ main {
 
       <div class="category-info">
 
+
         <h2>
           Books
         </h2>
+
 
         <span>
           Shop Books
         </span>
 
+
       </div>
+
 
     </div>
 
@@ -1192,7 +1284,7 @@ main {
 
 
 <!-- ==================================================
-     COMPACT FOOTER
+     FOOTER
 ================================================== -->
 
 <footer class="site-footer">
@@ -1219,6 +1311,7 @@ main {
 
     <section class="footer-column">
 
+
       <h3>
         QUICK LINKS
       </h3>
@@ -1226,17 +1319,6 @@ main {
 
       <ul>
 
-        <li>
-          <a href="index.html">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="boxes.html">
-            Shop
-          </a>
-        </li>
 
         <li>
           <a href="about.html">
@@ -1244,11 +1326,13 @@ main {
           </a>
         </li>
 
+
         <li>
           <a href="faq.html">
             FAQ
           </a>
         </li>
+
 
         <li>
           <a href="contact.html">
@@ -1256,13 +1340,9 @@ main {
           </a>
         </li>
 
-        <li>
-          <a href="checkout.html">
-            Checkout
-          </a>
-        </li>
 
       </ul>
+
 
     </section>
 
@@ -1271,47 +1351,24 @@ main {
 
     <section class="footer-column footer-payment">
 
+
       <h3>
         PAYMENT METHODS ACCEPTED
       </h3>
 
 
-      <div class="payment-logos">
+      <div class="payment-image-wrap">
 
 
-        <div
-          class="payment-card payment-visa"
-          aria-label="Visa accepted"
+        <img
+          src="Screenshot%202026-10-05%20205407.png"
+          alt="Square payments accepted: Visa, Mastercard, Discover and American Express"
+          class="payment-image"
         >
-          VISA
-        </div>
-
-
-        <div
-          class="payment-card payment-mastercard"
-          aria-label="Mastercard accepted"
-        >
-          Mastercard
-        </div>
-
-
-        <div
-          class="payment-card payment-amex"
-          aria-label="American Express accepted"
-        >
-          AMEX
-        </div>
-
-
-        <div
-          class="payment-card payment-discover"
-          aria-label="Discover accepted"
-        >
-          DISCOVER
-        </div>
 
 
       </div>
+
 
     </section>
 
@@ -1319,6 +1376,7 @@ main {
     <!-- CONTACT -->
 
     <section class="footer-column footer-contact">
+
 
       <h3>
         CONTACT
@@ -1351,13 +1409,14 @@ main {
 
       </p>
 
+
     </section>
 
 
   </div>
 
 
-  <!-- COPYRIGHT ONLY -->
+  <!-- COPYRIGHT -->
 
   <div class="footer-bottom">
 
