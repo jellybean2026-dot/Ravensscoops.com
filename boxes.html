@@ -131,7 +131,6 @@ nav::before {
 
 .lace-right {
   right: 0;
-
   transform: scaleX(-1);
 
   -webkit-mask-image:
@@ -178,7 +177,6 @@ nav::before {
     );
 
   pointer-events: none;
-
   z-index: 2;
 }
 
@@ -187,7 +185,6 @@ nav::before {
 
 .nav-links {
   position: relative;
-
   z-index: 5;
 
   display: flex;
@@ -200,7 +197,6 @@ nav::before {
   position: relative;
 
   color: #f5f1f7;
-
   text-decoration: none;
 
   font-family:
@@ -210,7 +206,6 @@ nav::before {
 
   font-size: 19px;
   font-weight: normal;
-
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -219,9 +214,7 @@ nav::before {
     0 1px 4px rgba(0,0,0,.95);
 
   background: none;
-
   border: none;
-
   padding: 0;
 
   cursor: pointer;
@@ -243,15 +236,13 @@ nav::before {
 
 .shop-dropdown {
   position: relative;
-
   display: inline-block;
 }
 
 
 /*
-   The dropdown begins immediately below the Shop
-   container. Padding creates an invisible hover bridge
-   so the menu stays open while the mouse moves downward.
+   Padding creates an invisible bridge between
+   Shop and the dropdown so desktop hover stays open.
 */
 
 .shop-menu {
@@ -289,7 +280,7 @@ nav::before {
 }
 
 
-/* KEEP MENU OPEN WHILE HOVERING */
+/* KEEP DROPDOWN OPEN */
 
 .shop-dropdown:hover .shop-menu,
 .shop-dropdown:focus-within .shop-menu {
@@ -356,7 +347,6 @@ nav::before {
   color: #e0e2e8;
 
   font-size: 9px;
-
   letter-spacing: 8px;
 
   z-index: 6;
@@ -373,7 +363,6 @@ main {
   flex: 1;
 
   width: 92%;
-
   max-width: 1150px;
 
   margin: 55px auto 75px;
@@ -394,7 +383,6 @@ main {
     serif;
 
   font-size: 48px;
-
   font-weight: normal;
 }
 
@@ -406,7 +394,6 @@ main {
   color: #c9c0d0;
 
   font-size: 17px;
-
   line-height: 1.6;
 }
 
@@ -430,13 +417,11 @@ main {
   min-height: 390px;
 
   display: flex;
-
   align-items: flex-end;
 
   overflow: hidden;
 
   border: 1px solid #554560;
-
   border-radius: 15px;
 
   background:
@@ -477,9 +462,7 @@ main {
   inset: 0 0 110px 0;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   font-family:
@@ -533,7 +516,6 @@ main {
     serif;
 
   font-size: 26px;
-
   font-weight: normal;
 }
 
@@ -567,7 +549,6 @@ main {
   padding: 7px 11px;
 
   border: 1px solid #8e739b;
-
   border-radius: 20px;
 
   background: rgba(8,3,13,.85);
@@ -689,7 +670,6 @@ main {
   z-index: 3;
 
   width: 92%;
-
   max-width: 1100px;
 
   margin: 0 auto;
@@ -732,7 +712,6 @@ main {
   list-style: none;
 
   padding: 0;
-
   margin: 0;
 }
 
@@ -774,21 +753,20 @@ main {
 
 
 /*
-   The payment graphic is intentionally displayed
-   as a short, wide strip instead of a tall image.
+   New transparent payment graphic.
+   Kept short and horizontal.
 */
 
 .payment-image-wrap {
-  width: 260px;
+  width: 280px;
   max-width: 100%;
 
-  height: 90px;
+  height: 85px;
 
   margin: 0 auto;
 
-  overflow: hidden;
-
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -799,11 +777,11 @@ main {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  object-fit: contain;
 
   object-position: center;
 
-  border-radius: 4px;
+  background: transparent;
 }
 
 
@@ -968,9 +946,9 @@ main {
   }
 
   .payment-image-wrap {
-    width: 220px;
+    width: 235px;
 
-    height: 76px;
+    height: 72px;
   }
 
   .footer-contact {
@@ -1019,7 +997,7 @@ main {
   .payment-image-wrap {
     width: 235px;
 
-    height: 81px;
+    height: 72px;
 
     margin: 0;
   }
@@ -1044,20 +1022,17 @@ main {
 
 <nav>
 
-
   <img
     src="lace.jpg"
     class="nav-lace lace-left"
     alt=""
   >
 
-
   <img
     src="lace.jpg"
     class="nav-lace lace-right"
     alt=""
   >
-
 
   <span class="nav-center-shade"></span>
 
@@ -1361,7 +1336,7 @@ main {
 
 
         <img
-          src="Screenshot%202026-10-05%20205407.png"
+          src="31c72858-2a19-4ccd-9741-3d498946195b.png"
           alt="Square payments accepted: Visa, Mastercard, Discover and American Express"
           class="payment-image"
         >
