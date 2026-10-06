@@ -30,9 +30,9 @@ body {
 }
 
 
-/* =========================
+/* ==================================================
    NAVIGATION
-========================= */
+================================================== */
 
 nav {
   position: relative;
@@ -62,8 +62,10 @@ nav {
 nav::before {
   content: "";
   position: absolute;
+
   top: 0;
   left: 10%;
+
   width: 80%;
   height: 1px;
 
@@ -78,14 +80,22 @@ nav::before {
   z-index: 3;
 }
 
+
+/* LACE */
+
 .nav-lace {
   position: absolute;
+
   top: 0;
+
   width: 36%;
   height: 100%;
+
   object-fit: cover;
   object-position: left center;
+
   pointer-events: none;
+
   z-index: 1;
 
   filter:
@@ -93,6 +103,7 @@ nav::before {
     contrast(1.65);
 
   mix-blend-mode: multiply;
+
   opacity: .88;
 }
 
@@ -124,6 +135,7 @@ nav::before {
 
 .lace-right {
   right: 0;
+
   transform: scaleX(-1);
 
   -webkit-mask-image:
@@ -149,10 +161,15 @@ nav::before {
     );
 }
 
+
+/* CENTER SHADE */
+
 .nav-center-shade {
   position: absolute;
+
   top: 0;
   left: 22%;
+
   width: 56%;
   height: 100%;
 
@@ -166,11 +183,16 @@ nav::before {
     );
 
   pointer-events: none;
+
   z-index: 2;
 }
 
+
+/* NAV LINKS */
+
 .nav-links {
   position: relative;
+
   z-index: 5;
 
   display: flex;
@@ -181,7 +203,9 @@ nav::before {
 .nav-link,
 .shop-button {
   position: relative;
+
   color: #f5f1f7;
+
   text-decoration: none;
 
   font-family:
@@ -190,7 +214,9 @@ nav::before {
     serif;
 
   font-size: 19px;
+
   font-weight: normal;
+
   letter-spacing: 1px;
 
   margin: 0 19px;
@@ -199,8 +225,11 @@ nav::before {
     0 1px 4px rgba(0,0,0,.95);
 
   background: none;
+
   border: none;
+
   padding: 0;
+
   cursor: pointer;
 }
 
@@ -214,10 +243,13 @@ nav::before {
 }
 
 
-/* SHOP DROPDOWN */
+/* ==================================================
+   SHOP DROPDOWN
+================================================== */
 
 .shop-dropdown {
   position: relative;
+
   display: inline-block;
 }
 
@@ -225,8 +257,10 @@ nav::before {
   display: none;
 
   position: absolute;
+
   top: 28px;
   left: 50%;
+
   transform: translateX(-50%);
 
   min-width: 190px;
@@ -234,12 +268,14 @@ nav::before {
   background: #13091b;
 
   border: 1px solid #6c5479;
+
   border-radius: 8px;
 
   box-shadow:
     0 12px 30px rgba(0,0,0,.75);
 
   overflow: hidden;
+
   z-index: 100;
 }
 
@@ -254,6 +290,7 @@ nav::before {
   padding: 13px 18px;
 
   color: #eee8f1;
+
   text-decoration: none;
 
   font-family:
@@ -275,32 +312,42 @@ nav::before {
 
 .shop-menu a:hover {
   background: #411456;
+
   color: white;
 }
 
+
+/* ORNAMENT */
+
 .nav-ornament {
   position: absolute;
+
   left: 50%;
   bottom: 2px;
+
   transform: translateX(-50%);
 
   color: #e0e2e8;
+
   font-size: 9px;
+
   letter-spacing: 8px;
 
   z-index: 6;
+
   opacity: .85;
 }
 
 
-/* =========================
+/* ==================================================
    SHOP PAGE
-========================= */
+================================================== */
 
 main {
   flex: 1;
 
   width: 92%;
+
   max-width: 1150px;
 
   margin: 55px auto 75px;
@@ -308,6 +355,7 @@ main {
 
 .shop-heading {
   text-align: center;
+
   margin-bottom: 50px;
 }
 
@@ -320,6 +368,7 @@ main {
     serif;
 
   font-size: 48px;
+
   font-weight: normal;
 }
 
@@ -329,12 +378,16 @@ main {
   max-width: 650px;
 
   color: #c9c0d0;
+
   font-size: 17px;
+
   line-height: 1.6;
 }
 
 
-/* CATEGORY GRID */
+/* ==================================================
+   SHOP CATEGORIES
+================================================== */
 
 .shop-categories {
   display: grid;
@@ -345,20 +398,19 @@ main {
   gap: 28px;
 }
 
-
-/* CATEGORY CARD */
-
 .category-card {
   position: relative;
 
   min-height: 390px;
 
   display: flex;
+
   align-items: flex-end;
 
   overflow: hidden;
 
   border: 1px solid #554560;
+
   border-radius: 15px;
 
   background:
@@ -391,7 +443,7 @@ main {
 }
 
 
-/* TEMPORARY CATEGORY ART AREA */
+/* CATEGORY ART */
 
 .category-art {
   position: absolute;
@@ -399,7 +451,9 @@ main {
   inset: 0 0 110px 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-family:
@@ -420,7 +474,7 @@ main {
 }
 
 
-/* CATEGORY NAME */
+/* CATEGORY INFO */
 
 .category-info {
   position: relative;
@@ -453,11 +507,13 @@ main {
     serif;
 
   font-size: 26px;
+
   font-weight: normal;
 }
 
 .category-info span {
   color: #c9c0d0;
+
   font-size: 14px;
 }
 
@@ -483,6 +539,7 @@ main {
   padding: 7px 11px;
 
   border: 1px solid #8e739b;
+
   border-radius: 20px;
 
   background: rgba(8,3,13,.85);
@@ -492,134 +549,223 @@ main {
   font-size: 11px;
 
   letter-spacing: 1px;
+
   text-transform: uppercase;
 }
 
 
-/* =========================
-   TEMPORARY FOOTER
-========================= */
+/* ==================================================
+   EXPANDED FOOTER
+================================================== */
 
-.contact-footer {
+.site-footer {
   position: relative;
 
   width: 100%;
 
-  text-align: center;
-
-  padding: 22px 20px 18px;
-
   background:
     radial-gradient(
-      circle at center,
-      #55206f 0%,
-      #411456 48%,
-      #291033 100%
+      ellipse at top center,
+      #351243 0%,
+      #1c0925 42%,
+      #0d0511 100%
     );
 
-  border-top: 1px solid #bfc3cc;
+  border-top: 1px solid #91809b;
 
   box-shadow:
-    0 -8px 25px rgba(0,0,0,.55);
+    0 -10px 35px rgba(0,0,0,.55);
 
   overflow: hidden;
+
   flex-shrink: 0;
 }
+
+
+/* FOOTER LACE */
 
 .footer-lace {
   position: absolute;
 
   top: 0;
 
-  width: 36%;
+  width: 30%;
   height: 100%;
 
   object-fit: cover;
-  object-position: left center;
+
+  object-position: left top;
 
   pointer-events: none;
 
-  z-index: 1;
-
   filter:
     grayscale(1)
-    contrast(1.65);
+    contrast(1.7);
 
   mix-blend-mode: multiply;
 
-  opacity: .88;
+  opacity: .38;
+
+  z-index: 1;
 }
 
 .footer-lace-left {
   left: 0;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black,
+      rgba(0,0,0,.65),
+      transparent
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      black,
+      rgba(0,0,0,.65),
+      transparent
+    );
 }
 
 .footer-lace-right {
   right: 0;
+
   transform: scaleX(-1);
-}
 
-.footer-center-shade {
-  position: absolute;
-
-  top: 0;
-  left: 22%;
-
-  width: 56%;
-  height: 100%;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(31,7,41,.94) 0%,
-      rgba(31,7,41,.80) 48%,
-      rgba(31,7,41,.36) 72%,
-      transparent 100%
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      black,
+      rgba(0,0,0,.65),
+      transparent
     );
 
-  pointer-events: none;
-  z-index: 2;
+  mask-image:
+    linear-gradient(
+      to right,
+      black,
+      rgba(0,0,0,.65),
+      transparent
+    );
 }
 
-.footer-content {
+
+/* FOOTER MAIN */
+
+.footer-inner {
   position: relative;
-  z-index: 5;
+
+  z-index: 3;
+
+  width: 92%;
+
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 48px 0 35px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr 1.3fr;
+
+  gap: 65px;
 }
 
-.footer-content h2 {
+.footer-column h3 {
+  margin: 0 0 18px;
+
   font-family:
     Georgia,
     "Times New Roman",
     serif;
 
-  font-size: 24px;
+  font-size: 18px;
 
-  margin: 0 0 7px;
+  font-weight: normal;
+
+  color: #ffffff;
+
+  letter-spacing: 1px;
 }
 
-.footer-content p {
-  color: #d2c9d6;
+.footer-column ul {
+  list-style: none;
 
-  margin: 0 0 12px;
+  padding: 0;
 
-  font-size: 14px;
+  margin: 0;
 }
 
-.contact-links {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 18px;
+.footer-column li {
+  margin-bottom: 11px;
 }
 
-.contact-link {
-  color: #f5f1f7;
+.footer-column a {
+  color: #c9c0cd;
 
   text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    color .2s ease,
+    text-shadow .2s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px rgba(200,170,220,.55);
+}
+
+
+/* CONTACT */
+
+.footer-contact p {
+  margin: 0 0 12px;
+
+  color: #c9c0cd;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.footer-contact a {
+  overflow-wrap: anywhere;
+}
+
+
+/* ==================================================
+   PAYMENT METHODS
+================================================== */
+
+.footer-payment {
+  position: relative;
+
+  z-index: 3;
+
+  width: 92%;
+
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 27px 0;
+
+  border-top:
+    1px solid rgba(210,200,215,.18);
+
+  text-align: center;
+}
+
+.footer-payment h3 {
+  margin: 0 0 18px;
 
   font-family:
     Georgia,
@@ -627,23 +773,163 @@ main {
     serif;
 
   font-size: 15px;
+
+  font-weight: normal;
+
+  letter-spacing: 1px;
+
+  color: #e7e0e9;
+}
+
+.payment-logos {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.payment-card {
+  height: 36px;
+
+  min-width: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 11px;
+
+  background: #ffffff;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 3px 8px rgba(0,0,0,.28);
+
+  font-family: Arial, sans-serif;
+
+  font-weight: bold;
+
+  line-height: 1;
+}
+
+.payment-visa {
+  color: #172b85;
+
+  font-size: 18px;
+
+  font-style: italic;
+}
+
+.payment-mastercard {
+  color: #252525;
+
+  font-size: 11px;
+}
+
+.payment-amex {
+  color: #1473a8;
+
+  font-size: 11px;
+}
+
+.payment-discover {
+  color: #333333;
+
+  font-size: 11px;
+}
+
+
+/* ==================================================
+   SMALL FOOTER LINKS
+================================================== */
+
+.footer-small-links {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  padding: 16px 15px 8px;
+
+  border-top:
+    1px solid rgba(210,200,215,.15);
+}
+
+.footer-small-links a {
+  color: #bdb2c2;
+
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+.footer-small-links a:hover {
+  color: white;
+}
+
+.footer-divider {
+  color: #65596a;
+
+  font-size: 11px;
+}
+
+
+/* ==================================================
+   COPYRIGHT
+================================================== */
+
+.footer-bottom {
+  position: relative;
+
+  z-index: 3;
+
+  padding: 7px 15px 17px;
+
+  text-align: center;
+
+  background:
+    rgba(4,1,6,.38);
+
+  color: #a99eae;
+
+  font-size: 12px;
 }
 
 .footer-ornament {
-  color: #e0e2e8;
+  margin-bottom: 8px;
+
+  color: #d9d3dd;
 
   font-size: 8px;
+
   letter-spacing: 7px;
 
-  margin-top: 12px;
-
-  opacity: .85;
+  opacity: .8;
 }
 
 
-/* =========================
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
 @media screen and (max-width: 700px) {
 
@@ -654,17 +940,21 @@ main {
   .nav-link,
   .shop-button {
     font-size: 12px;
+
     margin: 0 5px;
+
     letter-spacing: 0;
   }
 
   .shop-menu {
     top: 24px;
+
     min-width: 160px;
   }
 
   .shop-menu a {
     font-size: 13px;
+
     padding: 12px 14px;
   }
 
@@ -674,16 +964,22 @@ main {
 
   .nav-center-shade {
     left: 15%;
+
     width: 70%;
   }
 
   .nav-ornament {
     font-size: 7px;
+
     letter-spacing: 4px;
   }
 
+
+  /* SHOP */
+
   main {
     width: 92%;
+
     margin: 40px auto 55px;
   }
 
@@ -701,6 +997,7 @@ main {
 
   .shop-categories {
     grid-template-columns: 1fr;
+
     gap: 22px;
   }
 
@@ -716,37 +1013,78 @@ main {
     font-size: 24px;
   }
 
-  .contact-footer {
-    padding: 18px 15px 15px;
+
+  /* FOOTER */
+
+  .footer-inner {
+    width: 88%;
+
+    padding: 38px 0 28px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 32px 28px;
   }
 
-  .footer-content h2 {
-    font-size: 21px;
+  .footer-contact {
+    grid-column:
+      1 / -1;
   }
 
-  .footer-content p {
-    font-size: 13px;
+  .footer-lace {
+    width: 45%;
+
+    opacity: .24;
   }
 
-  .contact-links {
-    flex-direction: column;
-    gap: 8px;
+  .footer-payment {
+    width: 88%;
+
+    padding: 24px 0;
   }
 
-  .contact-link {
-    font-size: 14px;
+  .payment-card {
+    height: 34px;
+
+    min-width: 60px;
+  }
+
+}
+
+
+@media screen and (max-width: 420px) {
+
+  .nav-link,
+  .shop-button {
+    margin: 0 3px;
+
+    font-size: 11px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .footer-contact {
+    grid-column: auto;
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
 
 <nav>
 
@@ -767,6 +1105,7 @@ main {
 
   <div class="nav-links">
 
+
     <a
       href="index.html"
       class="nav-link"
@@ -775,11 +1114,17 @@ main {
     </a>
 
 
+    <!-- SHOP DROPDOWN -->
+
     <div class="shop-dropdown">
 
-      <button class="shop-button">
+      <button
+        class="shop-button"
+        type="button"
+      >
         Shop ▾
       </button>
+
 
       <div class="shop-menu">
 
@@ -827,6 +1172,7 @@ main {
       Checkout
     </a>
 
+
   </div>
 
 
@@ -837,9 +1183,12 @@ main {
 </nav>
 
 
-<!-- SHOP -->
+<!-- ==================================================
+     SHOP
+================================================== -->
 
 <main>
+
 
   <section class="shop-heading">
 
@@ -869,6 +1218,7 @@ main {
         ✦
       </div>
 
+
       <div class="category-info">
 
         <h2>
@@ -892,9 +1242,11 @@ main {
         Coming Soon
       </span>
 
+
       <div class="category-art">
         🕯
       </div>
+
 
       <div class="category-info">
 
@@ -919,9 +1271,11 @@ main {
         Coming Soon
       </span>
 
+
       <div class="category-art">
         📖
       </div>
+
 
       <div class="category-info">
 
@@ -940,15 +1294,16 @@ main {
 
   </section>
 
+
 </main>
 
 
-<!-- CURRENT FOOTER
-     We'll replace this with the new expanded footer
-     after the Shop page is approved.
--->
+<!-- ==================================================
+     FOOTER
+================================================== -->
 
-<footer class="contact-footer">
+<footer class="site-footer">
+
 
   <img
     src="lace.jpg"
@@ -956,55 +1311,245 @@ main {
     alt=""
   >
 
+
   <img
     src="lace.jpg"
     class="footer-lace footer-lace-right"
     alt=""
   >
 
-  <span class="footer-center-shade"></span>
+
+  <div class="footer-inner">
 
 
-  <div class="footer-content">
+    <!-- QUICK LINKS -->
 
-    <h2>
-      Ravens Scoops
-    </h2>
+    <section class="footer-column">
 
-    <p>
-      Have a question? We'd love to hear from you.
-    </p>
+      <h3>
+        QUICK LINKS
+      </h3>
 
 
-    <div class="contact-links">
+      <ul>
 
-      <a
-        class="contact-link"
-        href="mailto:ravensscoops@gmail.com"
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="boxes.html">
+            Shop
+          </a>
+        </li>
+
+        <li>
+          <a href="faq.html">
+            FAQ
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+        <li>
+          <a href="checkout.html">
+            Checkout
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- SHOP -->
+
+    <section class="footer-column">
+
+      <h3>
+        SHOP
+      </h3>
+
+
+      <ul>
+
+        <li>
+          <a href="mystery-boxes.html">
+            Mystery Boxes
+          </a>
+        </li>
+
+        <li>
+          <a href="boxes.html">
+            Candles
+          </a>
+        </li>
+
+        <li>
+          <a href="boxes.html">
+            Books
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="footer-column footer-contact">
+
+      <h3>
+        CONTACT
+      </h3>
+
+
+      <p>
+        Have a question? We'd love to hear from you.
+      </p>
+
+
+      <p>
+
+        <a href="mailto:ravensscoops@gmail.com">
+          ✉ ravensscoops@gmail.com
+        </a>
+
+      </p>
+
+
+      <p>
+
+        <a
+          href="https://www.tiktok.com/@ravensscoops"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ♪ TikTok: @ravensscoops
+        </a>
+
+      </p>
+
+    </section>
+
+
+  </div>
+
+
+  <!-- ==================================================
+       PAYMENT METHODS
+  ================================================== -->
+
+  <section class="footer-payment">
+
+    <h3>
+      PAYMENT METHODS ACCEPTED
+    </h3>
+
+
+    <div class="payment-logos">
+
+
+      <div
+        class="payment-card payment-visa"
+        aria-label="Visa accepted"
       >
-        ✉ ravensscoops@gmail.com
-      </a>
+        VISA
+      </div>
 
-      <a
-        class="contact-link"
-        href="https://www.tiktok.com/@ravensscoops"
-        target="_blank"
-        rel="noopener noreferrer"
+
+      <div
+        class="payment-card payment-mastercard"
+        aria-label="Mastercard accepted"
       >
-        ♪ TikTok: @ravensscoops
-      </a>
+        Mastercard
+      </div>
+
+
+      <div
+        class="payment-card payment-amex"
+        aria-label="American Express accepted"
+      >
+        AMEX
+      </div>
+
+
+      <div
+        class="payment-card payment-discover"
+        aria-label="Discover accepted"
+      >
+        DISCOVER
+      </div>
+
 
     </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       SMALL BOTTOM LINKS
+  ================================================== -->
+
+  <div class="footer-small-links">
+
+
+    <a href="about.html">
+      About Us
+    </a>
+
+
+    <span class="footer-divider">
+      |
+    </span>
+
+
+    <a href="faq.html">
+      FAQ
+    </a>
+
+
+    <span class="footer-divider">
+      |
+    </span>
+
+
+    <a href="contact.html">
+      Contact Us
+    </a>
+
+
+  </div>
+
+
+  <!-- ==================================================
+       COPYRIGHT
+  ================================================== -->
+
+  <div class="footer-bottom">
 
 
     <div class="footer-ornament">
       ◆ ✦ ◆ ✦ ◆
     </div>
 
+
+    © 2026 Ravens Scoops. All Rights Reserved.
+
+
   </div>
+
 
 </footer>
 
 
 </body>
+
 </html>
