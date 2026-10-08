@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Shop — Ravens Scoops</title>
 
 <style>
-
 * {
   box-sizing: border-box;
 }
@@ -29,7 +26,6 @@ body {
   flex-direction: column;
 }
 
-
 /* ==================================================
    NAVIGATION
 ================================================== */
@@ -39,22 +35,17 @@ nav {
   width: 100%;
   text-align: center;
   padding: 30px 10px;
-
-  background:
-    radial-gradient(
-      circle at center,
-      #55206f 0%,
-      #411456 48%,
-      #291033 100%
-    );
-
+  background: radial-gradient(
+    circle at center,
+    #55206f 0%,
+    #411456 48%,
+    #291033 100%
+  );
   border-top: 1px solid rgba(225,228,235,.20);
   border-bottom: 1px solid #bfc3cc;
-
   box-shadow:
     0 8px 25px rgba(0,0,0,.7),
     inset 0 1px 0 rgba(255,255,255,.06);
-
   overflow: visible;
   z-index: 20;
 }
@@ -66,18 +57,14 @@ nav::before {
   left: 10%;
   width: 80%;
   height: 1px;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(255,255,255,.45),
-      transparent
-    );
-
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+  );
   z-index: 3;
 }
-
 
 /* NAV LACE */
 
@@ -86,74 +73,59 @@ nav::before {
   top: 0;
   width: 36%;
   height: 100%;
-
   object-fit: cover;
   object-position: left center;
-
   pointer-events: none;
   z-index: 1;
-
-  filter:
-    grayscale(1)
-    contrast(1.65);
-
+  filter: grayscale(1) contrast(1.65);
   mix-blend-mode: multiply;
   opacity: .88;
 }
 
 .lace-left {
   left: 0;
-
-  -webkit-mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
-
-  mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 35%,
+    rgba(0,0,0,.95) 50%,
+    rgba(0,0,0,.7) 65%,
+    rgba(0,0,0,.3) 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 35%,
+    rgba(0,0,0,.95) 50%,
+    rgba(0,0,0,.7) 65%,
+    rgba(0,0,0,.3) 82%,
+    transparent 100%
+  );
 }
 
 .lace-right {
   right: 0;
   transform: scaleX(-1);
-
-  -webkit-mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
-
-  mask-image:
-    linear-gradient(
-      to right,
-      black 0%,
-      black 35%,
-      rgba(0,0,0,.95) 50%,
-      rgba(0,0,0,.7) 65%,
-      rgba(0,0,0,.3) 82%,
-      transparent 100%
-    );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 35%,
+    rgba(0,0,0,.95) 50%,
+    rgba(0,0,0,.7) 65%,
+    rgba(0,0,0,.3) 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 35%,
+    rgba(0,0,0,.95) 50%,
+    rgba(0,0,0,.7) 65%,
+    rgba(0,0,0,.3) 82%,
+    transparent 100%
+  );
 }
-
 
 /* NAV CENTER SHADE */
 
@@ -163,27 +135,22 @@ nav::before {
   left: 22%;
   width: 56%;
   height: 100%;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(31,7,41,.94) 0%,
-      rgba(31,7,41,.80) 48%,
-      rgba(31,7,41,.36) 72%,
-      transparent 100%
-    );
-
+  background: radial-gradient(
+    ellipse at center,
+    rgba(31,7,41,.94) 0%,
+    rgba(31,7,41,.80) 48%,
+    rgba(31,7,41,.36) 72%,
+    transparent 100%
+  );
   pointer-events: none;
   z-index: 2;
 }
-
 
 /* NAV LINKS */
 
 .nav-links {
   position: relative;
   z-index: 5;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,40 +159,27 @@ nav::before {
 .nav-link,
 .shop-button {
   position: relative;
-
   color: #f5f1f7;
   text-decoration: none;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 1px;
-
   margin: 0 19px;
-
-  text-shadow:
-    0 1px 4px rgba(0,0,0,.95);
-
+  text-shadow: 0 1px 4px rgba(0,0,0,.95);
   background: none;
   border: none;
   padding: 0;
-
   cursor: pointer;
 }
 
 .nav-link:hover,
 .shop-button:hover {
   color: #ffffff;
-
   text-shadow:
     0 0 8px rgba(220,205,255,.85),
     0 0 15px rgba(130,70,175,.6);
 }
-
 
 /* ==================================================
    SHOP DROPDOWN
@@ -238,38 +192,26 @@ nav::before {
 
 .shop-menu {
   display: none;
-
   position: absolute;
-
   top: 100%;
   left: 50%;
-
   transform: translateX(-50%);
-
   min-width: 190px;
-
   padding-top: 12px;
-
   background: transparent;
-
   z-index: 100;
 }
-
 
 /* Invisible hover bridge */
 
 .shop-menu::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 14px;
 }
-
 
 /* Keep dropdown open on desktop */
 
@@ -278,29 +220,17 @@ nav::before {
   display: block;
 }
 
-
 .shop-menu a {
   display: block;
-
   padding: 13px 18px;
-
   color: #eee8f1;
-
   text-decoration: none;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
-
   background: #13091b;
-
   border-left: 1px solid #6c5479;
   border-right: 1px solid #6c5479;
   border-bottom: 1px solid rgba(255,255,255,.08);
-
   white-space: nowrap;
 }
 
@@ -319,26 +249,19 @@ nav::before {
   color: white;
 }
 
-
 /* NAV ORNAMENT */
 
 .nav-ornament {
   position: absolute;
-
   left: 50%;
   bottom: 2px;
-
   transform: translateX(-50%);
-
   color: #e0e2e8;
-
   font-size: 9px;
   letter-spacing: 8px;
-
   z-index: 6;
   opacity: .85;
 }
-
 
 /* ==================================================
    SHOP PAGE
@@ -346,10 +269,8 @@ nav::before {
 
 main {
   flex: 1;
-
   width: 92%;
   max-width: 1150px;
-
   margin: 55px auto 75px;
 }
 
@@ -360,27 +281,18 @@ main {
 
 .shop-heading h1 {
   margin: 0 0 12px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 48px;
   font-weight: normal;
 }
 
 .shop-heading p {
   margin: 0 auto;
-
   max-width: 650px;
-
   color: #c9c0d0;
-
   font-size: 17px;
   line-height: 1.6;
 }
-
 
 /* ==================================================
    SHOP CATEGORIES
@@ -388,39 +300,26 @@ main {
 
 .shop-categories {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
 .category-card {
   position: relative;
-
   min-height: 390px;
-
   display: flex;
   align-items: flex-end;
-
   overflow: hidden;
-
   border: 1px solid #554560;
   border-radius: 15px;
-
-  background:
-    radial-gradient(
-      circle at top,
-      #291433 0%,
-      #13091b 55%,
-      #0c050f 100%
-    );
-
-  box-shadow:
-    0 18px 40px rgba(0,0,0,.48);
-
+  background: radial-gradient(
+    circle at top,
+    #291433 0%,
+    #13091b 55%,
+    #0c050f 100%
+  );
+  box-shadow: 0 18px 40px rgba(0,0,0,.48);
   text-decoration: none;
-
   transition:
     transform .25s ease,
     border-color .25s ease,
@@ -429,78 +328,52 @@ main {
 
 .category-card:hover {
   transform: translateY(-5px);
-
   border-color: #9474a5;
-
   box-shadow:
     0 22px 48px rgba(0,0,0,.62),
     0 0 18px rgba(112,62,143,.18);
 }
 
-
 /* CATEGORY ART */
 
 .category-art {
   position: absolute;
-
   inset: 0 0 110px 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 70px;
-
   color: rgba(255,255,255,.75);
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(85,32,111,.28),
-      transparent 65%
-    );
+  background: radial-gradient(
+    circle at center,
+    rgba(85,32,111,.28),
+    transparent 65%
+  );
 }
-
 
 /* CATEGORY INFO */
 
 .category-info {
   position: relative;
-
   z-index: 3;
-
   width: 100%;
-
   padding: 24px 20px;
-
   text-align: center;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(7,2,10,.98),
-      rgba(16,6,21,.93)
-    );
-
-  border-top:
-    1px solid rgba(210,190,220,.20);
+  background: linear-gradient(
+    to top,
+    rgba(7,2,10,.98),
+    rgba(16,6,21,.93)
+  );
+  border-top: 1px solid rgba(210,190,220,.20);
 }
 
 .category-info h2 {
   margin: 0 0 7px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 26px;
   font-weight: normal;
+  color: white;
 }
 
 .category-info span {
@@ -508,42 +381,27 @@ main {
   font-size: 14px;
 }
 
-
 /* ==================================================
-   COMING SOON
+   COMING SOON BADGES
 ================================================== */
 
-.coming-soon {
-  cursor: default;
-}
-
-.coming-soon:hover {
-  transform: none;
-}
+/* The badges remain, but the category cards
+   themselves are now clickable links. */
 
 .coming-badge {
   position: absolute;
-
   top: 16px;
   right: 16px;
-
   z-index: 5;
-
   padding: 7px 11px;
-
   border: 1px solid #8e739b;
   border-radius: 20px;
-
   background: rgba(8,3,13,.85);
-
   color: #ddd2e2;
-
   font-size: 11px;
-
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
 
 /* ==================================================
    FOOTER
@@ -551,96 +409,67 @@ main {
 
 .site-footer {
   position: relative;
-
   width: 100%;
-
-  background:
-    radial-gradient(
-      ellipse at top center,
-      #351243 0%,
-      #1c0925 48%,
-      #0d0511 100%
-    );
-
+  background: radial-gradient(
+    ellipse at top center,
+    #351243 0%,
+    #1c0925 48%,
+    #0d0511 100%
+  );
   border-top: 1px solid #91809b;
-
-  box-shadow:
-    0 -8px 25px rgba(0,0,0,.5);
-
+  box-shadow: 0 -8px 25px rgba(0,0,0,.5);
   overflow: hidden;
-
   flex-shrink: 0;
 }
-
 
 /* FOOTER LACE */
 
 .footer-lace {
   position: absolute;
-
   top: 0;
-
   width: 26%;
   height: 100%;
-
   object-fit: cover;
   object-position: left top;
-
   pointer-events: none;
-
-  filter:
-    grayscale(1)
-    contrast(1.7);
-
+  filter: grayscale(1) contrast(1.7);
   mix-blend-mode: multiply;
-
   opacity: .28;
-
   z-index: 1;
 }
 
 .footer-lace-left {
   left: 0;
-
-  -webkit-mask-image:
-    linear-gradient(
-      to right,
-      black,
-      rgba(0,0,0,.55),
-      transparent
-    );
-
-  mask-image:
-    linear-gradient(
-      to right,
-      black,
-      rgba(0,0,0,.55),
-      transparent
-    );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black,
+    rgba(0,0,0,.55),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    black,
+    rgba(0,0,0,.55),
+    transparent
+  );
 }
 
 .footer-lace-right {
   right: 0;
-
   transform: scaleX(-1);
-
-  -webkit-mask-image:
-    linear-gradient(
-      to right,
-      black,
-      rgba(0,0,0,.55),
-      transparent
-    );
-
-  mask-image:
-    linear-gradient(
-      to right,
-      black,
-      rgba(0,0,0,.55),
-      transparent
-    );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black,
+    rgba(0,0,0,.55),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    black,
+    rgba(0,0,0,.55),
+    transparent
+  );
 }
-
 
 /* ==================================================
    FOOTER COLUMNS
@@ -648,50 +477,30 @@ main {
 
 .footer-inner {
   position: relative;
-
   z-index: 3;
-
   width: 92%;
   max-width: 1100px;
-
   margin: 0 auto;
-
   padding: 20px 0 16px;
-
   display: grid;
-
-  grid-template-columns:
-    .8fr 1.3fr 1.2fr;
-
+  grid-template-columns: .8fr 1.3fr 1.2fr;
   gap: 55px;
-
   align-items: start;
 }
 
 .footer-column h3 {
   margin: 0 0 10px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 16px;
   font-weight: normal;
-
   color: #ffffff;
-
   letter-spacing: 1px;
 }
 
-
-/* ==================================================
-   QUICK LINKS
-================================================== */
+/* QUICK LINKS */
 
 .footer-column ul {
   list-style: none;
-
   padding: 0;
   margin: 0;
 }
@@ -702,11 +511,8 @@ main {
 
 .footer-column a {
   color: #c9c0cd;
-
   text-decoration: none;
-
   font-size: 13px;
-
   transition:
     color .2s ease,
     text-shadow .2s ease;
@@ -714,15 +520,10 @@ main {
 
 .footer-column a:hover {
   color: #ffffff;
-
-  text-shadow:
-    0 0 8px rgba(200,170,220,.55);
+  text-shadow: 0 0 8px rgba(200,170,220,.55);
 }
 
-
-/* ==================================================
-   PAYMENT METHODS
-================================================== */
+/* PAYMENT METHODS */
 
 .footer-payment {
   text-align: center;
@@ -735,44 +536,30 @@ main {
 .payment-image-wrap {
   width: 245px;
   height: 82px;
-
   max-width: 100%;
-
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
 }
 
 .payment-image {
   display: block;
-
   width: auto;
   height: auto;
-
   max-width: 100%;
   max-height: 82px;
-
   object-fit: contain;
-
   background: transparent;
 }
 
-
-/* ==================================================
-   CONTACT
-================================================== */
+/* CONTACT */
 
 .footer-contact p {
   margin: 0 0 7px;
-
   color: #c9c0cd;
-
   font-size: 13px;
-
   line-height: 1.45;
 }
 
@@ -780,43 +567,26 @@ main {
   overflow-wrap: anywhere;
 }
 
-
-/* ==================================================
-   COPYRIGHT
-================================================== */
+/* COPYRIGHT */
 
 .footer-bottom {
   position: relative;
-
   z-index: 3;
-
   padding: 8px 15px 10px;
-
   text-align: center;
-
-  border-top:
-    1px solid rgba(210,200,215,.14);
-
-  background:
-    rgba(4,1,6,.38);
-
+  border-top: 1px solid rgba(210,200,215,.14);
+  background: rgba(4,1,6,.38);
   color: #a99eae;
-
   font-size: 10px;
 }
 
 .footer-ornament {
   margin-bottom: 3px;
-
   color: #d9d3dd;
-
   font-size: 6px;
-
   letter-spacing: 5px;
-
   opacity: .75;
 }
-
 
 /* ==================================================
    TABLET / MOBILE
@@ -837,16 +607,11 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     height: 22px;
     line-height: 22px;
-
     font-size: 15px;
-
     margin: 0 7px;
-
     letter-spacing: 0;
-
     white-space: nowrap;
   }
 
@@ -863,10 +628,8 @@ main {
 
   .shop-menu a {
     display: block;
-
     height: auto;
     line-height: normal;
-
     font-size: 13px;
     padding: 12px 14px;
   }
@@ -885,7 +648,6 @@ main {
     letter-spacing: 4px;
     bottom: 1px;
   }
-
 
   /* SHOP */
 
@@ -909,7 +671,6 @@ main {
   .shop-categories {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
-
     gap: 12px;
     width: 100%;
   }
@@ -943,24 +704,17 @@ main {
   .coming-badge {
     top: 9px;
     right: 8px;
-
     padding: 5px 7px;
-
     font-size: 8px;
     letter-spacing: .5px;
   }
-
 
   /* FOOTER */
 
   .footer-inner {
     width: 88%;
-
     padding: 22px 0 18px;
-
-    grid-template-columns:
-      1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
   }
 
@@ -974,17 +728,14 @@ main {
   }
 
   .footer-contact {
-    grid-column:
-      1 / -1;
+    grid-column: 1 / -1;
   }
 
   .footer-lace {
     width: 45%;
     opacity: .20;
   }
-
 }
-
 
 /* ==================================================
    SMALL PHONES
@@ -997,7 +748,6 @@ main {
     margin: 0 5px;
     font-size: 14px;
   }
-
 
   /* KEEP TWO SHOP CARDS PER ROW */
 
@@ -1029,21 +779,16 @@ main {
   .coming-badge {
     top: 8px;
     right: 7px;
-
     padding: 5px 6px;
-
     font-size: 7px;
     letter-spacing: .3px;
   }
-
 
   /* FOOTER */
 
   .footer-inner {
     grid-template-columns: 1fr;
-
     gap: 20px;
-
     padding: 22px 0 18px;
   }
 
@@ -1058,7 +803,6 @@ main {
   .payment-image-wrap {
     width: 175px;
     height: 62px;
-
     margin: 0;
   }
 
@@ -1069,16 +813,12 @@ main {
   .footer-contact {
     grid-column: auto;
   }
-
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- ==================================================
      NAVIGATION
@@ -1100,28 +840,19 @@ main {
 
   <span class="nav-center-shade"></span>
 
-
   <div class="nav-links">
 
-    <a
-      href="index.html"
-      class="nav-link"
-    >
+    <a href="index.html" class="nav-link">
       Home
     </a>
-
 
     <!-- SHOP DROPDOWN -->
 
     <div class="shop-dropdown">
 
-      <button
-        class="shop-button"
-        type="button"
-      >
+      <button class="shop-button" type="button">
         Shop ▾
       </button>
-
 
       <div class="shop-menu">
 
@@ -1141,43 +872,33 @@ main {
           Books
         </a>
 
+        <a href="body-care.html">
+          Body Care
+        </a>
+
       </div>
 
     </div>
 
-
-    <a
-      href="faq.html"
-      class="nav-link"
-    >
+    <a href="faq.html" class="nav-link">
       FAQ
     </a>
 
-
-    <a
-      href="contact.html"
-      class="nav-link"
-    >
+    <a href="contact.html" class="nav-link">
       Contact
     </a>
 
-
-    <a
-      href="checkout.html"
-      class="nav-link"
-    >
+    <a href="checkout.html" class="nav-link">
       Checkout
     </a>
 
   </div>
-
 
   <span class="nav-ornament">
     ◆ ✦ ◆ ✦ ◆
   </span>
 
 </nav>
-
 
 <!-- ==================================================
      SHOP
@@ -1187,9 +908,7 @@ main {
 
   <section class="shop-heading">
 
-    <h1>
-      Shop
-    </h1>
+    <h1>Shop</h1>
 
     <p>
       Explore the strange, mysterious, witchy, and unexpected.
@@ -1198,9 +917,7 @@ main {
 
   </section>
 
-
   <section class="shop-categories">
-
 
     <!-- MYSTERY BOXES -->
 
@@ -1215,9 +932,7 @@ main {
 
       <div class="category-info">
 
-        <h2>
-          Mystery Boxes
-        </h2>
+        <h2>Mystery Boxes</h2>
 
         <span>
           Shop Mystery Boxes
@@ -1227,10 +942,12 @@ main {
 
     </a>
 
-
     <!-- CANDLES -->
 
-    <div class="category-card coming-soon">
+    <a
+      href="candles.html"
+      class="category-card"
+    >
 
       <span class="coming-badge">
         Coming Soon
@@ -1242,9 +959,7 @@ main {
 
       <div class="category-info">
 
-        <h2>
-          Candles
-        </h2>
+        <h2>Candles</h2>
 
         <span>
           Shop Candles
@@ -1252,12 +967,14 @@ main {
 
       </div>
 
-    </div>
-
+    </a>
 
     <!-- BOOKS -->
 
-    <div class="category-card coming-soon">
+    <a
+      href="books.html"
+      class="category-card"
+    >
 
       <span class="coming-badge">
         Coming Soon
@@ -1269,9 +986,7 @@ main {
 
       <div class="category-info">
 
-        <h2>
-          Books
-        </h2>
+        <h2>Books</h2>
 
         <span>
           Shop Books
@@ -1279,12 +994,14 @@ main {
 
       </div>
 
-    </div>
-
+    </a>
 
     <!-- BODY CARE -->
 
-    <div class="category-card coming-soon">
+    <a
+      href="body-care.html"
+      class="category-card"
+    >
 
       <span class="coming-badge">
         Coming Soon
@@ -1296,9 +1013,7 @@ main {
 
       <div class="category-info">
 
-        <h2>
-          Body Care
-        </h2>
+        <h2>Body Care</h2>
 
         <span>
           Shop Body Care
@@ -1306,13 +1021,11 @@ main {
 
       </div>
 
-    </div>
-
+    </a>
 
   </section>
 
 </main>
-
 
 <!-- ==================================================
      FOOTER
@@ -1332,17 +1045,13 @@ main {
     alt=""
   >
 
-
   <div class="footer-inner">
-
 
     <!-- QUICK LINKS -->
 
     <section class="footer-column">
 
-      <h3>
-        QUICK LINKS
-      </h3>
+      <h3>QUICK LINKS</h3>
 
       <ul>
 
@@ -1368,14 +1077,11 @@ main {
 
     </section>
 
-
     <!-- PAYMENT METHODS -->
 
     <section class="footer-column footer-payment">
 
-      <h3>
-        PAYMENT METHODS ACCEPTED
-      </h3>
+      <h3>PAYMENT METHODS ACCEPTED</h3>
 
       <div class="payment-image-wrap">
 
@@ -1389,14 +1095,11 @@ main {
 
     </section>
 
-
     <!-- CONTACT -->
 
     <section class="footer-column footer-contact">
 
-      <h3>
-        CONTACT
-      </h3>
+      <h3>CONTACT</h3>
 
       <p>
         Have a question? We'd love to hear from you.
@@ -1420,9 +1123,7 @@ main {
 
     </section>
 
-
   </div>
-
 
   <!-- COPYRIGHT -->
 
@@ -1436,10 +1137,7 @@ main {
 
   </div>
 
-
 </footer>
 
-
 </body>
-
 </html>
